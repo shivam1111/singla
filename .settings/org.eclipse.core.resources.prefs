@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//chemical_compositions/__manifest__.py=utf-8
+encoding//mill_order/__init__.py=utf-8
+encoding//mill_order/__manifest__.py=utf-8
+encoding//mill_order/models/mill_order.py=utf-8
+encoding//mill_purchase_order/__manifest__.py=utf-8
+encoding//mill_purchase_order/models/mill_purchase_order.py=utf-8
+encoding//singla_project_extended/__manifest__.py=utf-8

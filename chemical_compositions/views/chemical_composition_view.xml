@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <menuitem name="Chemical Compositions"
+           id="chemical_composition_management_main_menu"
+           web_icon="sale,static/description/icon.png"/>
+
+       <menuitem
+           id= "chemical_composition_management_main_submenu"
+           parent= "chemical_composition_management_main_menu"
+           sequence= "1"
+           name= "Compositions" />
+       
+       
+       <!-- Chemical Composition -->
+		<record id="view_chemical_compostion_tree" model="ir.ui.view">
+		    <field name="name">chemical.composition.tree</field>
+		    <field name="model">chemical.composition</field>
+		    <field name="arch" type="xml">
+			    <tree string = "Chemical Composition">
+			    		<field name = "name" />
+			    		<field name= "partner_id"/>
+			    		<field name = "date" />
+			    		<field name = "grade_id"/>
+			    		<field name = "heat_no"/>
+			    		<field name = "invoice_no" />
+			    		<field name = "rate_extra" />
+		    		</tree>       
+		    </field>
+	    </record>
+       
+		<record id="view_chemical_compostion_form" model="ir.ui.view">
+		    <field name="name">chemical.composition.form</field>
+		    <field name="model">chemical.composition</field>
+		    <field name="arch" type="xml">
+		    		<form string = "Chemical Composition">
+		    			<sheet>
+		    				<field name = "company_id" invisible="1"/>
+	                    <div class="oe_title">
+	                        <h1>
+	                            <field name="name" readonly="1"/>
+	                        </h1>
+	                    </div>
+	                    <group>
+	                    		<group>
+	                    			<field name = "partner_id" />
+	                    			<field name = "invoice_no" />
+	                    			<field name = "no_of_pieces" />
+	                    			<field name = "size" />
+	                    			<field name = "rate_extra" />
+	                    		</group>
+	                    		<group>
+	                    			<field name = "grade_id" />
+	                    			<field name = "date" />
+	                    			<field name = "truck_no" />
+	                    			<field name = "heat_no" />
+	                    			<field name = "color_code" />
+	                    			<field name = "attested" />
+	                    		</group>
+	                    </group>
+	                    <group string = "Metalurgical Properties">
+	                    		<group>
+	                    			<field name = "min_hardness" />
+	                    			<field name = "complete_decarb" />
+	                    		</group>
+	                    		<group>
+	                    			<field name = "max_hardness" />
+	                    			<field name = "partial_decarb" />
+	                    			<field name = "grain_size" />
+	                    		</group>
+	                    </group>
+                    		<notebook>
+                    			<page string = "Chemical Composition">
+                    				<field name = "line_ids" nolabel = "1" >
+                    					<tree string = "Composition Line" editable = "1">
+                    						<field name = "sequence" widget="handle"/>
+                    						<field name = "element_id" />
+                    						<field name = "min_val" />
+                    						<field name = "max_val"/>
+                    						<field name = "actual_val" />
+                    					</tree>
+                    				</field>
+                    			</page>
+                    			<page string = "Inclusion Rating">
+                    				<field name = "inclusion_rating_ids" nolabel = "1">
+                    					<tree string = "Inclusion Rating" editable = "1">
+                    						<field name = "type" />
+                    						<field name = "thin" />
+                    						<field name = "thick" />
+                    					</tree>
+                    				</field>
+                    			</page>
+                    			<page string = "Qty Details">
+                    				<field name = "length_detail_ids" nolabel ="1">
+                    					<tree string = "Qty Details" editable = "1">
+                    						<field name = "name" />
+                    						<field name = "no_of_pcs" />
+                    					</tree>
+                    				</field>
+                    			</page>
+                    		</notebook>	                    
+		    			</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>		    			
+		    		</form>       
+    			</field>
+		</record>
+
+        <record id="view_chemical_composition_filter" model="ir.ui.view">
+            <field name="name">chemical.composition.list.select</field>
+            <field name="model">chemical.composition</field>
+            <field name="arch" type="xml">
+                <search string="Search Compositions">
+                    <field name="name" string="Serial Number" filter_domain="[('name','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="grade_id"/>
+                    <field name="truck_no"/>
+                    <field name="heat_no"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Grade" domain="[]" context="{'group_by':'grade_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>		
+
+        <record id="action_chemical_composition" model="ir.actions.act_window">
+            <field name="name">Compositions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">chemical.composition</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="view_chemical_composition_filter"/>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "chemical_composition_management_sub_submenu"
+           parent= "chemical_composition_management_main_submenu"
+           sequence= "2"
+           action = "action_chemical_composition"
+            />	
+            
+        <!-- Chemical Element -->
+		<record id="view_chemical_element_tree" model="ir.ui.view">
+		    <field name="name">chemical.element.tree</field>
+		    <field name="model">chemical.element</field>
+		    <field name="arch" type="xml">
+			    <tree string = "Chemical Element" editable = "1">
+			    		<field name = "name" />
+			    		<field name = "code" />
+		    		</tree>       
+		    </field>
+	    </record>
+        <record id="action_chemical_element" model="ir.actions.act_window">
+            <field name="name">Element</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">chemical.element</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "chemical_element_management_sub_submenu"
+           parent= "chemical_composition_management_main_submenu"
+           sequence= "3"
+           action = "action_chemical_element"
+            />
+            
+       <!-- Material Grade -->
+		<record id="view_material_grade_form" model="ir.ui.view">
+		    <field name="name">material.grade.form</field>
+		    <field name="model">material.grade</field>
+		    <field name="arch" type="xml">
+		        <form string="Material Grade">
+		        		<sheet>
+						<group>
+							<group>
+								<field name = "name" />
+							</group>
+							<group>
+								<field name = "price_extra" />
+							</group>
+						</group>
+	                    <notebook>
+	                    		<page string = "Composition">
+                    				<field name = "line_ids" nolabel = "1" >
+                    					<tree string = "Composition Line" editable = "1">
+                    						<field name = "sequence" widget="handle"/>
+                    						<field name = "element_id" />
+                    						<field name = "min_val" />
+                    						<field name = "max_val"/>
+                    						<field name = "actual_val" />
+                    					</tree>
+                    				</field>	                    			
+	                    		</page>
+	                    		<page string = "Remarks">
+                    				<field name = "remarks" nolabel = "1" />
+	                    		</page>
+	                    </notebook>
+		        		</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>		    					        		
+		        </form>
+	        </field>
+        </record>        
+	    
+        <record id="action_material_grade" model="ir.actions.act_window">
+            <field name="name">Grades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">material.grade</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "chemical_grade_management_sub_submenu"
+           parent= "chemical_composition_management_main_submenu"
+           sequence= "3"
+           action = "action_material_grade"
+            />       
+       		    
+</odoo>

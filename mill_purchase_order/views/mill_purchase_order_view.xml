@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <menuitem
+           id= "mill_purchase_order_management_main_submenu"
+           parent= "mill_order.mill_order_management_main_menu"
+           sequence= "1"
+           name= "Purchase Order Management" />
+           
+       <record id="view_mill_puchase_order_form" model="ir.ui.view">
+       		<field name="name">mill.purchase.order.form</field>
+       		<field name="model">mill.purchase.order</field>
+       		<field name="arch" type="xml">
+	       		<form string="Mill Purchase Orders">
+		        		<header>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="order_placed,done"/>
+		        		</header>
+		        		<sheet>
+	                    <div class="oe_title">
+	                        <h1>
+	                            <field name="name" readonly="1"/>
+	                        </h1>
+	                    </div>		        		
+						<group>
+							<group>
+								<field name = "partner_id" />
+								<field name = "date_delivery" />
+								<field name = "size" />
+								<field name = "material_ordered" />
+								<field name = "basic_rate" widget = "monetary" />
+							</group>
+							<group>
+								<field name = "date_order" />
+								<field name = "broker_id" />
+								<field name = "grade_id" />
+								<field name = "material_received" />
+								<field name = "extra_rate" widget = "monetary"  />
+								<field name = "net_rate" widget = "monetary"/>
+							</group>
+						</group>
+						<notebook>
+							<page string = "Chemical Compositions">
+								<field name = "line_ids" nolabel = "1">
+	               					<tree string = "Composition Line" editable = "1">
+	               						<field name = "sequence" widget="handle"/>
+	               						<field name = "element_id" />
+	               						<field name = "min_val" />
+	               						<field name = "max_val"/>
+	               						<field name = "actual_val" />
+	               					</tree>																							
+								</field>
+							</page>
+						</notebook>		        			
+		        		</sheet>
+        			</form>
+       		</field>
+       </record>
+
+        <record id="action_mill_purchase_order" model="ir.actions.act_window">
+            <field name="name">Purchase Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mill.purchase.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "mill_purchase_order_management_sub_submenu"
+           parent= "mill_purchase_order_management_main_submenu"
+           sequence= "1"
+           action = "action_mill_purchase_order"
+            />       
+	
+</odoo>

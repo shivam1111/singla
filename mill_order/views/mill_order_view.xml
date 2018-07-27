@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <menuitem name="Mill Management"
+           id="mill_order_management_main_menu"
+           web_icon="sale,static/description/icon.png"/>
+
+       <menuitem
+           id= "mill_order_management_main_submenu"
+           parent= "mill_order_management_main_menu"
+           sequence= "1"
+           name= "Order Management" />
+
+		<record id="view_mill_order_form" model="ir.ui.view">
+		    <field name="name">mill.order.form</field>
+		    <field name="model">mill.order</field>
+		    <field name="arch" type="xml">
+		        <form string="Mill Orders">
+		        		<header>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,manufactured,done"/>
+		        		</header>
+		        		<sheet>
+			        		<group>
+							<group>
+								<field name = "size"/>
+								<field name = "grade_id" />
+								<field name = "qty" />
+								<field name = "cut_length" />
+								<field name = "ingot_size" />
+								<field name = "rate"/>
+							</group>
+							<group>
+								<field name = "booking_date"/>
+								<field name = "duration" widget = "float_time"/>								
+								<field name = "partner_id" />
+								<field name = "manufacturing_date" />
+								<field name = "corner_id" widget="many2many_checkboxes" required = "1" />
+							</group>
+						</group>
+						<group>
+							<field name = "note" nolabel = "1"/>
+						</group>		        		        		
+		        		</sheet>
+		        </form>
+	        </field>
+        </record>
+		<record id="view_mill_order_tree" model="ir.ui.view">
+		    <field name="name">mill.order.tree</field>
+		    <field name="model">mill.order</field>
+		    <field name="arch" type="xml">
+		        <tree string="Mill Orders">
+		        		<field name = "booking_date" />
+					<field name = "size"/>
+					<field name = "qty" sum="Total Qty" />
+					<field name = "grade_id" />
+					<field name = "partner_id" />
+					<field name = "manufacturing_date" />
+					<field name = "ingot_size" />
+					<field name = "cut_length" />
+					<field name = "rate" />
+					<field name = "note" />
+					<field name = "corner_id" />
+		        </tree>
+	        </field>
+        </record>        
+        
+        <record id="view_mill_order_calender" model="ir.ui.view">
+            <field name="name">mill.order.calendar</field>
+            <field name="model">mill.order</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="partner_id" date_start="manufacturing_date"  date_delay="duration" string="Orders" 
+                mode="week" quick_add="False" event_open_popup="%(view_mill_order_form)s" display="[size] | [qty]MT | [grade_id] | [partner_id]" >
+                    <field name="size"/>
+                    <field name = "qty" />
+                    <field name = "grade_id" />
+                    <field name = "partner_id" />
+                </calendar>
+            </field>
+        </record>        
+        
+        <record id="view_mill_orders_filter" model="ir.ui.view">
+            <field name="name">mill.order.list.select</field>
+            <field name="model">mill.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Orders">
+                    <field name="size" string="Order" filter_domain="[('size','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="grade_id" filter_domain="[('grade_id','ilike',self)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+                
+        <record id="action_mill_orders" model="ir.actions.act_window">
+            <field name="name">Orders Calendar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mill.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,calendar,form</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_mill_orders_filter"/>
+        </record>        
+		
+       <menuitem
+           id= "mill_order_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "1"
+           action = "action_mill_orders"
+            />
+
+		<record id="view_material_grade_tree" model="ir.ui.view">
+		    <field name="name">material.grade.tree</field>
+		    <field name="model">material.grade</field>
+		    <field name="arch" type="xml">
+		        <tree string="Material Grade" >
+					<field name = "name" />
+		        </tree>
+	        </field>
+        </record>
+        <record id="action_material_grade" model="ir.actions.act_window">
+            <field name="name">Material Grades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">material.grade</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "material_grade_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "2"
+           action = "action_material_grade"
+            />
+            
+		<record id="view_corner_type_tree" model="ir.ui.view">
+		    <field name="name">corner.type.tree</field>
+		    <field name="model">corner.type</field>
+		    <field name="arch" type="xml">
+		        <tree string="Corner Type" editable="top">
+					<field name = "name" />
+		        </tree>
+	        </field>
+        </record>
+        <record id="action_corner_type" model="ir.actions.act_window">
+            <field name="name">Corner Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">corner.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "corner_type_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "3"
+           action = "action_corner_type"
+            />  
+
+		<record id="view_ingot_size_tree" model="ir.ui.view">
+		    <field name="name">ingot.size.tree</field>
+		    <field name="model">ingot.size</field>
+		    <field name="arch" type="xml">
+		        <tree string="Ingot Size" editable="top">
+					<field name = "name" />
+		        </tree>
+	        </field>
+        </record>
+        <record id="action_ingot_size" model="ir.actions.act_window">
+            <field name="name">Ingot Size</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ingot.size</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "ingot_size_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "3"
+           action = "action_ingot_size"
+            />                                  
+            
+                           
+</odoo>

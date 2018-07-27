@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<record id="project_task_popup_calender_views" model="ir.ui.view">
+			<field name="name">project.task.calendar.create.form</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+            		<form string = "Size Info">
+            			<group>
+	            			<group>
+	            				<field name = "name" />
+	            			</group>
+	        				<group>
+	        					<field name = "partner_id" />
+	        				</group>            			
+            			</group>
+        				<notebook>
+        					<page string = "Description">
+        						<field name = "description" nolabel="1"/>	
+        					</page>
+        				</notebook>
+        				
+            		</form>
+            </field>			
+		</record>
+		
+        <record id="project.view_task_calendar" model="ir.ui.view">
+            <field name="name">project.task.calendar</field>
+            <field name="model">project.task</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="partner_id" date_start="date_deadline" string="Tasks" 
+                mode="month" quick_add="False" event_open_popup="%(project_task_popup_calender_views)s" >
+                    <field name="name"/>
+                    <field name = "partner_id" />
+                </calendar>
+            </field>
+        </record>
+</odoo>
