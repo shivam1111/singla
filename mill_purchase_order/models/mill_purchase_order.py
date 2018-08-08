@@ -28,6 +28,13 @@ class MillPurchaseOrder(models.Model):
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _description = " Mill Purchase Order"
     
+    @api.onchange('grade_id') # if these fields are changed, call method
+    def _chage_grade_id(self):
+        data = []
+        for i in self.grade_id.line_ids:
+            data.append((0,0,{'element_id':i.element_id,'min_val':i.min_val,'max_val':i.max_val}))
+        self.line_ids = data    
+    
     @api.depends('basic_rate','extra_rate')
     def _amount_all(self):
         """

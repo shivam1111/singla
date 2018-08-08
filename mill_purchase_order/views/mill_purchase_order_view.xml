@@ -68,6 +68,7 @@
        				<field name = "material_ordered" />
        				<field name = "material_received" />
        				<field name = "grade_id" />
+       				<field name = "size" />
        				<field name = "broker_id"/>
        				<field name = "net_rate" />
        			</tree>
