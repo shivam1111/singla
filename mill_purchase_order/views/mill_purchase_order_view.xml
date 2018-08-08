@@ -54,6 +54,24 @@
         			</form>
        		</field>
        </record>
+       
+        <record id="view_mill_puchase_order_tree" model="ir.ui.view">
+            <field name="name">Purchase Orders Tree</field>
+       		<field name="model">mill.purchase.order</field>
+       		<field name="arch" type="xml">
+       			<tree string = "Mill Purchase Order">
+       				<field name = "name" />
+       				<field name = "partner_id" />
+       				<field name = "date_order"/>
+       				<field name = "date_delivery" />
+       				<field name = "material_ordered" />
+       				<field name = "material_received" />
+       				<field name = "grade_id" />
+       				<field name = "broker_id"/>
+       				<field name = "net_rate" />
+       			</tree>
+       		</field>                    
+        </record>
 
         <record id="action_mill_purchase_order" model="ir.actions.act_window">
             <field name="name">Purchase Orders</field>
