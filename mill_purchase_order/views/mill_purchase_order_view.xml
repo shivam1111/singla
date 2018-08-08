@@ -59,7 +59,7 @@
             <field name="name">Purchase Orders Tree</field>
        		<field name="model">mill.purchase.order</field>
        		<field name="arch" type="xml">
-       			<tree string = "Mill Purchase Order">
+       			<tree string = "Mill Purchase Order" decoration-muted="state == 'done'">
        				<field name = "name" />
        				<field name = "partner_id" />
        				<field name = "date_order"/>
