@@ -58,7 +58,7 @@ class MillPurchaseOrder(models.Model):
     partner_id = fields.Many2one('res.partner','Supplier')
     date_order = fields.Datetime(string='Order Date', required=True, index=True, copy=False, default=fields.Datetime.now)
     date_delivery = fields.Datetime(string='Delivery Date', required=True, index=True, copy=False, default=fields.Datetime.now)
-    broker_id = fields.Many2one('res.partner','Broker')
+    broker_id = fields.Many2one('res.partner','Broker',domain = [('is_broker','=',True)])
     size = fields.Many2one('ingot.size','Material Size')
     grade_id = fields.Many2one('material.grade','Material Grade')
     material_ordered = fields.Float('Material Qty Ordered')
@@ -73,4 +73,5 @@ class MillPurchaseOrder(models.Model):
     extra_rate = fields.Monetary('Extra Rate',currency_field = "currency_id")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     line_ids = fields.One2many('composition.line','purchase_order_id','Composition Line')
+    
     

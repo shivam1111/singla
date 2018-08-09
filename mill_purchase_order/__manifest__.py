@@ -14,6 +14,7 @@
     'depends': ['base','mail','mill_order','chemical_compositions'],
     'data': [
         'views/mill_purchase_order_view.xml',
+        'views/res_partner_view.xml',
         'data/ir_sequence_data.xml'
     ],
     'demo': [
