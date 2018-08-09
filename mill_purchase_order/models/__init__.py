@@ -1,3 +1,3 @@
-import res_partner
 import chemical_composition
 import mill_purchase_order
+import res_partner
