@@ -47,7 +47,8 @@
 		    <field name="name">mill.order.tree</field>
 		    <field name="model">mill.order</field>
 		    <field name="arch" type="xml">
-		        <tree string="Mill Orders">
+		        <tree string="Mill Orders" decoration-muted="state == 'done'" >
+		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
 					<field name = "size"/>
 					<field name = "qty" sum="Total Qty" />
