@@ -52,6 +52,19 @@ class MillOrder(models.Model):
             records_to_unlink |= self.browse(int(self.id))
         return super(MillOrder,records_to_unlink).unlink()
         
+    @api.depends('rate','extra_rate')
+    def _amount_all(self):
+        """
+        Compute the total amounts of the SO.
+        """
+        for order in self:
+            order.update({
+                'net_rate': order.rate + order.extra_rate
+            })
+        
+    def _get_default_currency_id(self):
+        return self.env.user.company_id.currency_id.id                
+            
     size = fields.Char(string='Size', required=True)
     qty = fields.Float('Quantity')
     grade_id = fields.Many2one('material.grade','Grade')
@@ -59,7 +72,11 @@ class MillOrder(models.Model):
     manufacturing_date = fields.Datetime('Manufacturing Date')
     duration = fields.Float('Duration')
     note = fields.Text('Note')
-    rate = fields.Float('Rate/MT')
+    currency_id = fields.Many2one(
+        'res.currency', string='Currency',default=_get_default_currency_id)        
+    rate = fields.Monetary('Basic Rate/MT',currency_field = "currency_id")
+    extra_rate = fields.Monetary('Extra Rate',currency_field = "currency_id")
+    net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     corner_id = fields.Many2many('corner.type',string = "Corner Type")
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
     ingot_size  = fields.Many2one('ingot.size','Ingot Size')

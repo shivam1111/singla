@@ -26,13 +26,15 @@
 								<field name = "qty" />
 								<field name = "cut_length" />
 								<field name = "ingot_size" />
-								<field name = "rate"/>
+								<field name = "rate" widget = "monetary"/>
 							</group>
 							<group>
 								<field name = "booking_date"/>
 								<field name = "duration" widget = "float_time"/>								
 								<field name = "partner_id" />
 								<field name = "manufacturing_date" />
+								<field name = "extra_rate" widget = "monetary"/>
+								<field name = "net_rate" widget = "monetary"/>
 								<field name = "corner_id" widget="many2many_checkboxes" required = "1" />
 							</group>
 						</group>
