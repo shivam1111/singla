@@ -59,7 +59,7 @@ class MillOrder(models.Model):
         """
         for order in self:
             order.update({
-                'net_rate': order.rate + order.extra_rate
+                'net_rate': order.rate + order.extra_rate + order.rolling
             })
         
     def _get_default_currency_id(self):
@@ -76,6 +76,7 @@ class MillOrder(models.Model):
         'res.currency', string='Currency',default=_get_default_currency_id)        
     rate = fields.Monetary('Basic Rate/MT',currency_field = "currency_id")
     extra_rate = fields.Monetary('Extra Rate',currency_field = "currency_id")
+    rolling = fields.Monetary('Rolling',currency_field = "currency_id")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     corner_id = fields.Many2many('corner.type',string = "Corner Type")
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
