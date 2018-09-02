@@ -65,8 +65,8 @@
        				<field name = "date_order"/>
        				<field name = "date_delivery" />
        				<field name = "state" invisible="1"/>
-       				<field name = "material_ordered" />
-       				<field name = "material_received" />
+       				<field name = "material_ordered" sum ="Total Ordered" />
+       				<field name = "material_received" sum ="Total Completed" />
        				<field name = "grade_id" />
        				<field name = "size" />
        				<field name = "broker_id"/>
@@ -74,6 +74,25 @@
        			</tree>
        		</field>                    
         </record>
+        
+        <record id="view_mill_purchase_orders_filter" model="ir.ui.view">
+            <field name="name">mill.purchase.order.search</field>
+            <field name="model">mill.purchase.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Orders">
+                    <field name="size" string="Size" filter_domain="[('size','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="grade_id" filter_domain="[('grade_id','ilike',self)]"/>
+                    <filter string="Order Placed" domain="[('state','=','order_placed')]" name="order_placed"/>
+                    <filter string="Done" domain="[('state','=','done')]" name="done"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>        
 
         <record id="action_mill_purchase_order" model="ir.actions.act_window">
             <field name="name">Purchase Orders</field>
@@ -81,7 +100,7 @@
             <field name="res_model">mill.purchase.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="context">{}</field>
+            <field name="context">{'search_default_order_placed':1,'group_by':'partner_id'}</field>
         </record>        
 		
        <menuitem

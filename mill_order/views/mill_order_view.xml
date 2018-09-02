@@ -47,7 +47,7 @@
 		    <field name="name">mill.order.tree</field>
 		    <field name="model">mill.order</field>
 		    <field name="arch" type="xml">
-		        <tree string="Mill Orders" decoration-muted="state == 'done'" >
+		        <tree string="Mill Orders" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  >
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
 					<field name = "size"/>
@@ -84,9 +84,12 @@
             <field name="model">mill.order</field>
             <field name="arch" type="xml">
                 <search string="Search Orders">
-                    <field name="size" string="Order" filter_domain="[('size','ilike',self)]"/>
+                    <field name="size" string="Size" filter_domain="[('size','ilike',self)]"/>
                     <field name="partner_id" operator="child_of"/>
                     <field name="grade_id" filter_domain="[('grade_id','ilike',self)]"/>
+                    <filter string="Draft" domain="[('state','=','draft')]" name="draft"/>
+                    <filter string="Manufactured" domain="[('state','=','manufactured')]" name="manufactured"/>
+                    <filter string="Done" domain="[('state','=','done')]" name="done"/>
                     <group expand="0" string="Group By">
                         <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
                         <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
@@ -102,7 +105,7 @@
             <field name="res_model">mill.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,calendar,form</field>
-            <field name="context">{}</field>
+            <field name="context">{'search_default_draft':1,'group_by':'partner_id'}</field>
             <field name="search_view_id" ref="view_mill_orders_filter"/>
         </record>        
 		
