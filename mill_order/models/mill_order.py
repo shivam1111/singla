@@ -52,7 +52,7 @@ class MillOrder(models.Model):
             records_to_unlink |= self.browse(int(self.id))
         return super(MillOrder,records_to_unlink).unlink()
         
-    @api.depends('rate','extra_rate')
+    @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
         """
         Compute the total amounts of the SO.
