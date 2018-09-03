@@ -95,6 +95,7 @@
                     <filter string="Draft" domain="[('state','=','draft')]" name="draft"/>
                     <filter string="Manufactured" domain="[('state','=','manufactured')]" name="manufactured"/>
                     <filter string="Done" domain="[('state','=','done')]" name="done"/>
+                    <filter string="Draft/Manufactured" domain="[('state','in',['draft','manufactured'])]" name="draft_manufactured"/>
                     <group expand="0" string="Group By">
                         <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
                         <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
@@ -110,7 +111,7 @@
             <field name="res_model">mill.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,calendar,form</field>
-            <field name="context">{'search_default_draft':1,'group_by':'partner_id'}</field>
+            <field name="context">{'search_default_draft_manufactured':1,'group_by':'partner_id'}</field>
             <field name="search_view_id" ref="view_mill_orders_filter"/>
         </record>        
 		
