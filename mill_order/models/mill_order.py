@@ -82,6 +82,7 @@ class MillOrder(models.Model):
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
     ingot_size  = fields.Many2one('ingot.size','Ingot Size')
     cut_length = fields.Char('Cut Length')
+    completed = fields.Float('Completed')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('manufactured','Manufactured'),
