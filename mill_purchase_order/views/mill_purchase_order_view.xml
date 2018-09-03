@@ -86,6 +86,7 @@
                     <filter string="Order Placed" domain="[('state','=','order_placed')]" name="order_placed"/>
                     <filter string="Done" domain="[('state','=','done')]" name="done"/>
                     <group expand="0" string="Group By">
+                        <filter string="Broker" domain="[]" context="{'group_by':'broker_id'}"/>
                         <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
                         <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
