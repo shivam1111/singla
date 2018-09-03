@@ -68,7 +68,7 @@ class MillOrder(models.Model):
     size = fields.Char(string='Size', required=True)
     qty = fields.Float('Quantity')
     grade_id = fields.Many2one('material.grade','Grade')
-    partner_id = fields.Many2one('res.partner','Customer')
+    partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
     duration = fields.Float('Duration')
     note = fields.Text('Note')
