@@ -97,6 +97,7 @@
                     <filter string="Done" domain="[('state','=','done')]" name="done"/>
                     <filter string="Draft/Manufactured" domain="[('state','in',['draft','manufactured'])]" name="draft_manufactured"/>
                     <group expand="0" string="Group By">
+                    	    <filter string="Broker" domain="[]" context="{'group_by':'broker_id'}"/>
                         <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
                         <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
