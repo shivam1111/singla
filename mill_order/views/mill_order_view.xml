@@ -33,7 +33,7 @@
 								<field name = "duration" widget = "float_time"/>								
 								<field name = "partner_id" />
 								<field name = "manufacturing_date" />
-								<field name = "completed" sum = "Total Completed"/>
+								<field name = "completed" />
 								<field name = "extra_rate" widget = "monetary"/>
 								<field name = "rolling" widget = "monetary"/>
 								<field name = "net_rate" widget = "monetary"/>
@@ -56,13 +56,13 @@
 		        		<field name = "booking_date" />
 					<field name = "size"/>
 					<field name = "qty" sum="Total Qty" />
+					<field name = "completed" sum = "Total Completed" />
 					<field name = "grade_id" />
 					<field name = "partner_id" />
 					<field name = "manufacturing_date" />
 					<field name = "ingot_size" />
 					<field name = "cut_length" />
-					<field name = "completed" />
-					<field name = "net_rate" sum = "Total Completed" />
+					<field name = "net_rate"  />
 					<field name = "note" />
 					<field name = "corner_id" />
 		        </tree>
