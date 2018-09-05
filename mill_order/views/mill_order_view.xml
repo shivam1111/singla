@@ -33,7 +33,7 @@
 								<field name = "duration" widget = "float_time"/>								
 								<field name = "partner_id" />
 								<field name = "manufacturing_date" />
-								<field name = "completed" />
+								<field name = "completed" sum = "Total Completed"/>
 								<field name = "extra_rate" widget = "monetary"/>
 								<field name = "rolling" widget = "monetary"/>
 								<field name = "net_rate" widget = "monetary"/>
