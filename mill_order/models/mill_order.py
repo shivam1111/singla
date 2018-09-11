@@ -52,7 +52,7 @@ class MillOrderSizeLine(models.Model):
         ('done', 'Done'),
         ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
     grade_id = fields.Many2one('material.grade','Grade')
-    
+    booking_date = fields.Date('Booking Date',default = fields.Date.today())
 class MillOrder(models.Model):
     _name = 'mill.order'
     _description = "Mill Order"

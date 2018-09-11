@@ -50,6 +50,7 @@
 										<field name = "grade_id" />
 										<field name = "corner_id" widget = "many2many_tags"/>
 										<field name = "state" />
+										<field name = "booking_date"/>
 										<field name = "completed_qty" />
 										<field name = "rate" />
 										<field name = "remarks" />
