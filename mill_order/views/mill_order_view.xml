@@ -44,13 +44,16 @@
 						<notebook>
 							<page string = "Order Lines">
 								<field name = "line_ids" nolabel = "1" >
-									<tree string = "Size Line" editable = "top">
+									<tree string = "Size Line" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
 										<field name = "name" />
 										<field name = "order_qty" />
+										<field name = "grade_id" />
 										<field name = "corner_id" widget = "many2many_tags"/>
+										<field name = "state" />
 										<field name = "completed_qty" />
 										<field name = "rate" />
 										<field name = "remarks" />
+										
 									</tree>
 								</field>
 							</page>

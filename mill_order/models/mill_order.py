@@ -46,6 +46,12 @@ class MillOrderSizeLine(models.Model):
     remarks = fields.Char("Remarks")
     corner_id = fields.Many2many('corner.type',string = "Corner Type")
     order_id = fields.Many2one('mill.order')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('manufactured','Manufactured'),
+        ('done', 'Done'),
+        ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
+    grade_id = fields.Many2one('material.grade','Grade')
     
 class MillOrder(models.Model):
     _name = 'mill.order'
