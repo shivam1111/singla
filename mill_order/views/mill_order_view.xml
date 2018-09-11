@@ -24,6 +24,7 @@
 								<field name = "size"/>
 								<field name = "grade_id" />
 								<field name = "qty" />
+								<field name = "order_qty" />
 								<field name = "cut_length" />
 								<field name = "ingot_size" />
 								<field name = "rate" widget = "monetary"/>
@@ -34,16 +35,34 @@
 								<field name = "partner_id" />
 								<field name = "manufacturing_date" />
 								<field name = "completed" />
+								<field name = "completed_qty" />
 								<field name = "extra_rate" widget = "monetary"/>
 								<field name = "rolling" widget = "monetary"/>
 								<field name = "net_rate" widget = "monetary"/>
-								<field name = "corner_id" widget="many2many_checkboxes" required = "1" />
 							</group>
 						</group>
+						<notebook>
+							<page string = "Order Lines">
+								<field name = "line_ids" nolabel = "1" >
+									<tree string = "Size Line" editable = "top">
+										<field name = "name" />
+										<field name = "order_qty" />
+										<field name = "corner_id" widget = "many2many_tags"/>
+										<field name = "completed_qty" />
+										<field name = "rate" />
+										<field name = "remarks" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 						<group>
-							<field name = "note" nolabel = "1"/>
+							<field name = "note" nolabel = "1" placeholder = "Notes"/>
 						</group>		        		        		
 		        		</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>		    					        				        		
 		        </form>
 	        </field>
         </record>
@@ -64,7 +83,6 @@
 					<field name = "cut_length" />
 					<field name = "net_rate"  />
 					<field name = "note" />
-					<field name = "corner_id" />
 		        </tree>
 	        </field>
         </record>        

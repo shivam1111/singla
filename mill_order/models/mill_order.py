@@ -34,12 +34,31 @@ class IngotSize(models.Model):
     _description = "Ingot Size"
     
     name = fields.Char('Name')    
+
+class MillOrderSizeLine(models.Model):
+    _name = "mill.order.size.line"
+    _description = "Mill Order Size Line"
+    
+    name = fields.Char('Size',required=True)
+    order_qty = fields.Float('Order Qty')
+    completed_qty = fields.Float('Completed Qty')
+    rate = fields.Float("Rate")
+    remarks = fields.Char("Remarks")
+    corner_id = fields.Many2many('corner.type',string = "Corner Type")
+    order_id = fields.Many2one('mill.order')
     
 class MillOrder(models.Model):
     _name = 'mill.order'
     _description = "Mill Order"
     _rec_name = "size"
-
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
+    
+    
+    @api.onchange('line_ids')
+    def onchange_line_ids(self):
+        sizes_list = map(lambda x:x.name,self.line_ids)
+        self.size = ' | '.join(sizes_list)
+    
     @api.onchange('qty')
     def onchange_qty(self):
         # Considering 69MT production in 11 hours. 6.27/hour
@@ -51,6 +70,13 @@ class MillOrder(models.Model):
         for o in self:
             records_to_unlink |= self.browse(int(self.id))
         return super(MillOrder,records_to_unlink).unlink()
+      
+    @api.depends('line_ids','line_ids.order_qty')
+    def _compute_qty(self):
+        order_qty = sum(map(lambda x:x.order_qty,self.line_ids))
+        complete_qty = sum(map(lambda x:x.completed_qty,self.line_ids))
+        self.qty = order_qty
+        self.completed = complete_qty
         
     @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
@@ -66,7 +92,8 @@ class MillOrder(models.Model):
         return self.env.user.company_id.currency_id.id                
             
     size = fields.Char(string='Size', required=True)
-    qty = fields.Float('Quantity')
+    order_qty = fields.Float('Quantity',compute = '_compute_qty')
+    qty = fields.Float('Old field Qty')
     grade_id = fields.Many2one('material.grade','Grade')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
@@ -78,16 +105,17 @@ class MillOrder(models.Model):
     extra_rate = fields.Monetary('Extra Rate',currency_field = "currency_id")
     rolling = fields.Monetary('Rolling',currency_field = "currency_id")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
-    corner_id = fields.Many2many('corner.type',string = "Corner Type")
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
     ingot_size  = fields.Many2one('ingot.size','Ingot Size')
     cut_length = fields.Char('Cut Length')
-    completed = fields.Float('Completed')
+    completed = fields.Float('Old field Completed Qty')
+    completed_qty = fields.Float('Completed',compute = '_compute_qty')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('manufactured','Manufactured'),
         ('done', 'Done'),
-        ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')    
+        ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
+    line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
     
     
     
