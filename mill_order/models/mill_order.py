@@ -74,6 +74,10 @@ class MillOrder(models.Model):
         self.duration = self.qty/6.27
     
     @api.one
+    def set_state_done(self):
+        self.state = 'done'
+    
+    @api.one
     def unlink(self):
         records_to_unlink = self.env['mill.order']
         for o in self:

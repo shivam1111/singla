@@ -82,6 +82,7 @@
 					<field name = "manufacturing_date" />
 					<field name = "net_rate"  />
 					<field name = "note" />
+					<button name = "set_state_done" type = "object" string = "Done" />
 		        </tree>
 	        </field>
         </record>        
