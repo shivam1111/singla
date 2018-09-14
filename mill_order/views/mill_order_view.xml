@@ -23,7 +23,6 @@
 							<group>
 								<field name = "partner_id" />
 								<field name = "grade_id" />
-								<field name = "qty" />
 								<field name = "order_qty" />
 								<field name = "rate" widget = "monetary"/>
 							</group>
@@ -33,7 +32,6 @@
 								<field name = "size"/>							
 								
 								<field name = "manufacturing_date" />
-								<field name = "completed" />
 								<field name = "completed_qty" />
 								<field name = "extra_rate" widget = "monetary"/>
 								<field name = "rolling" widget = "monetary"/>
@@ -52,7 +50,7 @@
 										<field name = "corner_id" widget = "many2many_tags"/>
 										<field name = "state" />
 										<field name = "booking_date"/>
-										<field name = "completed_qty" />
+										<field name = "completed_qty" sum = "Total Completed Qty" />
 										<field name = "rate" />
 										<field name = "remarks" />
 										
@@ -79,8 +77,8 @@
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
 					<field name = "size"/>
-					<field name = "qty" sum="Total Qty" />
-					<field name = "completed" sum = "Total Completed" />
+					<field name = "order_qty" sum="Total Qty" />
+					<field name = "completed_qty" sum = "Total Completed" />
 					<field name = "partner_id" />
 					<field name = "manufacturing_date" />
 					<field name = "net_rate"  />
