@@ -122,7 +122,6 @@ class MillOrder(models.Model):
     completed_qty = fields.Float('Completed',compute = '_compute_qty')
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('manufactured','Manufactured'),
         ('done', 'Done'),
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
     line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
