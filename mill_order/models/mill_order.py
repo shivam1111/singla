@@ -82,11 +82,15 @@ class MillOrder(models.Model):
       
     @api.depends('line_ids','line_ids.order_qty')
     def _compute_qty(self):
-        order_qty = sum(map(lambda x:x.order_qty,self.line_ids))
-        complete_qty = sum(map(lambda x:x.completed_qty,self.line_ids))
-        self.order_qty = order_qty
-        self.completed_qty = complete_qty
-        
+        '''
+            Compute the total ordered and completed qty
+        '''
+        for order in self:
+            order_qty = sum(map(lambda x:x.order_qty,order.line_ids))
+            complete_qty = sum(map(lambda x:x.completed_qty,order.line_ids))
+            order.order_qty = order_qty
+            order.completed_qty = complete_qty
+    
     @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
         """
@@ -103,7 +107,6 @@ class MillOrder(models.Model):
     size = fields.Char(string='Size', required=True)
     order_qty = fields.Float('Quantity',compute = '_compute_qty')
     qty = fields.Float('Old field Qty')
-    grade_id = fields.Many2one('material.grade','Grade')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
     duration = fields.Float('Duration')
