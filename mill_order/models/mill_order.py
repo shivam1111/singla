@@ -53,6 +53,9 @@ class MillOrderSizeLine(models.Model):
         ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
     grade_id = fields.Many2one('material.grade','Grade')
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
+    cut_length = fields.Char('Cut Length')
+    ingot_size  = fields.Many2one('ingot.size','Ingot Size')
+    
 class MillOrder(models.Model):
     _name = 'mill.order'
     _description = "Mill Order"
@@ -81,8 +84,8 @@ class MillOrder(models.Model):
     def _compute_qty(self):
         order_qty = sum(map(lambda x:x.order_qty,self.line_ids))
         complete_qty = sum(map(lambda x:x.completed_qty,self.line_ids))
-        self.qty = order_qty
-        self.completed = complete_qty
+        self.order_qty = order_qty
+        self.completed_qty = complete_qty
         
     @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
@@ -112,8 +115,6 @@ class MillOrder(models.Model):
     rolling = fields.Monetary('Rolling',currency_field = "currency_id")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today())
-    ingot_size  = fields.Many2one('ingot.size','Ingot Size')
-    cut_length = fields.Char('Cut Length')
     completed = fields.Float('Old field Completed Qty')
     completed_qty = fields.Float('Completed',compute = '_compute_qty')
     state = fields.Selection([
