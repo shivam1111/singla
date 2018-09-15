@@ -122,6 +122,93 @@
            action = "action_mill_orders"
             />
 
+		<!-- Mill Order Size Line -->
+		<record id="view_mill_order_size_tree" model="ir.ui.view">
+		    <field name="name">mill.order.size.tree</field>
+		    <field name="model">mill.order.size.line</field>
+		    <field name="arch" type="xml">
+		        <tree string="Size"  decoration-muted="state == 'done'"  decoration-info="state == 'draft'" decoration-bf="state == 'manufactured'"  >
+		        		<field name = "state" invisible = "1" />
+		        		<field name = "booking_date" />
+					<field name = "name"/>
+					<field name = "partner_id" />
+					<field name = "order_qty" sum="Total Qty" />
+					<field name = "completed_qty" sum = "Total Completed" />
+					<field name = "corner_id" widget = "many2many_tags" />
+					<field name = "grade_id" />
+					<field name = "cut_length" />
+					<field name = "ingot_size" />
+					<field name = "remarks" />
+		        </tree>
+	        </field>
+        </record>  
+		<record id="view_mill_order_size_form" model="ir.ui.view">
+		    <field name="name">mill.order.size.form</field>
+		    <field name="model">mill.order.size.line</field>
+		    <field name="arch" type="xml">
+		        <form string="Size"  >
+		        		<header>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,manufactured,done"/>
+		        		</header>
+		        		<sheet>
+		        			<group>
+							<group>
+								<field name = "name"/>
+								<field name = "booking_date" />
+								<field name = "corner_id" widget = "many2many_tags" />
+								<field name = "grade_id" />
+								<field name = "cut_length" />
+								<field name = "ingot_size" />									
+							</group>
+							<group>
+								<field name = "partner_id" />
+								<field name = "order_qty" sum="Total Qty" />
+								<field name = "completed_qty" sum = "Total Completed" />	
+																	
+							</group>		        				        			
+		        			</group>
+		        			<field name = "remarks" placeholder = "Notes"/>
+		        		</sheet>
+		        </form>
+	        </field>
+        </record>          
+
+        <record id="view_mill_orders_size_filter" model="ir.ui.view">
+            <field name="name">mill.order.size.select</field>
+            <field name="model">mill.order.size.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Orders">
+                    <field name="name" string="Size" filter_domain="[('name','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <filter string="Draft" domain="[('state','=','draft')]" name="draft"/>
+                    <filter string="Done" domain="[('state','=','done')]" name="done"/>
+                    <filter string="Draft/Manufactured" domain="[('state','in',['draft','manufactured'])]" name="draft_manufactured"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="action_mill_size_lines" model="ir.actions.act_window">
+            <field name="name">Size Wise Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mill.order.size.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'partner_id','search_default_draft_manufactured':1}</field>
+            <field name="search_view_id" ref="view_mill_orders_size_filter"/> 
+        </record>        
+		
+       <menuitem
+           id= "mill_order_size_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "2"
+           action = "action_mill_size_lines"
+            />              		            
+
 		<record id="view_material_grade_tree" model="ir.ui.view">
 		    <field name="name">material.grade.tree</field>
 		    <field name="model">material.grade</field>
@@ -143,7 +230,7 @@
        <menuitem
            id= "material_grade_management_sub_submenu"
            parent= "mill_order_management_main_submenu"
-           sequence= "2"
+           sequence= "3"
            action = "action_material_grade"
             />
             
@@ -168,7 +255,7 @@
        <menuitem
            id= "corner_type_management_sub_submenu"
            parent= "mill_order_management_main_submenu"
-           sequence= "3"
+           sequence= "4"
            action = "action_corner_type"
             />  
 
@@ -193,7 +280,7 @@
        <menuitem
            id= "ingot_size_management_sub_submenu"
            parent= "mill_order_management_main_submenu"
-           sequence= "3"
+           sequence= "5"
            action = "action_ingot_size"
             />                                  
             

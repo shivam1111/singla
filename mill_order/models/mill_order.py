@@ -43,9 +43,10 @@ class MillOrderSizeLine(models.Model):
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty')
     rate = fields.Float("Rate")
-    remarks = fields.Char("Remarks")
+    remarks = fields.Text("Remarks")
     corner_id = fields.Many2many('corner.type',string = "Corner Type")
     order_id = fields.Many2one('mill.order')
+    partner_id = fields.Many2one('res.partner',related = "order_id.partner_id",string = "Customer",store=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('manufactured','Manufactured'),
