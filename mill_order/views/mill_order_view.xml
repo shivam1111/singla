@@ -164,7 +164,7 @@
 								<field name = "partner_id" />
 								<field name = "order_qty" sum="Total Qty" />
 								<field name = "completed_qty" sum = "Total Completed" />	
-								<field name = "order_id" />
+								<field name = "order_id" string = "Order"/>
 							</group>		        				        			
 		        			</group>
 		        			<field name = "remarks" placeholder = "Notes"/>
