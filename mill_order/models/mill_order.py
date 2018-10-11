@@ -50,6 +50,7 @@ class MillOrderSizeLine(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('manufactured','Manufactured'),
+        ('cancel','Cancel'),
         ('done', 'Done'),
         ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
     grade_id = fields.Many2one('material.grade','Grade')
@@ -77,6 +78,18 @@ class MillOrder(models.Model):
     @api.one
     def set_state_done(self):
         self.state = 'done'
+    
+    @api.one
+    def write(self,vals):
+        if vals.get('state',False) == 'done':
+            for l in self.line_ids:
+                if l.state != 'cancel':
+                    l.state = 'done'
+        if vals.get('state',False) == 'cancel':
+            for l in self.line_ids:
+                l.state = 'cancel'
+            
+        return super(MillOrder,self).write(vals)
     
     @api.one
     def unlink(self):
@@ -128,6 +141,7 @@ class MillOrder(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
+        ('cancel','Cancel'),
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
     line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
     

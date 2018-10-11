@@ -16,7 +16,7 @@
 		    <field name="arch" type="xml">
 		        <form string="Mill Orders">
 		        		<header>
-		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,done"/>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,done,cancel"/>
 		        		</header>
 		        		<sheet>
 			        		<group>
@@ -40,7 +40,7 @@
 						<notebook>
 							<page string = "Order Lines">
 								<field name = "line_ids" nolabel = "1" >
-									<tree string = "Size Line" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
+									<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
 										<field name = "name" />
 										<field name = "order_qty" sum = "Total Ordered Qty" />
 										<field name = "grade_id" />
@@ -72,7 +72,7 @@
 		    <field name="name">mill.order.tree</field>
 		    <field name="model">mill.order</field>
 		    <field name="arch" type="xml">
-		        <tree string="Mill Orders" decoration-muted="state == 'done'"  decoration-info="state == 'draft'"  >
+		        <tree string="Mill Orders" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'"  decoration-info="state == 'draft'"  >
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
 					<field name = "size"/>
@@ -126,7 +126,7 @@
 		    <field name="name">mill.order.size.tree</field>
 		    <field name="model">mill.order.size.line</field>
 		    <field name="arch" type="xml">
-		        <tree string="Size"  decoration-muted="state == 'done'"  decoration-info="state == 'draft'" decoration-bf="state == 'manufactured'"  >
+		        <tree string="Size" decoration-danger = "state == 'cancel'"   decoration-muted="state == 'done'"  decoration-info="state == 'draft'" decoration-bf="state == 'manufactured'"  >
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
 					<field name = "name"/>
@@ -147,7 +147,7 @@
 		    <field name="arch" type="xml">
 		        <form string="Size"  >
 		        		<header>
-		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,manufactured,done"/>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,manufactured,done,cancel"/>
 		        		</header>
 		        		<sheet>
 		        			<group>
@@ -186,6 +186,7 @@
                         <filter string="Grades" domain="[]" context="{'group_by':'grade_id'}"/>
                         <filter  string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter  string="Status" domain="[]" context="{'group_by':'state'}"/>
+                        <filter  string="Size" domain="[]" context="{'group_by':'name'}"/>
                     </group>
                </search>
             </field>
