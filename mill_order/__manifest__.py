@@ -14,6 +14,7 @@
     'depends': ['base','mail'],
     'data': [
         'views/mill_order_view.xml',
+        'report/mill_order_report_view.xml'
     ],
     'demo': [
     ],
