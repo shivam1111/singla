@@ -10,6 +10,7 @@
            sequence= "1"
            name= "Order Management" />
 
+		<!-- MILL ORDER -->
 		<record id="view_mill_order_form" model="ir.ui.view">
 		    <field name="name">mill.order.form</field>
 		    <field name="model">mill.order</field>
@@ -46,7 +47,7 @@
 										<field name = "grade_id" />
 										<field name = "cut_length" />
 										<field name = "ingot_size" />
-										<field name = "corner_id" widget = "many2many_tags"/>
+										<field name = "corner_id" />
 										<field name = "state" />
 										<field name = "booking_date"/>
 										<field name = "completed_qty" sum = "Total Completed Qty" />
@@ -68,6 +69,7 @@
 		        </form>
 	        </field>
         </record>
+		
 		<record id="view_mill_order_tree" model="ir.ui.view">
 		    <field name="name">mill.order.tree</field>
 		    <field name="model">mill.order</field>
@@ -133,7 +135,7 @@
 					<field name = "partner_id" />
 					<field name = "order_qty" sum="Total Qty" />
 					<field name = "completed_qty" sum = "Total Completed" />
-					<field name = "corner_id" widget = "many2many_tags" />
+					<field name = "corner_id"  />
 					<field name = "grade_id" />
 					<field name = "cut_length" />
 					<field name = "ingot_size" />
@@ -154,7 +156,7 @@
 							<group>
 								<field name = "name"/>
 								<field name = "booking_date" />
-								<field name = "corner_id" widget = "many2many_tags" />
+								<field name = "corner_id"  />
 								<field name = "grade_id" />
 								<field name = "cut_length" />
 								<field name = "ingot_size" />									
@@ -208,6 +210,57 @@
            sequence= "2"
            action = "action_mill_size_lines"
             />              		            
+
+		<!-- SIZES -->
+		<record id="view_mill_size_size_tree" model="ir.ui.view">
+		    <field name="name">mill.size.size.tree</field>
+		    <field name="model">size.size</field>
+		    <field name="arch" type="xml">
+		        <tree string="Sizes"  editable = "1" >
+					<field name = "name" />
+					<field name = "corner_id" />
+					<field name = "remarks" />
+		        </tree>
+	        </field>
+        </record>  
+        		
+		<record id="view_size_size_form" model="ir.ui.view">
+		    <field name="name">size.size.form</field>
+		    <field name="model">size.size</field>
+		    <field name="arch" type="xml">
+		    		<form string="Mill Sizes">
+	    				<group >
+	    					<group>
+	    							<field name = "name" />
+	    					</group>
+		    				<group>
+		    					<field name = "corner_id" />
+		    				</group>
+    					</group>
+    					<notebook>
+    						<page string = "Notes">
+    							<field name = "remarks" nolabel = "1" />
+    						</page>
+    					</notebook>
+		    		</form>
+		    </field>
+		</record>	
+		
+        <record id="action_size_size" model="ir.actions.act_window">
+            <field name="name">Sizes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">size.size</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "size_size_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "3"
+           action = "action_size_size"
+            />			    		
 
 		<record id="view_material_grade_tree" model="ir.ui.view">
 		    <field name="name">material.grade.tree</field>

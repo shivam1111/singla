@@ -23,6 +23,21 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 
+class Size(models.Model):
+    _name = "size.size"
+    _description = "Flats Size"
+    
+    @api.multi
+    def name_get(self):
+        result = []
+        for i in self:
+            result.append((i.id,i.name+" ("+i.corner_id.name+")"))
+        return result
+    
+    name = fields.Char('Size',required=True)
+    corner_id = fields.Many2one('corner.type',string = "Corner Type",required=True)
+    remarks = fields.Text('Remarks')
+
 class CornerType(models.Model):
     _name = "corner.type"
     _description = "Corner Type"
@@ -39,12 +54,12 @@ class MillOrderSizeLine(models.Model):
     _name = "mill.order.size.line"
     _description = "Mill Order Size Line"
     
-    name = fields.Char('Size',required=True)
+    name = fields.Many2one('size.size',required=True)
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty')
     rate = fields.Float("Rate")
     remarks = fields.Text("Remarks")
-    corner_id = fields.Many2many('corner.type',string = "Corner Type")
+    corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "name.corner_id",store=True)
     order_id = fields.Many2one('mill.order')
     partner_id = fields.Many2one('res.partner',related = "order_id.partner_id",string = "Customer",store=True)
     state = fields.Selection([
@@ -67,7 +82,7 @@ class MillOrder(models.Model):
     
     @api.onchange('line_ids')
     def onchange_line_ids(self):
-        sizes_list = map(lambda x:x.name,self.line_ids)
+        sizes_list = map(lambda x:x.name and x.name.name or '',self.line_ids)
         self.size = ' | '.join(sizes_list)
     
     @api.onchange('qty')
