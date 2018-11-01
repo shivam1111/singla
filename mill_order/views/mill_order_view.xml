@@ -50,6 +50,7 @@
 										<field name = "corner_id" />
 										<field name = "state" />
 										<field name = "booking_date"/>
+										<field name = "complete_date"/>
 										<field name = "completed_qty" sum = "Total Completed Qty" />
 										<field name = "rate" />
 										<field name = "remarks" />
@@ -131,6 +132,7 @@
 		        <tree string="Size" decoration-danger = "state == 'cancel'"   decoration-muted="state == 'done'"  decoration-info="state == 'draft'" decoration-bf="state == 'manufactured'"  >
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
+		        		<field name = "complete_date"/>
 					<field name = "name"/>
 					<field name = "partner_id" />
 					<field name = "order_qty" sum="Total Qty" />
