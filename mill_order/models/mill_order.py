@@ -70,7 +70,7 @@ class MillOrderSizeLine(models.Model):
         ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
     grade_id = fields.Many2one('material.grade','Grade')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
-    complete_date = fields.Date('Completion Date Date',default = fields.Date.today)
+    complete_date = fields.Date('Completion Date Date')
     cut_length = fields.Char('Cut Length')
     ingot_size  = fields.Many2one('ingot.size','Ingot Size')
     
