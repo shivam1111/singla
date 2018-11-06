@@ -2,19 +2,20 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Mill Order',
+    'name': 'Mill Production',
     'version': '1.0',
     'category': 'singla',
     'sequence': 15,
-    'summary': 'Orders Management',
+    'summary': 'Production Management',
     'description': """
 
     """,
     'website': 'https://www.odoo.com',
-    'depends': ['base','mail'],
+    'depends': ['base','mail','chemical_compositions','mill_stock'],
     'data': [
-        'views/mill_order_view.xml',
-        'report/mill_order_report_view.xml',
+        'data/ir_sequence_data.xml',
+        'views/mill_production_view.xml',
+        'report/mill_production_report.xml',
     ],
     'demo': [
     ],

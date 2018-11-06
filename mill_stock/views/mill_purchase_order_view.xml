@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_inherit_mill_purchase_order_tree" model="ir.ui.view">
+	    <field name="name">mill.purchase.order.tree</field>
+	    <field name="model">mill.purchase.order</field>
+	    <field name="inherit_id" ref="mill_purchase_order.view_mill_puchase_order_tree"/>
+	    <field name="arch" type="xml">
+	    		<xpath expr = "/tree/field[@name = 'material_received']" position = "after">
+	    			<field name = "balance" sum = "Balance"/>
+	    		</xpath> 
+	    	</field>		
+	</record>
+
+	<record id="view_inherit_mill_purchase_order_form" model="ir.ui.view">
+	    <field name="name">mill.purchase.order.form</field>
+	    <field name="model">mill.purchase.order</field>
+	    <field name="inherit_id" ref="mill_purchase_order.view_mill_puchase_order_form"/>
+	    <field name="arch" type="xml">
+	    		<xpath expr = "//notebook" position = "inside" >
+	    			<page string = "Stock">
+		    			<field name = "stock_line_ids" nolabel = "1" context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'purchase'}">
+		    				<tree string = "Purchase Stock Line" editable = "1">
+		    					<field name = "name" readonly ="1" />
+		    					<field name = "date"  readonly = "1"/>
+		    					<field name = "partner_id" readonly = "1"/>
+		    					<field name = "grade_id" readonly = "1"/>
+		    					<field name = "type" invisible = "1" />
+		    					<field name = "qty" />
+		    				</tree>
+	    				</field>
+	    				<group class="oe_subtotal_footer oe_right" colspan="2">
+	    					<field name="balance" />
+	    				</group>
+    				</page>
+	    		</xpath>
+	    </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_inherit_material_grade_tree" model="ir.ui.view">
+	    <field name="name">material.grade.stock.tree</field>
+	    <field name="model">material.grade</field>
+	    <field name="inherit_id" ref="mill_order.view_material_grade_tree"/>
+	    <field name="arch" type="xml">
+	    		<xpath expr = "/tree" position = "inside">
+	    			<field name = "qty" />
+	    		</xpath>
+	    </field>
+    </record>
+
+	<record id="view_inherit_material_grade_form" model="ir.ui.view">
+	    <field name="name">material.grade.stock.form</field>
+	    <field name="model">material.grade</field>
+	    <field name="inherit_id" ref="chemical_compositions.view_material_grade_form"/>
+	    <field name="arch" type="xml">
+	        <xpath expr="//field[@name='name']" position="after">
+	        		<field name = "qty" />
+	        </xpath>
+	        <xpath expr="//notebook" position="inside">
+	            <page string = "Stock">
+	            		<field name = "stock_line_ids" nolabel = "1" >
+	            			<tree string = "Stock" decoration-danger = "type == 'production'" decoration-success = "type == 'purchase'" decoration-info = "type == 'adjustment'">
+		            			<field name = "name"/>
+		            			<field name = "date"/>
+		            			<field name = "partner_id" />
+		            			<field name = "grade_id" />
+		            			<field name = "qty" sum = "Total Available Qty"/>
+	            				<field name = "remarks" />
+							<field name = "type" />	            			
+	            			</tree>
+            			</field>
+	            </page>
+	        </xpath>
+	    </field>
+	</record>	
+</odoo>
