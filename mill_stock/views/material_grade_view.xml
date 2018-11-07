@@ -21,7 +21,7 @@
 	        </xpath>
 	        <xpath expr="//notebook" position="inside">
 	            <page string = "Stock">
-	            		<field name = "stock_line_ids" nolabel = "1" >
+	            		<field name = "stock_line_ids" nolabel = "1"  editable = "1">
 	            			<tree string = "Stock" decoration-danger = "type == 'production'" decoration-success = "type == 'purchase'" decoration-info = "type == 'adjustment'">
 		            			<field name = "name"/>
 		            			<field name = "date"/>
