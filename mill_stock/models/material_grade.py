@@ -25,13 +25,13 @@ class MaterialGrade(models.Model):
     _inherit = 'material.grade'
     
     @api.one
-    @api.depends()
+    @api.depends('stock_line_ids','stock_line_ids.qty')
     def _compute_qty(self):
         total = 0.00
         for i in self.stock_line_ids:
             total += i.qty
         self.qty = total
     
-    qty = fields.Float('Qty',compute = "_compute_qty")
+    qty = fields.Float('Qty',compute = "_compute_qty",store=True)
     stock_line_ids = fields.One2many('stock.line','grade_id','Stock')
     
