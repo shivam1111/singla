@@ -23,6 +23,7 @@ class StockLine(models.Model):
                             string = "Type",help = "Determines the purpose for which the line has been created",required=True)
     qty = fields.Float('Qty')
     purchase_id = fields.Many2one('mill.purchase.order','Purchase Order')
-    
+    pcs = fields.Float('Pcs')
+    heat_no = fields.Char('Heat No.')
     
     

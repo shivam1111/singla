@@ -37,6 +37,7 @@
 					    					<th>KVA Op.</th>
 					    					<th>KVA Cl.</th>
 					    					<th>Units</th>
+					    					<th>KWH/MT</th>
 					    					<th>MD/MT</th>
 					    					<th>Coal/MT</th>
 					    					<th>Scrap</th>
@@ -65,6 +66,7 @@
 					    							<td><span t-field="l.kva_opening" /></td>
 					    							<td><span t-field="l.kva_closing" /></td>
 					    							<td><span t-field="l.units" /></td>
+					    							<td><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
 					    							<td><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
 					    							<td><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
 					    							<td><span t-field="l.scrap" /></td>

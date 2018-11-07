@@ -24,7 +24,6 @@ class StockLine(models.Model):
     name = fields.Char('Name')
     size_id = fields.Many2one('size.size',string  = "Size")
     batch = fields.Float('No. of Batch',help = "Dhakku")
-    pcs = fields.Float('Pcs')
     kg_per_pc = fields.Float('Kg/pc')
     production_id = fields.Many2one('mill.production','Production')
     kwh_opening = fields.Float('KWH Op.')
@@ -79,7 +78,7 @@ class MillProduction(models.Model):
             self.scrap_percentage = 0.00
     
     @api.one
-    @api.depends('production_line_ids','production_line_ids.units')
+    @api.depends('production_line_ids','production_line_ids.units','total_production')
     def _compute_units(self):
         total = 0.00
         for i in self.production_line_ids:
@@ -88,7 +87,11 @@ class MillProduction(models.Model):
         try:
             self.units_per_mt = total/self.total_production
         except ZeroDivisionError:
-            self.units_per_mt = 0.00        
+            self.units_per_mt = 0.00
+        try:
+            self.kwh_mt = total/self.total_production        
+        except ZeroDivisionError:
+            self.kwh_mt = 0.00
         
     
     name = fields.Char('Name',default = '/',required = True)
@@ -107,5 +110,6 @@ class MillProduction(models.Model):
     miss_roll = fields.Text('Miss Roll')
     total_units = fields.Float("Total Units Consumed",compute = "_compute_units",store=True)
     units_per_mt = fields.Float('Units/MT',compute = '_compute_units')
+    kwh_mt = fields.Float('KWH/MT',compute = '_compute_units' )
     
     

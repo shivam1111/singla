@@ -24,7 +24,7 @@
 	                    			<field name = "mill_kara"/>
 	                    			<field name = "total_scrap" />
 	                    			<field name = "total_units" />
-	                    			<field name = "total_production" />
+	                    			<field name = "kwh_mt" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "md_mt" />
@@ -33,6 +33,7 @@
 	                    			<field name = "miss_roll" />
 	                    			<field name = "scrap_percentage" />
 	                    			<field name = "units_per_mt" />
+	                    			<field name = "total_production" />
 	                    		</group>
 	                    </group>
 	                    <notebook>
@@ -46,6 +47,7 @@
 	                    					<field name = "kg_per_pc" />
 	                    					<field name = "qty" sum ="Total Production"/>
 	                    					<field name = "partner_id" />
+	                    					<field name = "heat_no" />
 	                    					<field name = "grade_id" />
 	                    					<field name = "kwh_opening" />
 	                    					<field name = "kwh_closing" />
