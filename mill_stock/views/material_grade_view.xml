@@ -26,7 +26,6 @@
 		            			<field name = "name" readonly="1"/>
 		            			<field name = "date"/>
 		            			<field name = "partner_id" />
-		            			<field name = "grade_id" />
 		            			<field name = "heat_no"/>
 		            			<field name = "pcs"/>
 		            			<field name = "qty" sum = "Total Available Qty"/>
