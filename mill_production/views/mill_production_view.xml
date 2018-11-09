@@ -43,7 +43,7 @@
 	                    					<field name = "name"  readonly = "1"/>
 	                    					<field name = "size_id" />
 	                    					<field name = "batch" />
-	                    					<field name = "pcs" />
+	                    					<field name = "pcs" sum = "Total Pcs" />
 	                    					<field name = "kg_per_pc" />
 	                    					<field name = "qty" sum ="Total Production"/>
 	                    					<field name = "partner_id" />
@@ -121,7 +121,7 @@
 	         <field name="name">material.grade.pivot</field>
 	         <field name="model">material.grade</field>
 	         <field name="arch" type="xml">
-	             <pivot string="Stock Analysis" disable_linking="True">
+	             <pivot string="Stock Analysis" disable_linking="False">
 	                 <field name="name" type="row"/>
 	                 <field name="qty" type="measure"/>
 	             </pivot>
@@ -142,7 +142,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">material.grade</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_mode">pivot,tree,form,graph</field>
         </record>        	               		
 
        <menuitem
