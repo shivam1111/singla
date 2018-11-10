@@ -121,7 +121,7 @@
 	         <field name="name">material.grade.pivot</field>
 	         <field name="model">material.grade</field>
 	         <field name="arch" type="xml">
-	             <pivot string="Stock Analysis" disable_linking="False">
+	             <pivot string="Stock Analysis" >
 	                 <field name="name" type="row"/>
 	                 <field name="qty" type="measure"/>
 	             </pivot>
@@ -131,7 +131,7 @@
 	         <field name="name">material.grade.graph</field>
 	         <field name="model">material.grade</field>
 	         <field name="arch" type="xml">
-	             <graph string="Stock Analysis" disable_linking="True">
+	             <graph string="Stock Analysis" disable_linking="False">
 	                 <field name="name" type="row"/>
 	                 <field name="qty" type="measure"/>
 	             </graph>
