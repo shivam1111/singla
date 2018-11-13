@@ -51,7 +51,7 @@
 					    				<t t-foreach="docs" t-as="doc">
 					    					<t t-foreach="doc.production_line_ids" t-as="l">
 					    						<tr t-attf-style = "{{ l_last and 'border-bottom:2px solid black' or '' }}">
-					    							<td style = "border-right:1px solid black;">
+					    							<td style = "border-right:2px solid black;">
 					    								<t t-if = "l_first"><span t-field="doc.date" t-field-options='{"format": "d MMMM y"}'/></t>
 					    							</td>
 					    							<td><span t-field="l.size_id.name" /></td>
