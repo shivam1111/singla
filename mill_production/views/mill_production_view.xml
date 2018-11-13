@@ -96,6 +96,8 @@
             <field name="model">mill.production</field>
             <field name="arch" type="xml">
                 <search string="Search Orders">
+                		<field name = "name" />
+                		<field name = "size_id" />
                </search>
             </field>
         </record>            		

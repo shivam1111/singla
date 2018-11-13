@@ -111,5 +111,5 @@ class MillProduction(models.Model):
     total_units = fields.Float("Total Units Consumed",compute = "_compute_units",store=True)
     units_per_mt = fields.Float('Units/MT',compute = '_compute_units')
     kwh_mt = fields.Float('KWH/MT',compute = '_compute_units' )
-    
+    size_id = fields.Many2one('size.size',related= "production_line_ids.size_id",string = "Size")
     
