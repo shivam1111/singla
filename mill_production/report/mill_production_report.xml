@@ -50,31 +50,59 @@
 					    				<tbody>
 					    				<t t-foreach="docs" t-as="doc">
 					    					<t t-foreach="doc.production_line_ids" t-as="l">
-					    						<tr t-attf-style = "{{ l_last and 'border-bottom:2px solid black' or '' }}">
-					    							<td style = "border-right:2px solid black;">
-					    								<t t-if = "l_first"><span t-field="doc.date" t-field-options='{"format": "d MMMM y"}'/></t>
-					    							</td>
-					    							<td><span t-field="l.size_id.name" /></td>
-					    							<td><span t-field="l.batch" /></td>
-					    							<td><span t-field="l.pcs" /></td>
-					    							<td><span t-field="l.kg_per_pc" /></td>
-					    							<td><span t-field="l.qty" /></td>
-					    							<td><span t-field="l.partner_id.name" /></td>
-					    							<td><span t-field="l.grade_id.name" /></td>
-					    							<td><span t-field="l.kwh_opening" /></td>
-					    							<td><span t-field="l.kwh_closing" /></td>
-					    							<td><span t-field="l.kva_opening" /></td>
-					    							<td><span t-field="l.kva_closing" /></td>
-					    							<td><span t-field="l.units" /></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
-					    							<td><span t-field="l.scrap" /></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.scrap_percentage" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.hours" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.furnace_kara" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.mill_kara" /></t></td>
-					    							<td><t t-if = "l_first"><span t-field="doc.miss_roll" /></t></td>
+					    						<tr>
+					    							<t t-if = "l_last">
+						    							<td style = "border-right:1px solid black;border-bottom:1px solid black;">
+						    								<t t-if = "l_first"><span t-field="doc.date" t-field-options='{"format": "d MMMM y"}'/></t>
+						    							</td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.size_id.name" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.batch" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.pcs" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.kg_per_pc" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.qty" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.partner_id.name" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.grade_id.name" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.kwh_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.kwh_closing" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.kva_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.kva_closing" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.units" /></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="l.scrap" /></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.scrap_percentage" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.hours" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.furnace_kara" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.mill_kara" /></t></td>
+						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.miss_roll" /></t></td>					    							
+					    							</t>
+												<t t-if = "not l_last">					    							
+						    							<td style = "border-right:1px solid black;">
+						    								<t t-if = "l_first"><span t-field="doc.date" t-field-options='{"format": "d MMMM y"}'/></t>
+						    							</td>
+						    							<td><span t-field="l.size_id.name" /></td>
+						    							<td><span t-field="l.batch" /></td>
+						    							<td><span t-field="l.pcs" /></td>
+						    							<td><span t-field="l.kg_per_pc" /></td>
+						    							<td><span t-field="l.qty" /></td>
+						    							<td><span t-field="l.partner_id.name" /></td>
+						    							<td><span t-field="l.grade_id.name" /></td>
+						    							<td><span t-field="l.kwh_opening" /></td>
+						    							<td><span t-field="l.kwh_closing" /></td>
+						    							<td><span t-field="l.kva_opening" /></td>
+						    							<td><span t-field="l.kva_closing" /></td>
+						    							<td><span t-field="l.units" /></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
+						    							<td><span t-field="l.scrap" /></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.scrap_percentage" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.hours" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.furnace_kara" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.mill_kara" /></t></td>
+						    							<td><t t-if = "l_first"><span t-field="doc.miss_roll" /></t></td>
+					    							</t>
 					    						</tr>
 					    					</t>
 				    					</t>
