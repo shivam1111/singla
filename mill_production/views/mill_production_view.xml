@@ -81,7 +81,7 @@
        				<field name = "coal" sum = "Total Coal" />
        				<field name = "total_units" sum = "Total Units Consumed" />
        				<field name = "total_scrap" sum = "Total Scrap" />
-       				<field name = "coal_mt" />
+       				<field name = "coal_mt" avg = "Average Coal Consumption"/>
        				<field name = "units_per_mt" />
        				<field name = "hours" sum = "Total Hours"/>
        				<field name = "furnace_kara"/>
