@@ -8,16 +8,17 @@ class MillStockWizard(models.TransientModel):
     _description = "Mill Stock Analysis"
     
     @api.one
-    @api.depends('from_date','to_date','type')
+    @api.depends('date','type')
     def _compute_total_stock(self):
         total = 0.00
-        stock_line_ids = self.env['stock.line'].search([('date','>=',self.from_date),('date','<=',self.to_date)])
+        stock_line_ids = self.env['stock.line'].search([('date','<=',self.date)])
         for i in stock_line_ids:
             total += i.qty
         self.total_stock = total    
     
     from_date = fields.Date('From',required=True)
     to_date = fields.Date('To',required=True)
+    date = fields.Date('Stock on Date')
     type = fields.Selection(selection = [('production','Production'),
                                          ('purchase','Purchase'),('adjustment','Adjustment Entry'),('all','All')],
                             string = "Type",help = "Determines the purpose for which the line has been created",required=True)

@@ -7,11 +7,10 @@
             		<form string="Order Analysis">
             			<group>
             				<group>
-            					<field name = "from_date" />
+            					<field name = "date" />
             					<field name = "type" />
         					</group>
             				<group>
-            					<field name = "to_date" />
             					<field name = "total_stock" />
             				</group>
             			</group>
