@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <menuitem
+           id= "mill_stock_sub_menu"
+           parent= "mill_order.mill_order_management_main_menu"
+           sequence= "2"
+           name= "Stock Management" />	
+</odoo>

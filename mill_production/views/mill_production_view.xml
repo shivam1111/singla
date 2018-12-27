@@ -140,7 +140,7 @@
 	         </field>
 	    </record>        	    
         <record id="action_material_grade_analysis" model="ir.actions.act_window">
-            <field name="name">Stock Analysis</field>
+            <field name="name">Stock</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">material.grade</field>
             <field name="view_type">form</field>
@@ -149,7 +149,7 @@
 
        <menuitem
            id= "material_grade_analysis_item"
-           parent= "mill_production_management_sub_menu"
+           parent= "mill_stock.mill_stock_sub_menu"
            sequence= "1"
            action = "action_material_grade_analysis"
             />

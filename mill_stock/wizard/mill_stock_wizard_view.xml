@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_mill_stock_wizard" model="ir.ui.view">
+            <field name="name">Mill Stock Wizard</field>
+            <field name="model">mill.stock.wizard</field>
+            <field name="arch" type="xml">
+            		<form string="Order Analysis">
+            			<group>
+            				<group>
+            					<field name = "from_date" />
+            					<field name = "type" />
+        					</group>
+            				<group>
+            					<field name = "to_date" />
+            					<field name = "total_stock" />
+            				</group>
+            			</group>
+                    <footer>
+<!--                         <button name="create_invoices" string="Create and View Invoices" type="object"
+                            context="{'open_invoices': True}" class="btn-primary"/> -->
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>            			
+            		</form>
+            </field>
+        </record>
+        <record id="action_mill_stock_wizard" model="ir.actions.act_window">
+            <field name="name">Stock Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mill.stock.wizard</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>        	               		
+
+       <menuitem
+           id= "submenu_mill_stock_wizard"
+           parent= "mill_stock.mill_stock_sub_menu"
+           sequence= "1"
+           action = "action_mill_stock_wizard"
+            />        
+        	
+</odoo>
