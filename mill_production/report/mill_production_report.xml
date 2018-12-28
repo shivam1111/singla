@@ -48,7 +48,9 @@
 					    					<th>B</th>
 					    				</thead>
 					    				<tbody>
+					    				<t t-set="total_production" t-value="0.00"/>
 					    				<t t-foreach="docs" t-as="doc">
+					    					<t t-set = "total_production" t-value = "total_production + doc.total_production" />
 					    					<t t-foreach="doc.production_line_ids" t-as="l">
 					    						<tr>
 					    							<t t-if = "l_last">
@@ -108,6 +110,15 @@
 				    					</t>
 					    				</tbody>
 					    			</table>
+					    			<table class = "table table-condensed table-bordered">
+					    				<caption>Summary</caption>
+					    				<tbody>
+					    					<tr>
+					    						<td>Total Production</td>
+					    						<td><span t-esc = "total_production"/></td>
+					    					</tr>
+					    				</tbody>
+					    			</table>					    			
 	            		</div>			        		    		
 		    </t>
 		</template>
