@@ -24,20 +24,25 @@
             						</group>
             					</group>
             					<group>
-	            					<field name = "type" />
-	            					<field name = "stock_line_ids">
-				            			<tree string = "Stock" editable = "top" decoration-danger = "type == 'production'" decoration-success = "type == 'purchase'" decoration-info = "type == 'adjustment'">
-					            			<field name = "name" />
-					            			<field name = "date"/>
-					            			<field name = "partner_id" />
-					            			<field name = "heat_no"/>
-					            			<field name = "pcs" sum = "Total Pcs" />
-					            			<field name = "qty" sum = "Total  Qty"/>
-				            				<field name = "remarks" />
-										<field name = "type" />	            			
-				            			</tree>
-	            					</field>            					
+            						<group>
+									<field name = "type" />            						
+            						</group>
+            						<group>
+            							<field name = "total_stock_entries" />
+            						</group>
             					</group>
+            					<field name = "stock_line_ids">
+			            			<tree string = "Stock" editable = "top" decoration-danger = "type == 'production'" decoration-success = "type == 'purchase'" decoration-info = "type == 'adjustment'">
+				            			<field name = "name" />
+				            			<field name = "date"/>
+				            			<field name = "partner_id" />
+				            			<field name = "heat_no"/>
+				            			<field name = "pcs" sum = "Total Pcs" />
+				            			<field name = "qty" sum = "Total  Qty"/>
+			            				<field name = "remarks" />
+									<field name = "type" />	            			
+			            			</tree>
+            					</field>            					            					
             				</page>
             			</notebook>
                     <footer>
