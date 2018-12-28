@@ -13,9 +13,36 @@
             					<field name = "total_stock" />
             				</group>
             			</group>
+            			<notebook>
+            				<page string = 'Stock Entries'>
+            					<group>
+            						<group>
+            							<field name = "from_date" />
+            						</group>
+            						<group>
+            							<field name = "to_date" />
+            						</group>
+            					</group>
+            					<group>
+	            					<field name = "type" />
+	            					<field name = "stock_line_ids">
+				            			<tree string = "Stock" editable = "top" decoration-danger = "type == 'production'" decoration-success = "type == 'purchase'" decoration-info = "type == 'adjustment'">
+					            			<field name = "name" />
+					            			<field name = "date"/>
+					            			<field name = "partner_id" />
+					            			<field name = "heat_no"/>
+					            			<field name = "pcs" sum = "Total Pcs" />
+					            			<field name = "qty" sum = "Total  Qty"/>
+				            				<field name = "remarks" />
+										<field name = "type" />	            			
+				            			</tree>
+	            					</field>            					
+            					</group>
+            				</page>
+            			</notebook>
                     <footer>
-<!--                         <button name="create_invoices" string="Create and View Invoices" type="object"
-                            context="{'open_invoices': True}" class="btn-primary"/> -->
+                        <button name="print_stock_entries" string="Print Stock" type="object"
+                           class="btn-primary"/>
                         <button string="Cancel" class="btn-default" special="cancel"/>
                     </footer>            			
             		</form>

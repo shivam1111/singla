@@ -18,6 +18,7 @@
         'views/material_grade_view.xml',
         'views/mill_purchase_order_view.xml',
         'wizard/mill_stock_wizard_view.xml',
+        'wizard/mill_stock_wizard_report.xml'
     ],
     'demo': [
     ],

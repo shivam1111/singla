@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<record id="paperformat_mill_stock_landscape" model="report.paperformat"> 
+		  <field name="name">Production A4 Landscape</field> 
+		  <field name="default" eval="False" /> 
+		  <field name="format">A4</field> 
+		  <field name="page_height">0</field> 
+		  <field name="page_width">0</field> 
+		  <field name="orientation">Landscape</field> 
+		  <field name="margin_top">10</field> 
+		  <field name="margin_bottom">23</field> 
+		  <field name="margin_left">7</field> 
+		  <field name="margin_right">7</field> 
+		  <field name="header_line" eval="False" /> 
+		  <field name="header_spacing">35</field> 
+		  <field name="dpi">90</field> 
+		</record> 
+		    
+		<template id="template_mill_stock_wizard_report">
+		    <t t-call="report.html_container">
+				<t t-foreach="docs" t-as="doc">
+			    		<div class="page" style="font-size: 10px !important;">
+			    			<div class="oe_structure"/>
+			    			<table class = "table table-condensed table-bordered">
+			    				<caption>Summary</caption>
+			    				<tbody>
+			    					<tr>
+			    						<td>Type</td>
+			    						<td><span t-field = "doc.type"/></td>
+			    					</tr>
+			    					<tr>
+			    						<td>Total</td>
+			    						<td><span t-field = "doc.total_stock_entries"/></td>
+			    					</tr>
+			    				</tbody>
+			    			</table>
+			    			<table class = "table table-condensed table-bordered">
+			    				<thead>
+			    					<th>Name</th>
+			    					<th>Date</th>
+			    					<th>Partner</th>
+			    					<th>Heat No.</th>
+			    					<th>Pcs</th>
+			    					<th>Qty</th>
+			    					<th>Remarks</th>
+			    					<th>Type</th>
+			    				</thead>
+			    				<tbody>
+			    					<t t-foreach="doc.stock_line_ids" t-as="l">
+									<tr>
+										<td><span t-field = "l.name"/></td>
+										<td><span t-field = "l.date"/></td>
+										<td><span t-field = "l.partner_id.name"/></td>
+										<td><span t-field = "l.heat_no"/></td>
+										<td><span t-field = "l.pcs"/></td>
+										<td><span t-field = "l.qty"/></td>
+										<td><span t-field = "l.remarks"/></td>
+										<td><span t-field = "l.type"/></td>
+									</tr>			    					
+			    					</t>
+			    				</tbody>
+			    			</table>
+			    		</div>					
+				</t>
+		    </t>
+	    </template>
+        <report 
+            id="report_mill_stock_wizard"
+            string="Stock Entries"
+            model="mill.stock.wizard" 
+            report_type="qweb-pdf"
+            file="mill_stock.mill_stock_wizard_report" 
+            name="mill_stock.template_mill_stock_wizard_report" 
+            paperformat = "paperformat_mill_stock_landscape"
+        />		    
+    </data>
+</odoo>
