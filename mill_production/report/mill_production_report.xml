@@ -53,7 +53,7 @@
 					    						<tr>
 					    							<t t-if = "l_last">
 						    							<td style = "border-right:1px solid black;border-bottom:1px solid black;">
-						    								<t t-if = "l_first"><span t-field="doc.date" t-field-options='{"format": "d MMMM y"}'/></t>
+						    								<span></span>
 						    							</td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.size_id.name" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.batch" /></td>
@@ -67,15 +67,15 @@
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.kva_opening" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.kva_closing" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.units" /></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;">Total: <span t-field="doc.coal" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.scrap" /></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.scrap_percentage" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.hours" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.furnace_kara" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.mill_kara" /></t></td>
-						    							<td style="border-bottom:1px solid black;"><t t-if = "l_first"><span t-field="doc.miss_roll" /></t></td>					    							
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>					    							
 					    							</t>
 												<t t-if = "not l_last">					    							
 						    							<td style = "border-right:1px solid black;">
