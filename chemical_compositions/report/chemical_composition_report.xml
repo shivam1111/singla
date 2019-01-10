@@ -37,7 +37,7 @@
 			            		</tr>
 			            		<tr>
 			            			<td><strong>Grade: </strong></td>
-			            			<td><span style = "text-transform:uppercase;"><t t-esc="doc.grade_id and doc.grade_id.name or '-'" /></span></td>
+			            			<td><span style = "text-transform:uppercase;"><t t-esc="doc.grade_id and (doc.grade_id.name_str or doc.grade_id.name) or '-'" /></span></td>
 			            			<td><strong>Size: </strong></td>
 			            			<td><span style = "text-transform:uppercase;"><t t-esc="doc.size or '-'" /></span></td>
 			            			<td><strong>Color Code: </strong></td>

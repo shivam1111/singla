@@ -6,7 +6,7 @@
     				<div class = "page">
 					<div class="oe_structure"/>
 		            <div class = "row" style = "padding: 10px;">
-		            		<div style = "text-align:center;"><h2><t t-esc="doc.name"/></h2></div>
+		            		<div style = "text-align:center;"><h2><t t-esc="doc.name_str or doc.name"/></h2></div>
 			            <table class = "table table-striped table-bordered table-responsive">
 			            		<caption>CHEMICAL COMPOSITION</caption>
 			            		<thead class="thead-dark">

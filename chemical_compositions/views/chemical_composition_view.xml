@@ -179,9 +179,10 @@
 						<group>
 							<group>
 								<field name = "name" />
+								<field name = "price_extra" />
 							</group>
 							<group>
-								<field name = "price_extra" />
+								<field name= "name_str" />
 							</group>
 						</group>
 	                    <notebook>
