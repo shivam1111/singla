@@ -18,7 +18,7 @@ class ProductionOrderLine(models.Model):
         self.qty  = (self.kg_per_pc * self.pcs)/1000    
     
     name = fields.Char('Name', help = "This is also a bundle No.",default = '/')
-    size_id = fields.Many2one('size.size',string  = "Size")
+    size_id = fields.Many2one('size.size',string  = "Size",required = True)
     tolerance = fields.Char('Tolerance')
     corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "size_id.corner_id",store=True)
     sequence = fields.Integer('sequence', help="Sequence for the handle.",default=10)
