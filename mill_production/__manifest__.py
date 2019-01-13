@@ -16,6 +16,8 @@
         'data/ir_sequence_data.xml',
         'views/mill_production_view.xml',
         'report/mill_production_report.xml',
+        'views/production_order_view.xml',
+        'report/production_order_report.xml',
     ],
     'demo': [
     ],

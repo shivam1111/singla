@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!-- Sequences for mill.production -->
         <record id="seq_mill_production" model="ir.sequence">
@@ -19,6 +19,24 @@
             <field name="padding">3</field>
             <field name="company_id" eval="False"/>
         </record>        
+
+        <!-- Sequences for production bundle -->
+        <record id="seq_production_bundle" model="ir.sequence">
+            <field name="name">Production Bundle</field>
+            <field name="code">production.bundle</field>
+            <field name="prefix">B/</field>
+            <field name="padding">0</field>
+            <field name="company_id" eval="False"/>
+        </record>        
+        
+        <!-- Sequences for production order -->
+        <record id="seq_production_order" model="ir.sequence">
+            <field name="name">Production Order</field>
+            <field name="code">production.order</field>
+            <field name="prefix">MO/</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>                
 
     </data>
 </odoo>

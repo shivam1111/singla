@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<template id="mill_production_order_template">
+		    <t t-call="report.html_container">
+		    		<t t-foreach="docs" t-as="doc">
+						<div class="page">
+			            		<div class="oe_structure"/>
+				            <div class = "row" style = "padding: 10px;">
+				            		<h1>
+					            		<div class = "col-xs-6"><t t-esc = "doc.name" /></div>
+					            		<div class = "col-xs-6 text-right"><span t-field="doc.date" t-options ='{"format": "dd/MM/yyyy"}'  /></div>				            						            		
+				            		</h1>
+				            </div>	            		
+				            <div class = "row" style = "padding: 10px;" >
+								<table class = "table table-condensed">
+									<thead>
+										<th>Bundle No.</th>
+										<th>Size</th>
+										<th>Tolerance</th>
+										<th>Corner</th>
+										<th>Pcs</th>
+										<th>Kg/Pc</th>
+										<th>Qty</th>
+										<th>Grade</th>
+										<th>Furncace</th>
+										<th>CC</th>
+										<th>Heat No</th>
+										<th>Remarks</th>
+									</thead>
+									<tbody>
+										<t t-foreach = "doc.line_ids" t-as = "l">
+											<tr>
+												<td><t t-esc="l.name" /></td>
+												<td><t t-esc="l.size_id.name" /></td>
+												<td><t t-esc="l.tolerance or '-'" /></td>
+												<td><t t-esc="l.corner_id.name" /></td>
+												<td><t t-esc="l.pcs" /></td>
+												<td><t t-esc="l.kg_per_pc" /></td>
+												<td><t t-esc="l.qty" /></td>
+												<td><t t-esc="l.grade_id.name" /></td>
+												<td><t t-esc="l.partner_id.name" /></td>
+												<td><t t-esc="l.cc" /></td>
+												<td><t t-esc="l.heat_no" /></td>
+												<td><t t-esc="l.remarks" /></td>											
+											</tr>
+										</t>
+										<tr>
+												<td><strong>Total</strong></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td><strong><t t-esc="sum(l.qty for l in doc.line_ids)" /></strong></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>																						
+										</tr>
+									</tbody>
+								</table>				            
+				            </div>
+				            <t t-if = "doc.remarks">
+					            <div class = "row" style = "padding: 10px;" >
+					            		<strong>Note:</strong><p t-field = "doc.remarks" />
+					            </div>				            
+				            </t>
+		            		</div>			        		    						        		    			
+		    		</t>
+		    </t>
+		</template>
+
+        <report 
+            id="report_mill_production_order"
+            string="Production Order"
+            model="production.order" 
+            report_type="qweb-pdf"
+            file="mill_production.production_order_report" 
+            name="mill_production.mill_production_order_template" 
+            paperformat = "mill_production.paperformat_production_landscape"
+        />
+    </data>
+</odoo>

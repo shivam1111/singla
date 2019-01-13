@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="view_mill_production_order" model="ir.ui.view">
+       		<field name="name">mill.production.order.form</field>
+       		<field name="model">production.order</field>
+       		<field name="arch" type="xml">
+       			<form string = "Production Order">
+       				<sheet>
+	                    <div class="oe_title oe_left">
+	                        <h1>
+	                            <field name="name" readonly="1"/>
+	                        </h1>
+	                    </div>		        		
+	                    <div class="oe_title oe_right">
+	                        <h1>
+	                            <field name="date" readonly="1"/>
+	                        </h1>
+	                    </div>
+	                    <group>
+	                    		<field name = "line_ids" nolabel = "1">
+								<tree string = "Order Lines" editable = "top">
+									<field name = "sequence" widget = "handle" />
+									<field name = "name" readonly = "1"/>
+									<field name = "size_id" />
+									<field name = "tolerance" />
+									<field name = "corner_id" />
+									<field name = "pcs" />
+									<field name  = "kg_per_pc" />
+									<field name = "qty" sum = "Total Qty"/>
+									<field name = "grade_id" />
+									<field name = "partner_id" />
+									<field name = "heat_no" />
+									<field name = "cc" />
+									<field name = "remarks" />
+								</tree>	                    		
+	                    		</field>
+	                    </group>
+	                    <group>
+	                    		<field name = "remarks" nolabel = "1" placeholder = "Notes"/>
+	                    </group>
+       				</sheet>
+       			</form>    	
+       		</field>
+    		</record>	
+    		
+        <record id="action_mill_production_order" model="ir.actions.act_window">
+            <field name="name">Production Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">production.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'date:month'}</field>
+        </record>
+        
+       <menuitem
+           id= "mill_production_order_item"
+           parent= "mill_production_management_sub_menu"
+           sequence= "1"
+           action = "action_mill_production_order"
+            />                    		
+    </data>
+</odoo>
