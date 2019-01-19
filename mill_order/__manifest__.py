@@ -11,7 +11,7 @@
 
     """,
     'website': 'https://www.odoo.com',
-    'depends': ['base','mail'],
+    'depends': ['base','mail','india_gst'],
     'data': [
         'views/mill_order_view.xml',
         'report/mill_order_report_view.xml',

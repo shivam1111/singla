@@ -5,6 +5,16 @@
     			<t t-call="report.external_layout">
     				<div class = "page">
 					<div class="oe_structure"/>
+		            <div class="row">
+		                <div class="col-xs-6">
+		                    <div  class="mt8">
+		                        <strong>Customer:</strong>
+		                        <div t-field="doc.partner_id"
+		                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
+		                        <p t-if="doc.partner_id.gstin_registered">GST: <span t-field="doc.partner_id.gstin"/></p>
+		                    </div>
+		                </div>
+		            </div>					
 		            <div class = "row" style = "padding: 10px;">
 		            		<div style = "text-align:center;"><h2>PACKING LIST</h2></div>
 			            <table class = "table table-striped table-bordered table-responsive">
