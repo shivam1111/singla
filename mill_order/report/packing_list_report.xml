@@ -34,7 +34,7 @@
 											<t t-esc="l.name.name.name or '-'"/>			            					
 			            					</td>
 			            					<td>
-											<t t-esc="l.grade_id.name or '-'"/>			            					
+											<t t-esc="l.grade_id and (l.grade_id.name_str or l.grade_id.name) or '-'"/>			            					
 			            					</td>
 			            					<td>
 											<t t-esc="l.cut_length or '-'"/>			            					
