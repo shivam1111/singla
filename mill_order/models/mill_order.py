@@ -94,7 +94,7 @@ class MillOrderSizeLineCompleted(models.Model):
     completed_qty = fields.Float('Completed Qty')
     remarks = fields.Text("Remarks")
     order_id = fields.Many2one('mill.order')
-    complete_date = fields.Date('Completion Date')
+    complete_date = fields.Date('Completion Date',default = fields.Date.today)
     pcs = fields.Float('Pcs')
     
 class MillOrder(models.Model):
