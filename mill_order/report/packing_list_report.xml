@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    		<template id="report_packing_list_template">
+    			<t t-call="report.external_layout">
+    				<div class = "page">
+					<div class="oe_structure"/>
+		            <div class = "row" style = "padding: 10px;">
+		            		<div style = "text-align:center;"><h2>PACKING LIST</h2></div>
+			            <table class = "table table-striped table-bordered table-responsive">
+			            		<thead class="thead-dark">
+			            			<th>Size</th>
+			            			<th>Grade</th>
+			            			<th>Cut Length</th>
+			            			<th>Corner Type</th>
+			            			<th>Pcs</th>
+			            			<th>Qty</th>
+			            			<th>Remarks</th>
+			            		</thead>
+			            		<tbody>
+			            			<t t-foreach="doc.line_completed_ids" t-as="l">
+			            				<tr>
+			            					<td>
+											<t t-esc="l.name.name.name or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.grade_id.name or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.cut_length or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.corner_id.name or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.pcs or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.completed_qty or '-'"/>			            					
+			            					</td>
+			            					<td>
+											<t t-esc="l.remarks or '-'"/>			            					
+			            					</td>			            								            								            								            								            								            					
+			            				</tr>
+			            			</t>
+			            				<tr>
+			            					<td><strong>Total</strong></td>
+			            					<td></td>
+			            					<td></td>
+										<td></td>
+										<td><strong><t t-esc="sum(l.pcs for l in doc.line_completed_ids)" /></strong></td>
+										<td><strong><t t-esc="sum(l.completed_qty for l in doc.line_completed_ids)" /></strong></td>
+										<td></td>			            					
+			            				</tr>
+			            		</tbody>
+			            </table>		            		
+		            </div>
+    				</div>
+    				<div class = "footer">
+    				</div>
+    			</t>
+    		</template>
+    		
+		<template id="report_packing_list">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="doc">
+		            <t t-call="mill_order.report_packing_list_template"/>
+		        </t>
+		    </t>
+		</template>
+        <report 
+            id="order_packing_list"
+            string="Packing List"
+            model="mill.order" 
+            report_type="qweb-pdf"
+            file="mill_order.packing_list_report" 
+            name="mill_order.report_packing_list" 
+        />    		
+    </data>
+</odoo>

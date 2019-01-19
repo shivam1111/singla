@@ -54,9 +54,18 @@ class MillOrderSizeLine(models.Model):
     _name = "mill.order.size.line"
     _description = "Mill Order Size Line"
     
+    @api.one
+    @api.depends('order_id.line_completed_ids','order_id.line_completed_ids.completed_qty')
+    def _compute_completed_qty(self):
+        line_ids = self.order_id.line_completed_ids.filtered(lambda rec: rec.name.id == self.id)
+        total = 0.00
+        for i in line_ids:
+            total = total + i.completed_qty
+        self.completed_qty = total
+        
     name = fields.Many2one('size.size',required=True)
     order_qty = fields.Float('Order Qty')
-    completed_qty = fields.Float('Completed Qty')
+    completed_qty = fields.Float('Completed Qty', compute = "_compute_completed_qty",store=True)
     rate = fields.Float("Rate")
     remarks = fields.Text("Remarks")
     corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "name.corner_id",store=True)
@@ -70,9 +79,23 @@ class MillOrderSizeLine(models.Model):
         ], string='Status', copy=False, index=True, track_visibility='onchange', default='draft')
     grade_id = fields.Many2one('material.grade','Grade')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
-    complete_date = fields.Date('Completion Date Date')
     cut_length = fields.Char('Cut Length')
     ingot_size  = fields.Many2one('ingot.size','Ingot Size')
+
+class MillOrderSizeLineCompleted(models.Model):
+    _name = "mill.order.size.line.completed"
+    _description = "Mill Order Size Line Completed"
+    
+    name = fields.Many2one('mill.order.size.line')
+    order_qty = fields.Float('Order Qty',related = "name.order_qty")
+    grade_id = fields.Many2one('material.grade','Grade',related = "name.grade_id")
+    cut_length = fields.Char('Cut Length',related = "name.cut_length")
+    corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "name.corner_id",store=True)
+    completed_qty = fields.Float('Completed Qty')
+    remarks = fields.Text("Remarks")
+    order_id = fields.Many2one('mill.order')
+    complete_date = fields.Date('Completion Date')
+    pcs = fields.Float('Pcs')
     
 class MillOrder(models.Model):
     _name = 'mill.order'
@@ -160,6 +183,6 @@ class MillOrder(models.Model):
         ('cancel','Cancel'),
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
     line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
-    
+    line_completed_ids = fields.One2many('mill.order.size.line.completed','order_id','Completed Order Lines')
     
     

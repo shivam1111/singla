@@ -20,6 +20,7 @@
 		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,done,cancel"/>
 		        		</header>
 		        		<sheet>
+		        			<field name = "id" invisible = "1" />
 			        		<group>
 							<group>
 								<field name = "partner_id" />
@@ -39,24 +40,39 @@
 							</group>
 						</group>
 						<notebook>
-							<page string = "Order Lines">
-								<field name = "line_ids" nolabel = "1" >
-									<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
-										<field name = "name" />
-										<field name = "order_qty" sum = "Total Ordered Qty" />
-										<field name = "grade_id" />
-										<field name = "cut_length" />
-										<field name = "ingot_size" />
-										<field name = "corner_id" />
-										<field name = "state" />
-										<field name = "booking_date"/>
-										<field name = "complete_date"/>
-										<field name = "completed_qty" sum = "Total Completed Qty" />
-										<field name = "rate" />
-										<field name = "remarks" />
-										
-									</tree>
-								</field>
+							<page string = "Order">
+								<group string = "Order Line">
+									<field name = "line_ids" nolabel = "1" >
+										<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
+											<field name = "name" />
+											<field name = "order_qty" sum = "Total Ordered Qty" />
+											<field name = "grade_id" />
+											<field name = "cut_length" />
+											<field name = "ingot_size" />
+											<field name = "corner_id" />
+											<field name = "state" />
+											<field name = "booking_date"/>
+											<field name = "completed_qty" sum = "Total Completed Qty" />
+											<field name = "rate" />
+											<field name = "remarks" />
+										</tree>
+									</field>								
+								</group>
+								<group string = "Completed Order Lines" attrs = "{'invisible':[('id','=',False)]}">
+									<field name = "line_completed_ids" nolabel = "1" >
+										<tree string = "Completed Size Line"   editable = "bottom">
+											<field name = "name" domain = "[('order_id','=',parent.id)]" />
+											<field name = "order_qty" sum = "Total Ordered Qty" readonly = "1" />
+											<field name = "grade_id" readonly = "1"/>
+											<field name = "cut_length" readonly = "1"/>
+											<field name = "corner_id" readonly = "1"/>
+											<field name = "complete_date"/>
+											<field name = "pcs" sum = "Total Pcs" />
+											<field name = "completed_qty" sum = "Total Completed Qty" />
+											<field name = "remarks" />
+										</tree>
+									</field>																
+								</group>
 							</page>
 						</notebook>
 						<group>
@@ -132,7 +148,6 @@
 		        <tree string="Size" decoration-danger = "state == 'cancel'"   decoration-muted="state == 'done'"  decoration-info="state == 'draft'" decoration-bf="state == 'manufactured'"  >
 		        		<field name = "state" invisible = "1" />
 		        		<field name = "booking_date" />
-		        		<field name = "complete_date"/>
 					<field name = "name"/>
 					<field name = "partner_id" />
 					<field name = "order_qty" sum="Total Qty" />
