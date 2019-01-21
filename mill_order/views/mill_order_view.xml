@@ -26,6 +26,7 @@
 								<field name = "partner_id" />
 								<field name = "order_qty" />
 								<field name = "rate" widget = "monetary"/>
+								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
 							</group>
 							<group>
 								<field name = "booking_date"/>
@@ -352,6 +353,33 @@
            parent= "mill_order_management_main_submenu"
            sequence= "5"
            action = "action_ingot_size"
+            />
+		
+		<!-- Material Feature -->
+		<record id="view_material_feature_tree" model="ir.ui.view">
+		    <field name="name">material.feature.tree</field>
+		    <field name="model">material.feature</field>
+		    <field name="arch" type="xml">
+		        <tree string="Features" editable="top">
+					<field name = "name" />
+		        </tree>
+	        </field>
+        </record>
+        
+        <record id="action_material_feature" model="ir.actions.act_window">
+            <field name="name">Material Features</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">material.feature</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "material_feature_management_sub_submenu"
+           parent= "mill_order_management_main_submenu"
+           sequence= "5"
+           action = "action_material_feature"
             />                                  
             
                            

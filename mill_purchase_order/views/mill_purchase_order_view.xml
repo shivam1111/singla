@@ -34,6 +34,7 @@
 								<field name = "grade_id" />
 								<field name = "material_received" />
 								<field name = "extra_rate" widget = "monetary"  />
+								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
 								<field name = "net_rate" widget = "monetary"/>
 							</group>
 						</group>

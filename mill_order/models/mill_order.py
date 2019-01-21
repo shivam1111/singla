@@ -23,6 +23,12 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 
+class MaterialFeature(models.Model):
+    _name = "material.feature"
+    _description = "Material Feature"
+    
+    name = fields.Char('Name')
+
 class Size(models.Model):
     _name = "size.size"
     _description = "Flats Size"
@@ -184,5 +190,5 @@ class MillOrder(models.Model):
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
     line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
     line_completed_ids = fields.One2many('mill.order.size.line.completed','order_id','Completed Order Lines')
-    
+    material_feature_ids = fields.Many2many('material.feature','mill_order_material_feature_rel','order_id','feature_id','Features')
     

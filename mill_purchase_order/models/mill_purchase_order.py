@@ -73,5 +73,5 @@ class MillPurchaseOrder(models.Model):
     extra_rate = fields.Monetary('Extra Rate',currency_field = "currency_id")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     line_ids = fields.One2many('composition.line','purchase_order_id','Composition Line')
-    
+    material_feature_ids = fields.Many2many('material.feature','mill_purchase_order_material_feature_rel','order_id','feature_id','Features')
     
