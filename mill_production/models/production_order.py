@@ -5,7 +5,7 @@ from odoo.tools.translate import _
 class ProductionOrderLine(models.Model):
     _name="production.order.line"
     _description = "Production Order Line"
-    _order = "sequence"
+    _order = "sequence desc"
     
     @api.model
     def create(self, vals):

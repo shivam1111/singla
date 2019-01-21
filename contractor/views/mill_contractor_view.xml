@@ -86,6 +86,6 @@
            sequence= "1"
            action = "action_mill_contractor"
             />                        
-            		
+    
 	</data>
 </odoo>
