@@ -92,7 +92,11 @@ class MillContractor(models.Model):
     def _compute_cost_per_mt(self):
         self._cr.execute('SELECT SUM(qty) from contractor_mt_line')
         total_qty = self._cr.fetchone()[0] or 0.00
-        cost_per_mt = self.total_cost/float(total_qty)
+        try:
+            cost_per_mt = self.total_cost/float(total_qty)
+        except ZeroDivisionError:
+            cost_per_mt = 0.00
+            
         self.cost_per_mt = cost_per_mt
         self.total_qty = total_qty
     
