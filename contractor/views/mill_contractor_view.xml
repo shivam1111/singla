@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+       <menuitem
+           id= "mill_contractor_main_submenu"
+           parent= "mill_order.mill_order_management_main_menu"
+           sequence= "1"
+           name= "Contractor" />
+           
+		<!-- MILL CONTRACTOR -->
+		<record id="view_mill_contractor_form" model="ir.ui.view">
+		    <field name="name">mill.contractor.form</field>
+		    <field name="model">mill.contractor</field>
+		    <field name="arch" type="xml">
+		        <form string="Mill Contractors">
+		        		<header></header>
+		        		<sheet>
+		        			<field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                        		<field name = "total_cost" />
+                        		<field name = "total_payment" />
+                        		<field name = "balance" />
+                        		<field name = "cost_per_mt" />
+                        		<field name = "total_qty" />
+                        </group>
+                        <notebook>
+                        		<page string = "Work Lines">
+                        			<field name = "mt_line_ids" nolabel = "1">
+                        				<tree string = "Work Lines" editable = "top">
+                        					<field name = "name" />
+                        					<field name = "date" />
+                        					<field name = "partner_id" />
+                        					<field name = "qty" sum = "Total Qty"/>
+                        					<field name = "rate" />
+                        					<field name = "to_pay" />
+                        					<field name = "remarks" />
+                        				</tree>
+                        			</field>
+                        		</page>
+                        		<page string = "Payments">
+                        			<field name = "payment_line_ids" nolabel = "1">
+                        				<tree strin = "Payment Lines" editable = "top" >
+                        					<field name = "name" />
+                        					<field name = "date" />
+                        					<field name = "payment" />
+                        					<field name = "remarks" />
+                        				</tree>
+                        			</field>
+                        		</page>
+                        </notebook>		        			
+		        		</sheet>
+		        </form>
+	        </field>
+        </record>  
+        
+        <record id="action_mill_contractor" model="ir.actions.act_window">
+            <field name="name"> Mill Contractor </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mill.contractor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+        
+       <menuitem
+           id= "menuitem_action_mill_contractor"
+           parent= "mill_contractor_main_submenu"
+           sequence= "1"
+           action = "action_mill_contractor"
+            />                        
+            		
+	</data>
+</odoo>

@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//chemical_compositions/__manifest__.py=utf-8
+encoding//contractor/__manifest__.py=utf-8
+encoding//contractor/models/mill_contractor.py=utf-8
 encoding//mill_order/__init__.py=utf-8
 encoding//mill_order/__manifest__.py=utf-8
 encoding//mill_order/models/mill_order.py=utf-8
