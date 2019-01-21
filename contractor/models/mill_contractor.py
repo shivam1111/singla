@@ -24,6 +24,23 @@ from odoo.exceptions import except_orm
 from odoo import tools, _
 from odoo.modules.module import get_module_resource
 
+class AdvanceLine(models.Model):
+    _name = "advance.line"
+    _description  = "Advance Line"
+    
+    @api.model
+    def create(self, vals):
+        vals['name'] = self.env['ir.sequence'].next_by_code('advance.line') or _('New')
+        result = super(AdvanceLine, self).create(vals)
+        return result                   
+    
+    name = fields.Char('Name',default = "/")   
+    date = fields.Date('Date',default = fields.Date.today)
+    type = fields.Selection([('give','Give Advance'),('return','Return Advance')],required = True)
+    amount = fields.Float('Amount') 
+    remarks = fields.Text('Remarks')
+    contractor_id = fields.Many2one('mill.contractor','Contractor')
+    
 class ContractorPaymentLine(models.Model):
     _name = "contractor.payment.line"
     _description = "Contractor Payment Line"
@@ -38,7 +55,7 @@ class ContractorPaymentLine(models.Model):
     date = fields.Date('Date',default = fields.Date.today)
     payment = fields.Float('Payment')
     remarks = fields.Text('Remarks')
-    contractor_id = fields.Many2one('mill.contractr','Contractor')
+    contractor_id = fields.Many2one('mill.contractor','Contractor')
 
 class ContractorMTLine(models.Model):
     _name = "contractor.mt.line"
@@ -61,7 +78,7 @@ class ContractorMTLine(models.Model):
     partner_id = fields.Many2one('res.partner','Partner')
     to_pay = fields.Float('To Pay')
     remarks = fields.Text('Remarks')
-    contractor_id = fields.Many2one('mill.contractr','Contractor')
+    contractor_id = fields.Many2one('mill.contractor','Contractor')
     
 
 class MillContractor(models.Model):
@@ -76,11 +93,15 @@ class MillContractor(models.Model):
         self.total_cost = total
 
     @api.model
-    @api.depends('payment_line_ids','payment_line_ids.payment')
+    @api.depends()
     def _compute_total_paid(self):
-        self._cr.execute('SELECT SUM(payment) from contractor_payment_line')
-        total = self._cr.fetchone()[0] or 0.00
-        self.total_payment = total        
+        total_paid  = 0.00
+        for i in self.payment_line_ids:
+            total_paid += i.payment
+        advance = 0.00
+        for i in self.advance_ids.filtered(lambda l: l.type == 'return'):
+            advance += i.amount
+        self.total_payment = (total_paid + advance)        
 
     @api.model
     @api.depends('total_cost','total_payment')
@@ -101,6 +122,17 @@ class MillContractor(models.Model):
         self.total_qty = total_qty
     
     @api.model
+    @api.depends()
+    def _compute_advance(self):
+        advance = 0.00
+        for i in self.advance_ids:
+            if i.type == 'give':
+                advance += i.amount
+            else:
+                advance -= i.amount
+        self.advance = advance
+        
+    @api.model
     def _default_image(self):
         image_path = get_module_resource('hr', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))    
@@ -119,3 +151,5 @@ class MillContractor(models.Model):
     balance = fields.Float('Balance',compute = "_compute_balance",help = "-ve means contractor ows us money")
     cost_per_mt = fields.Float('Cost/MT',compute = "_compute_cost_per_mt")
     total_qty = fields.Float('Total Qty',compute = "_compute_cost_per_mt")
+    advance_ids = fields.One2many('advance.line','contractor_id','Advance Lines')
+    advance = fields.Float('Advance',compute = "_compute_advance")

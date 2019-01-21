@@ -28,6 +28,7 @@
                         		<field name = "balance" />
                         		<field name = "cost_per_mt" />
                         		<field name = "total_qty" />
+                        		<field name = "advance" />
                         </group>
                         <notebook>
                         		<page string = "Work Lines">
@@ -45,10 +46,21 @@
                         		</page>
                         		<page string = "Payments">
                         			<field name = "payment_line_ids" nolabel = "1">
-                        				<tree strin = "Payment Lines" editable = "top" >
+                        				<tree string = "Payment Lines" editable = "top" >
                         					<field name = "name" />
                         					<field name = "date" />
                         					<field name = "payment" />
+                        					<field name = "remarks" />
+                        				</tree>
+                        			</field>
+                        		</page>
+                        		<page string = "Advance">
+                        			<field name = "advance_ids" nolabel = "1" >
+                        				<tree string = "Advances" editable = "top">
+                        					<field name = "name" />
+                        					<field name = "date" />
+                        					<field name = "type" />
+                        					<field name = "amount" />
                         					<field name = "remarks" />
                         				</tree>
                         			</field>
