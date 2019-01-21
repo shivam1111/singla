@@ -27,7 +27,7 @@ from odoo.modules.module import get_module_resource
 class AdvanceLine(models.Model):
     _name = "advance.line"
     _description  = "Advance Line"
-    _order = "date"
+    _order = "date desc"
     
     @api.model
     def create(self, vals):
@@ -45,7 +45,7 @@ class AdvanceLine(models.Model):
 class ContractorPaymentLine(models.Model):
     _name = "contractor.payment.line"
     _description = "Contractor Payment Line"
-    _order = "date"
+    _order = "date desc"
     
     @api.model
     def create(self, vals):
@@ -62,7 +62,7 @@ class ContractorPaymentLine(models.Model):
 class ContractorMTLine(models.Model):
     _name = "contractor.mt.line"
     _description = "Contractor MT Line"
-    _order = "date"
+    _order = "date desc"
     
     @api.model
     def create(self, vals):
