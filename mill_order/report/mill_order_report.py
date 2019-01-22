@@ -10,6 +10,7 @@ class MillOrderReport(models.Model):
     name = fields.Many2one('size.size','Size')
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty')
+    balance = fields.Float('Balance')
     corner_id = fields.Many2one('corner.type',string = "Corner Type")
     order_id = fields.Many2one('mill.order','Order')
     partner_id = fields.Many2one('res.partner',string = "Customer")
@@ -28,6 +29,7 @@ class MillOrderReport(models.Model):
                 name,
                 SUM(order_qty) as order_qty,
                 SUM(completed_qty) as completed_qty,
+                SUM(order_qty) - SUM(completed_qty)  as balance,
                 order_id,
                 partner_id,
                 state,

@@ -7,8 +7,9 @@
          <field name="arch" type="xml">
              <pivot string="Order Analysis" disable_linking="True">
                  <field name="partner_id" type="row"/>
-                 <field name="name"  type="col"/>
                  <field name="order_qty" type="measure"/>
+                 <field name="completed_qty" type="measure"/>
+                 <field name="balance" type="measure"/>
              </pivot>
          </field>
     </record>
