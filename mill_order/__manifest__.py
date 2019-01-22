@@ -15,7 +15,8 @@
     'data': [
         'views/mill_order_view.xml',
         'report/mill_order_report_view.xml',
-        'report/packing_list_report.xml'
+        'report/packing_list_report.xml',
+        'data/ir_sequence_data.xml',
     ],
     'demo': [
     ],

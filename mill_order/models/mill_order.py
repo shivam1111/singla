@@ -68,8 +68,22 @@ class MillOrderSizeLine(models.Model):
         for i in line_ids:
             total = total + i.completed_qty
         self.completed_qty = total
+
+    @api.model
+    def create(self, vals):
+        vals['ref'] = self.env['ir.sequence'].next_by_code('mill.order.size.line') or _('New')
+        result = super(MillOrderSizeLine, self).create(vals)
+        return result  
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for i in self:
+            result.append((i.id,i.name.name+(i.ref and " ["+i.ref+"]" or "" )))
+        return result                 
         
     name = fields.Many2one('size.size',required=True)
+    ref = fields.Char('Ref')
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty', compute = "_compute_completed_qty",store=True)
     rate = fields.Float("Rate")
