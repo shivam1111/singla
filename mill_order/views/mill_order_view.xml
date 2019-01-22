@@ -45,6 +45,7 @@
 								<group string = "Order Line">
 									<field name = "line_ids" nolabel = "1" >
 										<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
+											<field name = "ref" readonly = "1"/>
 											<field name = "name" />
 											<field name = "order_qty" sum = "Total Ordered Qty" />
 											<field name = "grade_id" />

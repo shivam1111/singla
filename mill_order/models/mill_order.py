@@ -83,7 +83,7 @@ class MillOrderSizeLine(models.Model):
         return result                 
         
     name = fields.Many2one('size.size',required=True)
-    ref = fields.Char('Ref')
+    ref = fields.Char('Ref',default = '/')
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty', compute = "_compute_completed_qty",store=True)
     rate = fields.Float("Rate")
