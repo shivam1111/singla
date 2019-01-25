@@ -17,7 +17,6 @@
        		<field name="model">production.order</field>
        		<field name="arch" type="xml">
        			<form string = "Production Order">
-       				<sheet>
 	                    <div class="oe_title oe_left">
 	                        <h1>
 	                            <field name="name" readonly="1"/>
@@ -40,6 +39,7 @@
 									<field name  = "kg_per_pc" />
 									<field name = "qty" sum = "Total Qty"/>
 									<field name = "grade_id" />
+									<field name = "customer_id" />
 									<field name = "partner_id" />
 									<field name = "heat_no" />
 									<field name = "cc" />
@@ -50,7 +50,6 @@
 	                    <group>
 	                    		<field name = "remarks" nolabel = "1" placeholder = "Notes"/>
 	                    </group>
-       				</sheet>
        			</form>    	
        		</field>
     		</record>	
@@ -85,6 +84,7 @@
 					<field name  = "kg_per_pc" />
 					<field name = "qty" sum = "Total Qty"/>
 					<field name = "grade_id" />
+					<field name = "customer_id" />
 					<field name = "partner_id" />
 					<field name = "heat_no" />
 					<field name = "cc" />
