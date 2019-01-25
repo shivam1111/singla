@@ -101,6 +101,7 @@
                     <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
                     <field name="size_id" string = "Size" operator="child_of"/>
                     <field name="grade_id" string = "Grade" operator="child_of"/>
+                    <field name="customer_id" string = "Customer" operator="child_of"/>
                </search>
             </field>
         </record>   		
