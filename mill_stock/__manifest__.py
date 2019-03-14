@@ -18,7 +18,10 @@
         'views/material_grade_view.xml',
         'views/mill_purchase_order_view.xml',
         'wizard/mill_stock_wizard_view.xml',
-        'wizard/mill_stock_wizard_report.xml'
+        'wizard/mill_stock_wizard_report.xml',
+        'security/ir.model.access.csv',
+        'report/heat_report.xml',
+        'views/heat_view.xml',
     ],
     'demo': [
     ],

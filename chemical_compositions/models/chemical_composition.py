@@ -34,6 +34,7 @@ class CompositionLine(models.Model):
     min_val = fields.Char('Min')
     max_val = fields.Char('Max')
     actual_val = fields.Char('Actual')
+    furnace_val = fields.Char('Furnace Report')
     composition_id = fields.Many2one('chemical.composition','Composition')
     grade_id = fields.Many2one('material.grade','Material Grade')
     sequence = fields.Integer('Sequence') 

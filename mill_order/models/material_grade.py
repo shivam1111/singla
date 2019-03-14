@@ -24,7 +24,7 @@ from odoo.tools.translate import _
 class MaterialGrade(models.Model):
     _name = 'material.grade'
     _description = "Material Grade"
-    
     _inherit = ['mail.thread', 'ir.needaction_mixin']
+
     name = fields.Char(string='Name', required=True)
     

@@ -24,6 +24,11 @@ class StockLine(models.Model):
     qty = fields.Float('Qty')
     purchase_id = fields.Many2one('mill.purchase.order','Purchase Order')
     pcs = fields.Float('Pcs')
-    heat_no = fields.Char('Heat No.')
+    heat_no = fields.Char('Heat No.(Deprecated)',help = "This field has been deprecated.")
+    heat_no_ids = fields.Many2many('heat.heat','stock_line_heat_heat_relation','stock_line_id','heat_id','Heats')
+    state = fields.Selection(selection=[('stock','Stock Updated'),('heats','Heats Updated'),('no_check','Checking Not Required')],default = "stock",required=True)
+    heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
+    
+    
     
     

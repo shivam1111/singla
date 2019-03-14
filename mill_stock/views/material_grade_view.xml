@@ -28,7 +28,6 @@
 		            			<field name = "name" readonly="1"/>
 		            			<field name = "date"/>
 		            			<field name = "partner_id" />
-		            			<field name = "heat_no"/>
 		            			<field name = "pcs" sum = "Total Pcs" />
 		            			<field name = "qty" sum = "Total Available Qty"/>
 	            				<field name = "remarks" />

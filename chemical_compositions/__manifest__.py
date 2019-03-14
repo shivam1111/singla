@@ -16,7 +16,8 @@
         'views/chemical_composition_view.xml',
         'data/ir_sequence_data.xml',
         'report/chemical_composition_report.xml',
-        'report/material_grade_report.xml'
+        'report/material_grade_report.xml',
+        'security/ir.model.access.csv',
     ],
     'demo': [
     ],

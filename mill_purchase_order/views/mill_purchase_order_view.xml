@@ -46,7 +46,6 @@
 	               						<field name = "element_id" />
 	               						<field name = "min_val" />
 	               						<field name = "max_val"/>
-	               						<field name = "actual_val" />
 	               					</tree>																							
 								</field>
 							</page>

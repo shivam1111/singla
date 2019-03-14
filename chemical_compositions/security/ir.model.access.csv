@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+id_access_composition_line,access_composition_line,model_composition_line,,1,1,1,
+id_access_chemical_element,access_chemical_element,model_chemical_element,,1,1,1,

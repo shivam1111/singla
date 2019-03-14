@@ -10,7 +10,7 @@
        				<field name = "date" />
        			</tree>
        		</field>
-    		</record>
+   		</record>
     
        <record id="view_mill_production_order_form" model="ir.ui.view">
        		<field name="name">mill.production.order.form</field>
