@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 id_access_stock_line,access_stock_line,model_stock_line,,1,1,1,
 id_access_heat_heat,access_heat_heat,model_heat_heat,,1,1,1,
+id_access_mill_purchase_order,access_mill_purchase_order,model_mill_purchase_order,,1,0,0,
