@@ -51,6 +51,7 @@
 	                    	<group>
 	                    		<field name = "grade_id" readonly = "1" />
 	                    		<field name = "type" readonly = "1" />
+	                    		<field name = "truck_no" />
 	                    	</group>
 	                    </group>	
 	                    <notebook>
@@ -80,6 +81,7 @@
 					                    		<field name = "date" />
 					                    		<field name = "grade_id" required = "1"  context = "{'onchange':True}"/>
 					                    		<field name = "size" />
+					                    		<field name = "truck_no" />
 					                    	</group>
 					                    </group>
 				                    	<group string = "Chemical Composition Details">
