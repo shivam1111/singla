@@ -31,6 +31,7 @@
 	                    		<field name = "furnace_heat_no" />
 	                    		<field name = "surface_inspection" />
 	                    		<field name = "supervisor_id" />
+	                    		<field name = "truck_no" />
 	                    	</group>
 	                    	<group>
 	                    		<field name = "date" />

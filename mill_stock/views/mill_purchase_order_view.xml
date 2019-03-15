@@ -24,6 +24,7 @@
 		    					<field name = "date"  readonly = "1"/>
 		    					<field name = "partner_id" readonly = "1"/>
 		    					<field name = "grade_id" readonly = "1"/>
+		    					<field name = "truck_no" />
 		    					<field name = "pcs" />
 		    					<field name = "type" invisible = "1" />
 		    					<field name = "qty" />

@@ -28,7 +28,7 @@ class StockLine(models.Model):
     heat_no_ids = fields.Many2many('heat.heat','stock_line_heat_heat_relation','stock_line_id','heat_id','Heats')
     state = fields.Selection(selection=[('stock','Stock Updated'),('heats','Heats Updated'),('no_check','Checking Not Required')],default = "stock",required=True)
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
-    
+    truck_no = fields.Char('Truck No.')
     
     
     

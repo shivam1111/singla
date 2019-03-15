@@ -38,6 +38,7 @@ class Heat(models.Model):
     name = fields.Char('Name',default = '/',required = True)
     furnace_heat_no = fields.Char('Furnace Heat No.',required = True)
     date = fields.Char('Date Rcvd',required=True,default = fields.Date.today)
+    truck_no = fields.Char('Truck No.',related = "stock_line_id.truck_no")
     stock_line_id = fields.Many2one('stock.line','Stock Line')
     grade_id = fields.Many2one(string = "Grade",store=True,related = "stock_line_id.grade_id")
     line_ids = fields.One2many('composition.line','heat_id','Chemical Composition Report')
