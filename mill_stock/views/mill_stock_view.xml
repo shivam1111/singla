@@ -127,6 +127,7 @@
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_mill_stock_line_filter"/>
             <field name = "context">{'search_default_stock_updated':1}</field>
+            <field name = "domain">[('qty','>','0')]</field>
         </record>        
 		
        <menuitem
