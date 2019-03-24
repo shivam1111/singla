@@ -22,6 +22,7 @@
         'report/heat_report.xml',
         'views/heat_view.xml',
         'views/mill_stock_view.xml',
+        'views/chemical_composition_view.xml',
     ],
     'demo': [
     ],

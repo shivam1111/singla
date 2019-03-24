@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_chemical_composition_form_inherit" model="ir.ui.view">
+            <field name="name">chemical.composition.form.inherit</field>
+            <field name="model">chemical.composition</field>
+            <field name="inherit_id" ref="chemical_compositions.view_chemical_compostion_form"/>
+            <field name="arch" type="xml">
+				<xpath expr = "//page/field[@name='line_ids']" position = "before">
+					<group>
+						<field name = "heat_id" />
+					</group>
+				</xpath>				            
+            </field>
+    </record>
+</odoo>
