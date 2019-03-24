@@ -121,6 +121,7 @@
            parent= "mill_production_management_sub_menu"
            sequence= "1"
            action = "action_mill_production_order_line"
+           groups="mill_order.group_raw_material_manager"
             />    		               		
     </data>
 </odoo>

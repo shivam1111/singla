@@ -6,7 +6,7 @@
 					<div class="page">
 						<div class="oe_structure"/>
 			            <div class = "row" style = "padding: 10px;">
-			            		<div class = "text-center">Heat Report</div>
+			            		<div class = "text-center"><h1>Heat Report</h1></div>
 			            </div>						
 			            <div class="row mt32 mb32" id="informations">
 							<div class = "col-xs-3">
@@ -14,15 +14,15 @@
 			                    <p t-field="doc.date" t-options ='{"format": "dd/MM/yyyy"}'/>								
 							</div>
 							<div class = "col-xs-3">
-		                    	<strong>Name:</strong>
+		                    	<strong>SSAI Heat No.</strong>
 		                    	<p t-field="doc.name"/>
 							</div>
 							<div class = "col-xs-3">
-		                    	<strong>Grade:</strong>
+		                    	<strong>Grade</strong>
 		                    	<p t-field="doc.grade_id.name"/>
 							</div>
 							<div class = "col-xs-3">
-			                    <strong>Furnace Heat No.</strong>
+			                    <strong>Supplier Heat No.</strong>
 			                    <p t-field="doc.furnace_heat_no" />								
 							</div>														
 			            </div>						
@@ -32,7 +32,7 @@
 			                    <p t-field="doc.supervisor_id.name" />								
 							</div>
 							<div class = "col-xs-3">
-		                    	<strong>Size:</strong>
+		                    	<strong>Size</strong>
 		                    	<p t-esc="doc.size.name or '-'"/>
 							</div>																					
 							<div class = "col-xs-3">
@@ -47,11 +47,22 @@
 								</t>								
 							</div>
 							<div class = "col-xs-3" >
-								<strong>Supplier</strong>
-								<p t-esc="doc.stock_line_id.partner_id and doc.stock_line_id.partner_id.name or '-'"/>
-							</div>							
+								<strong>Grinding</strong>
+			                    <t t-if="doc.grinding">
+    								<p>
+    									Done
+    								</p>
+								</t>
+			                    <t t-if="not doc.grinding">
+			                    	<p>Not Done</p>
+								</t>																
+							</div>														
 			            </div>
 			            <div class="row mt32 mb32" id="informations">
+							<div class = "col-xs-3" >
+								<strong>Supplier</strong>
+								<p t-esc="doc.stock_line_id.partner_id and doc.stock_line_id.partner_id.name or '-'"/>
+							</div>										            
 							<div class = "col-xs-3">
 			                    <strong>Truck No.</strong>
 			                    <p t-esc="doc.truck_no or '-'" />								

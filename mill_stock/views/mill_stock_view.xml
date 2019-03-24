@@ -62,6 +62,7 @@
                     					<field name = "name" />
                     					<field name = "furnace_heat_no" />
                     					<field name = "grade_id" />
+                    					<field name =  "grinding" />
                     					<button name="%(mill_stock.report_heat_heat)d" string="Print Heat Report" type="action" />
                     				</tree>
                     				<form string = "Heat Details">
@@ -75,6 +76,7 @@
 					                    	<group>
 					                    		<field name = "furnace_heat_no" />
 					                    		<field name = "surface_inspection" />
+					                    		<field name  = "grinding" />
 					                    		<field name = "supervisor_id" />
 					                    	</group>
 					                    	<group>

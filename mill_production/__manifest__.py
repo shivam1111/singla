@@ -18,6 +18,7 @@
         'report/mill_production_report.xml',
         'views/production_order_view.xml',
         'report/production_order_report.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [
     ],

@@ -131,6 +131,7 @@
            parent= "mill_purchase_order_management_main_submenu"
            sequence= "2"
            action = "action_broker_view"
+           groups = "base.group_system"
             />               
         
 	

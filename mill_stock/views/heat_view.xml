@@ -10,6 +10,7 @@
 		    		<field name = "name" />
 		    		<field name = "furnace_heat_no" />
 		    		<field name = "grade_id" />
+					<field name = "grinding" />		    		
 		    		<field name = "size" />
 		    	</tree>
 		    </field>		
@@ -30,6 +31,7 @@
 	                    	<group>
 	                    		<field name = "furnace_heat_no" />
 	                    		<field name = "surface_inspection" />
+	                    		<field name = "grinding" />
 	                    		<field name = "supervisor_id" />
 	                    		<field name = "truck_no" />
 	                    	</group>

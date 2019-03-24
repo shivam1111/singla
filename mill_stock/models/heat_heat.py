@@ -20,8 +20,8 @@ class Heat(models.Model):
         if self._context.get('onchange',False):
             # This means the grade_id field value is being changed
             line_ids = self.grade_id and self.grade_id.line_ids or []
-        elif self.stock_line_id.purchase_id:
-            line_ids = self.stock_line_id.purchase_id.line_ids
+        elif self.sudo().stock_line_id.purchase_id:
+            line_ids = self.sudo().stock_line_id.purchase_id.line_ids
         elif self.grade_id:
             line_ids = self.grade_id.line_ids
         for i in line_ids:
@@ -35,8 +35,9 @@ class Heat(models.Model):
         return result
         
     
-    name = fields.Char('Name',default = '/',required = True)
-    furnace_heat_no = fields.Char('Furnace Heat No.',required = True)
+    name = fields.Char('SSAI Heat No.',default = '/',required = True)
+    furnace_heat_no = fields.Char('Supplier Heat No.',required = True)
+    grinding = fields.Boolean('Grinding')
     date = fields.Char('Date Rcvd',required=True,default = fields.Date.today)
     truck_no = fields.Char('Truck No.',related = "stock_line_id.truck_no")
     stock_line_id = fields.Many2one('stock.line','Stock Line')
