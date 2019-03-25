@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
+from odoo.osv import expression
 
 class CompositionLine(models.Model):
     _inherit = "composition.line"
@@ -28,6 +29,21 @@ class Heat(models.Model):
             data.append((0,0,{'element_id':i.element_id,'min_val':i.min_val,'max_val':i.max_val}))
         self.line_ids = data            
 
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        heats = []
+        heats = self.search([('furnace_heat_no','ilike',name)])
+        res =  super(Heat,self).name_search(name,args,operator,limit)
+        return list(set(res + (heats and heats.name_get() or [])))
+        
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            name = '[' + str(record.furnace_heat_no or "") + ']' + ' ' + record.name
+            result.append((record.id, name))
+        return result    
+    
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('heat.heat') or _('New')
