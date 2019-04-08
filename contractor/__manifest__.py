@@ -15,6 +15,8 @@
     'data': [
         'data/ir_sequence_data.xml',
         'views/mill_contractor_view.xml',
+        'report/mill_contractor_report_view.xml',
+        
     ],
     'demo': [
     ],
