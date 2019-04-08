@@ -41,7 +41,7 @@
 	                    			<field name = "production_line_ids" context = "{'default_type':'production'}">
 	                    				<tree string = "Production" editable = "1">
 	                    					<field name = "name"  readonly = "1"/>
-	                    					<field name = "size_id" widget = "selection" />
+	                    					<field name = "size_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 	                    					<field name = "batch" />
 	                    					<field name = "pcs" sum = "Total Pcs" />
 	                    					<field name = "kg_per_pc" />
