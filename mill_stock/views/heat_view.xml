@@ -30,8 +30,6 @@
 	                    <group>
 	                    	<group>
 	                    		<field name = "furnace_heat_no" />
-	                    		<field name = "surface_inspection" />
-	                    		<field name = "grinding" />
 	                    		<field name = "supervisor_id" />
 	                    		<field name = "truck_no" />
 	                    	</group>
@@ -41,6 +39,20 @@
 	                    		<field name = "size" />
 	                    	</group>
 	                    </group>
+	                    <group string = "Inspection" col="6">
+	                    	<group >
+	                    		<field name = "surface_inspection" />
+	                    	</group>
+	                    	<group>
+	                    		<field name = "grinding" />
+	                    	</group>
+	                    	<group>
+	                    		<field name = "xrf_tested" />
+	                    	</group>
+	                    </group>
+                   		<group>
+                   			<field name = "remarks" />
+                   		</group>
                     	<group string = "Chemical Composition Details">
                     		<field name = "line_ids" nolabel = "1">
                     			<tree string = "Chemical Composition Details" editable = "top">
@@ -51,7 +63,7 @@
                     				<field name = "actual_val" />
                     			</tree>
                     		</field>
-                    	</group>		    			
+                    	</group>	
 		    		</sheet>
 		    	</form>
 		    </field>

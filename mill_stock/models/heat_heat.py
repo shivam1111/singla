@@ -60,6 +60,8 @@ class Heat(models.Model):
     grade_id = fields.Many2one(string = "Grade",store=True,related = "stock_line_id.grade_id")
     line_ids = fields.One2many('composition.line','heat_id','Chemical Composition Report')
     surface_inspection = fields.Boolean('Surface Inspection')
+    xrf_tested = fields.Boolean('XRF Tested')
+    remarks = fields.Text('Remarks')
     size = fields.Many2one('ingot.size','Size')
     supervisor_id = fields.Many2one('res.users','Supervisor',default = lambda self:self.env.user)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env['res.company']._company_default_get('sale.order'))
