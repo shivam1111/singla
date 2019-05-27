@@ -32,6 +32,7 @@ class StockLine(models.Model):
     kva_closing = fields.Float('KVA Cl.')
     units = fields.Float('Units',compute = "_compute_units")
     scrap = fields.Float('Scrap')
+    production_line_id = fields.Many2one('production.order.line','Prooduction Line',help = "This field stores the planned productio line")
     stock_id = fields.Many2one('stock.line','Stock Line')
     
     

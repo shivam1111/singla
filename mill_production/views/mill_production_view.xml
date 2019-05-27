@@ -48,8 +48,9 @@
 	                    					<field name = "qty" sum ="Total Production"/>
 	                    					<field name = "partner_id" />
 	                    					<field name = "heat_no" />
-	                    					<field name = "heat_no_ids" widget="many2many_tags" options="{'no_create_edit': True}" />
+	                    					<field name = "heat_no_ids" widget="many2many_tags" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
 	                    					<field name = "grade_id" />
+	                    					<field name = "production_line_id" string = "Bundle No."   options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
 	                    					<field name = "kwh_opening" />
 	                    					<field name = "kwh_closing" />
 	                    					<field name = "kva_opening" />
