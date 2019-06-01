@@ -1,13 +1,14 @@
 from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
+from odoo import exceptions 
 
 class ProductionOrderLine(models.Model):
     _name="production.order.line"
     _description = "Production Order Line"
     _order = "sequence desc"
     
-    @api.model
+    @api.model 
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('production.bundle') or _('New')
         result = super(ProductionOrderLine, self).create(vals)
@@ -15,7 +16,26 @@ class ProductionOrderLine(models.Model):
     
     @api.onchange('pcs','kg_per_pc')
     def _compute_qty(self):
-        self.qty  = (self.kg_per_pc * self.pcs)/1000    
+        self.qty  = (self.kg_per_pc * self.pcs)/1000
+        
+    @api.multi
+    def view_production_order(self):
+        #Find production line that has the bundle number
+        line_ids = self.env['stock.line'].search([('production_line_id','=',self.id)])
+        if line_ids:
+            return {
+                'name': _('Production Details'),
+                'type': 'ir.actions.act_window',
+                'res_model': 'mill.production',
+                'view_type':'form',
+                'view_mode': 'tree',
+                'view_id': self.env.ref('mill_production.view_mill_production_tree').id,   
+                'context': {},
+                'domain':[('id','in',[i.production_id.id for i in line_ids])],
+                'target':'current'
+            } 
+        else:
+            raise exceptions.Warning('There are no production orders attached to this bundle')      
     
     name = fields.Char('Name', help = "This is also a bundle No.",default = '/')
     size_id = fields.Many2one('size.size',string  = "Size",required = True)

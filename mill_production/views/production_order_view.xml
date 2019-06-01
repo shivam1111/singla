@@ -88,7 +88,8 @@
 					<field name = "partner_id" />
 					<field name = "heat_no" />
 					<field name = "cc" />
-					<field name = "remarks" />       				
+					<field name = "remarks" /> 
+					<button string = "View Production Order" name = "view_production_order" type = "object" />      				
        			</tree>
        		</field>
    		</record>
