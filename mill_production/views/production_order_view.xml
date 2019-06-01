@@ -37,6 +37,7 @@
 									<field name = "corner_id" />
 									<field name = "pcs" />
 									<field name  = "kg_per_pc" />
+									<field name = "flat_length" />
 									<field name = "qty" sum = "Total Qty"/>
 									<field name = "grade_id" />
 									<field name = "customer_id" />

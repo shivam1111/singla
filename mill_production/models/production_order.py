@@ -2,11 +2,26 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 from odoo import exceptions 
+import re
 
 class ProductionOrderLine(models.Model):
     _name="production.order.line"
     _description = "Production Order Line"
     _order = "sequence desc"
+    
+    @api.depends('size_id','kg_per_pc')
+    def _compute_flat_length(self):
+        for i in self:
+            if i.size_id:
+                try:
+                    name_list = re.split("x", i.size_id.name, flags=re.IGNORECASE)
+                    length = float(i.kg_per_pc) / (float(name_list[0]) * float(name_list[1]) * float(0.002389) )
+                    i.flat_length = length
+                except:
+                    raise exceptions.Warning('Please check if the name if the size entered is correct!')
+            else:
+                i.flat_length = 0
+        
     
     @api.model 
     def create(self, vals):
@@ -45,6 +60,7 @@ class ProductionOrderLine(models.Model):
     pcs = fields.Float('Pcs')
     kg_per_pc = fields.Float('Kg/pc')
     qty = fields.Float('Qty')
+    flat_length = fields.Float("Flat Length",compute = "_compute_flat_length")
     grade_id = fields.Many2one('material.grade','Grade')
     partner_id = fields.Many2one('res.partner',help="Mostly furnce, but depends on usage",string = "Furnace")
     customer_id = fields.Many2one('res.partner','Customer')
