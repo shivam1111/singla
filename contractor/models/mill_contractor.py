@@ -91,9 +91,10 @@ class MillContractor(models.Model):
     @api.model
     @api.depends('mt_line_ids','mt_line_ids.qty','mt_line_ids.rate','mt_line_ids.to_pay')
     def _compute_total_cost(self):
-        self._cr.execute('SELECT SUM(to_pay) from contractor_mt_line')
-        total = self._cr.fetchone()[0] or 0.00
-        self.total_cost = total
+        if self.id:
+            self._cr.execute('SELECT SUM(to_pay) from contractor_mt_line where contractor_id = %s'%(self.id))
+            total = self._cr.fetchone()[0] or 0.00
+            self.total_cost = total
 
     @api.model
     @api.depends()
@@ -114,8 +115,9 @@ class MillContractor(models.Model):
     @api.model
     @api.depends()
     def _compute_cost_per_mt(self):
-        self._cr.execute('SELECT SUM(qty) from contractor_mt_line')
-        total_qty = self._cr.fetchone()[0] or 0.00
+        total_qty = 0.00
+        for i in self.mt_line_ids:
+            total_qty = total_qty + i.qty
         try:
             cost_per_mt = self.total_cost/float(total_qty)
         except ZeroDivisionError:
