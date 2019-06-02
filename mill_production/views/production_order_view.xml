@@ -29,23 +29,23 @@
 	                    </div>
 	                    <group>
 	                    		<field name = "line_ids" nolabel = "1">
-								<tree string = "Order Lines" editable = "top">
-									<field name = "sequence" widget = "handle" />
-									<field name = "name" readonly = "1"/>
-									<field name = "size_id" />
-									<field name = "tolerance" />
-									<field name = "corner_id" />
-									<field name = "pcs" />
-									<field name  = "kg_per_pc" />
-									<field name = "flat_length" />
-									<field name = "qty" sum = "Total Qty"/>
-									<field name = "grade_id" />
-									<field name = "customer_id" />
-									<field name = "partner_id" />
-									<field name = "heat_no" />
-									<field name = "cc" />
-									<field name = "remarks" />
-								</tree>	                    		
+									<tree string = "Order Lines"  editable = "top">
+										<field name = "sequence" widget = "handle" />
+										<field name = "name" readonly = "1"/>
+										<field name = "size_id" />
+										<field name = "tolerance" />
+										<field name = "corner_id" />
+										<field name = "pcs" />
+										<field name  = "kg_per_pc" />
+										<field name = "flat_length" />
+										<field name = "qty" sum = "Total Qty"/>
+										<field name = "grade_id" />
+										<field name = "customer_id" />
+										<field name = "partner_id" />
+										<field name = "heat_no" />
+										<field name = "cc" />
+										<field name = "remarks" />
+									</tree>	                    		
 	                    		</field>
 	                    </group>
 	                    <group>

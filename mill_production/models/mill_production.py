@@ -5,7 +5,7 @@ from odoo.tools.translate import _
 class StockLine(models.Model):
     _inherit = "stock.line"
     _description = "Stock Line (Production)"
-    
+
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('stock.line.production') or _('New')
@@ -22,6 +22,7 @@ class StockLine(models.Model):
         self.units = (self.kwh_closing - self.kwh_opening)*10
         
     name = fields.Char('Name')
+    sequence = fields.Integer('sequence', help="Sequence for the handle.",default=10)
     size_id = fields.Many2one('size.size',string  = "Size")
     batch = fields.Float('No. of Batch',help = "Dhakku")
     kg_per_pc = fields.Float('Kg/pc')
