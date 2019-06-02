@@ -287,6 +287,7 @@
 		    <field name="arch" type="xml">
 		        <tree string="Material Grade" >
 					<field name = "name" />
+					<field name = "color_id" />
 		        </tree>
 	        </field>
         </record>

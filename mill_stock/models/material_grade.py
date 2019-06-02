@@ -34,5 +34,4 @@ class MaterialGrade(models.Model):
     
     qty = fields.Float('Qty',compute = "_compute_qty",store=True)
     stock_line_ids = fields.One2many('stock.line','grade_id','Stock')
-    color_code = fields.Char('Color Code')
     

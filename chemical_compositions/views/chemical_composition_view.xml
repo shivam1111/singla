@@ -183,6 +183,7 @@
 							</group>
 							<group>
 								<field name= "name_str" />
+								<field name = "color_id" widget = "selection" />
 							</group>
 						</group>
 	                    <notebook>
@@ -224,6 +225,35 @@
            parent= "chemical_composition_management_main_submenu"
            sequence= "3"
            action = "action_material_grade"
-            />       
+            /> 
+            
+		<!-- color.color -->
+		<record id="view_color_color_tree" model="ir.ui.view">
+		    <field name="name">color.color.tree</field>
+		    <field name="model">color.color</field>
+		    <field name="arch" type="xml">
+		        <tree string="Color" editable = "top">
+		        	<field name  = "name" />
+		        </tree>
+	        </field>		
+        </record>
+
+        <record id="action_color_color" model="ir.actions.act_window">
+            <field name="name">Color</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">color.color</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>        
+		
+       <menuitem
+           id= "color_color_sub_submenu"
+           parent= "chemical_composition_management_main_submenu"
+           sequence= "3"
+           action = "action_color_color"
+            />        
+        
+		      
        		    
 </odoo>

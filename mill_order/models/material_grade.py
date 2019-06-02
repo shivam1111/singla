@@ -20,6 +20,12 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 
+class Color(models.Model):
+    _name = "color.color"
+    _description = "Color"
+    
+    name = fields.Char('Color')
+
 
 class MaterialGrade(models.Model):
     _name = 'material.grade'
@@ -27,4 +33,5 @@ class MaterialGrade(models.Model):
     _inherit = ['mail.thread', 'ir.needaction_mixin']
 
     name = fields.Char(string='Name', required=True)
+    color_id = fields.Many2one('color.color','Color')
     
