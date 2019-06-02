@@ -7,7 +7,7 @@ import re
 class ProductionOrderLine(models.Model):
     _name="production.order.line"
     _description = "Production Order Line"
-    _order = "sequence desc"
+    _order = "sequence"
     
     @api.depends('size_id','kg_per_pc')
     def _compute_flat_length(self):
