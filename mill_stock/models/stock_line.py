@@ -2,17 +2,16 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 
-
 class StockLine(models.Model):
     _name = 'stock.line'
     _description = "Stock Line"
     _order = "date desc"
+    
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('stock.line') or _('New')
         result = super(StockLine, self).create(vals)
         return result
-        
     
     name = fields.Char('Name',default = '/',required = True)
     date = fields.Char('Date',required=True,default = fields.Date.today)

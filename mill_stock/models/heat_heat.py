@@ -61,6 +61,7 @@ class Heat(models.Model):
     line_ids = fields.One2many('composition.line','heat_id','Chemical Composition Report')
     surface_inspection = fields.Boolean('Surface Inspection')
     xrf_tested = fields.Boolean('XRF Tested')
+    state = fields.Selection([('ok','OK'),('non_confirmance','Non Confirmance'),('rejected','Rejected'),('resolved','Resolved')],default='ok',string = "State")
     remarks = fields.Text('Remarks')
     size = fields.Many2one('ingot.size','Size')
     supervisor_id = fields.Many2one('res.users','Supervisor',default = lambda self:self.env.user)
