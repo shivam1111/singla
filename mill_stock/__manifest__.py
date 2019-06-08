@@ -23,6 +23,9 @@
         'views/heat_view.xml',
         'views/mill_stock_view.xml',
         'views/chemical_composition_view.xml',
+        'views/test_test_view.xml',
+        'report/test_report.xml',
+        'report/test_report_print.xml'
     ],
     'demo': [
     ],

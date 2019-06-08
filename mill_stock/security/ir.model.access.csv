@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 id_access_stock_line,access_stock_line,model_stock_line,,1,1,1,
 id_access_heat_heat,access_heat_heat,model_heat_heat,,1,1,1,
+id_test_test,access_test_test,model_test_test,,1,1,1,
+id_test_line,access_test_line,model_test_line,,1,1,1,1

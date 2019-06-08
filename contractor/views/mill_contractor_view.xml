@@ -34,7 +34,7 @@
                         		<page string = "Work Lines">
                         			<field name = "mt_line_ids" nolabel = "1">
                         				<tree string = "Work Lines" editable = "top">
-                        					<field name = "name" />
+                        					<field name = "name"/>
                         					<field name = "date" />
                         					<field name = "partner_id" />
                         					<field name = "qty" sum = "Total Qty"/>

@@ -126,7 +126,7 @@
         </record>		
 
         <record id="action_chemical_composition" model="ir.actions.act_window">
-            <field name="name">Compositions</field>
+            <field name="name">Test Certificates</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">chemical.composition</field>
             <field name="view_type">form</field>
