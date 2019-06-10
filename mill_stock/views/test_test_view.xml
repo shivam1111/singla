@@ -28,6 +28,7 @@
 		                    		<field name = "name" readonly = "1"/>
 		                    		<field name = "date" />
 		                    		<field name = "heat_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
+		                    		<field name = "heat_print_name" />
 		                    		<field name = "supplier_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 		                    		<field name = "grade_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 		                    		<field name = "remarks" />

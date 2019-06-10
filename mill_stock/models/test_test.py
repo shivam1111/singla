@@ -27,6 +27,11 @@ class TestLine(models.Model):
     _name = "test.line"
     _description = "Test Line"
     
+    @api.onchange('heat_id')
+    def onchange_heat_id(self):
+        if self.heat_id:
+            self.heat_print_name = self.heat_id.name_get()[0][1]
+    
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('test.line') or _('New')
@@ -37,6 +42,7 @@ class TestLine(models.Model):
     supplier_id = fields.Many2one('res.partner','Supplier')
     grade_id = fields.Many2one('material.grade','Grade')
     heat_id = fields.Many2one('heat.heat','Heat No.')
+    heat_print_name = fields.Char('Heat Print Name',required=True)
     remarks = fields.Char('Remarks')
     date = fields.Date('Date',default = fields.Date.today)
     test_id = fields.Many2one('test.test','Test')
@@ -52,7 +58,7 @@ class Test(models.Model):
         return result    
     
     name = fields.Char('Name',default = '/',required = True)
-    partner_id = fields.Many2one('res.partner','Lab')
+    partner_id = fields.Many2one('res.partner','Lab',required=True)
     date = fields.Date('Date',default = fields.Date.today)
     line_ids = fields.One2many('test.line','test_id','Test Lines')
     
