@@ -28,7 +28,7 @@
 			            		<t t-foreach="doc.line_ids" t-as="l">
 			            			<tr>
 			            				<td><span t-esc="l_index + 1" /></td>
-			            				<td><span t-esc = "l.heat_id.furnace_heat_no + '[' + l.heat_id.name +']'" /></td>
+			            				<td><span t-esc = "l.heat_print_name" /></td>
 			            				<td><span t-esc = "l.grade_id.name" /></td>
 			            				<td><span t-esc =  "l.remarks" /></td>
 			            			</tr>
