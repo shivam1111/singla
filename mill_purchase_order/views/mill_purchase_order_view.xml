@@ -67,7 +67,6 @@
        				<field name = "name" />
        				<field name = "partner_id" />
        				<field name = "date_order"/>
-       				<field name = "date_delivery" />
        				<field name = "state" invisible="1"/>
        				<field name = "material_ordered" sum ="Total Ordered" />
        				<field name = "material_received" sum ="Total Completed" />
