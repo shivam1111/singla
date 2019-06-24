@@ -7,17 +7,15 @@ class TestReport(models.Model):
     _description = "Test Report"
     _auto = False
     
-    date = fields.Date('Date',default = fields.Date.today)
-    grade_id = fields.Many2one('material.grade','Grade')
-    supplier_id = fields.Many2one('res.partner','Supplier')
+    date = fields.Char('Date')
+    count = fields.Integer('Count')
     
     def _select(self):
         select_str = """
             select 
                 min(l.id) as id,
-                date,
-                grade_id,
-                supplier_id
+                to_char(date,'Mon-YY') as date,
+                count(*) as count
         """ 
         return select_str
     
@@ -29,9 +27,8 @@ class TestReport(models.Model):
         
     def _group_by(self):
         group_by_str = """
-            GROUP BY date,
-                    grade_id,
-                    supplier_id
+            GROUP BY date
+
         """
         return group_by_str    
     
