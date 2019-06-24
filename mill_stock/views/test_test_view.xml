@@ -5,6 +5,18 @@
            parent= "chemical_compositions.chemical_composition_management_main_menu"
            sequence= "1"
            name= "Lab Tests" />
+           
+	<record id = "view_test_test_tree" model = "ir.ui.view">
+	    <field name="name">test.test.tree</field>
+	    <field name="model">test.test</field>
+	    <field name="arch" type="xml">	
+		    <tree string = "Lab Test Records">
+		    	<field name = "name" />
+		    	<field name = "date" />
+		    </tree>	
+	    </field>
+	</record>
+
 
 	<record id="view_test_test_form" model="ir.ui.view">
 	    <field name="name">test.test.form</field>
@@ -47,7 +59,7 @@
         <field name="res_model">test.test</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{}</field>
+        <field name="context">{'group_by':'date'}</field>
     </record>        
 
    <menuitem
