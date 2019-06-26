@@ -22,13 +22,13 @@ class TestReport(models.Model):
     def _from(self):
         from_str = """
             test_line  l
+            where test_id is not null 
         """
         return from_str
         
     def _group_by(self):
         group_by_str = """
             GROUP BY date
-
         """
         return group_by_str    
     
@@ -41,4 +41,3 @@ class TestReport(models.Model):
             FROM  %s 
             %s
             )""" % (self._table, self._select(), self._from(), self._group_by()))
-

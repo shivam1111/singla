@@ -45,7 +45,7 @@ class TestLine(models.Model):
     heat_print_name = fields.Char('Heat Print Name',required=True)
     remarks = fields.Char('Remarks')
     date = fields.Date('Date',default = fields.Date.today,requred=True)
-    test_id = fields.Many2one('test.test','Test')
+    test_id = fields.Many2one('test.test',string = "Test",ondelete='cascade', index=True, copy=False)
 
 class Test(models.Model):
     _name = "test.test"
