@@ -1,7 +1,6 @@
 from odoo import tools
 from odoo import api, fields, models
 
-
 class TestReport(models.Model):
     _name = "test.report"
     _description = "Test Report"

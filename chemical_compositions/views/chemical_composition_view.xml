@@ -47,6 +47,7 @@
 	                    			<field name = "no_of_pieces" />
 	                    			<field name = "size" />
 	                    			<field name = "rate_extra" />
+	                    			<field name = "mechanical_properties" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "grade_id" />
@@ -96,6 +97,17 @@
                     						<field name = "no_of_pcs" />
                     					</tree>
                     				</field>
+                    			</page>
+                    			<page string = "Mechanical Properties" attrs = "{'invisible':[('mechanical_properties','=',False)]}">
+                    				<group>
+	                    				<group>
+		                    				<field name = "ultimate_tensile_strength" />
+		                    				<field name = "elongation" />                    				
+	                    				</group>
+	                    				<group>
+	                    					<field name = "yield_strength" />
+	                    				</group>                    				
+                    				</group>
                     			</page>
                     		</notebook>	                    
 		    			</sheet>

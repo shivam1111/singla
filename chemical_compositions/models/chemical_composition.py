@@ -77,5 +77,10 @@ class ChemicalComposition(models.Model):
     complete_decarb = fields.Float('Complete Decarb')
     partial_decarb = fields.Float('Partial Decarb')
     grain_size = fields.Float('Grain Size')
+    mechanical_properties = fields.Boolean('Mechanical Properties',default = False)
+    ultimate_tensile_strength = fields.Float('Ultimate Tensile Strength (N/mm2)')
+    yield_strength = fields.Float('Yield Strength (N/mm2)')
+    elongation = fields.Float('Elongation %')
+    
     
     

@@ -82,6 +82,20 @@
 			            		</tbody>
 			            </table>
 		            </div>
+					<div t-if="doc.mechanical_properties" class="row mt32 mb32" id="informations">
+		                <div  class="col-xs-4 text-center">
+		                    <strong>Ultimate Tensile Strength</strong>
+		                    <p t-esc="doc.ultimate_tensile_strength and str(doc.ultimate_tensile_strength) + ' N/mm2' or '-'"/>
+		                </div>
+		                <div class="col-xs-4 text-center">
+		                    <strong>Yield Strength</strong>
+		                    <p t-esc="doc.yield_strength and str(doc.yield_strength) + ' N/mm2' or '-'"/>		                	
+		                </div>
+		                <div class="col-xs-4 text-center">
+		                    <strong>Elongation %</strong>
+		                    <p t-esc="doc.elongation and doc.elongation or '-'"/>		                	
+		                </div>		                
+					</div>		            
 		            <div class = "row">
 		            		<div class = "col-xs-6">
 		            			<table class = "table table-striped">
