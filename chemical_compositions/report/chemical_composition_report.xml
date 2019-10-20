@@ -8,7 +8,7 @@
 					<div class = "row">
 						<div class="col-xs-3">
                 				<img t-if="doc.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.company_id.logo" style="max-height: 45px;"/>
-            				</div>						
+            			</div>						
 					</div>		        	
 		        </div>
 		        <div class="page">
@@ -205,7 +205,7 @@
 		            			<p>
 		            			1. Fully killed by 'Al' &amp; 'Si' and made to attain fine grain precise<br/>
 		            			2. Material is free from lead &amp; mercury<br/>
-		            			3. 'Al' added to keep Al inn the range 0.020% to 0.050%<br/>
+		            			3. 'Al' added to keep Al in the range 0.020% to 0.050%<br/>
 		            			4. Product does not contain any radioactive material.<br/>
 		            			</p>
 			            	</div>
