@@ -47,7 +47,7 @@
 	                    			<field name = "no_of_pieces" />
 	                    			<field name = "size" />
 	                    			<field name = "rate_extra" />
-	                    			<field name = "mechanical_properties" />
+	                    			<field name = "quantity_details" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "grade_id" />
@@ -62,24 +62,33 @@
 	                    		<group>
 	                    			<field name = "min_hardness" />
 	                    			<field name = "complete_decarb" />
+	                    			<field name = "reduction_ratio" />
+	                    			<field name = "spark_test" />
+	                    			<field name = "is_mpi" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "max_hardness" />
 	                    			<field name = "partial_decarb" />
 	                    			<field name = "grain_size" />
+	                    			<filed name = "surface_inspection" />
 	                    		</group>
 	                    </group>
                     		<notebook>
                     			<page string = "Chemical Composition">
-                    				<field name = "line_ids" nolabel = "1" >
-                    					<tree string = "Composition Line" editable = "1">
-                    						<field name = "sequence" widget="handle"/>
-                    						<field name = "element_id" />
-                    						<field name = "min_val" />
-                    						<field name = "max_val"/>
-                    						<field name = "actual_val" />
-                    					</tree>
-                    				</field>
+	                    				<field name = "line_ids" nolabel = "1" >
+	                    					<tree string = "Composition Line" editable = "1">
+	                    						<field name = "sequence" widget="handle"/>
+	                    						<field name = "element_id" />
+	                    						<field name = "min_val" />
+	                    						<field name = "max_val"/>
+	                    						<field name = "actual_val" />
+	                    					</tree>
+	                    				</field>
+                    				<group>
+                    					<field name = "carbon_equivalence" />
+                    					<field name = "nicrmo" />
+                    				</group>
+	                    				
                     			</page>
                     			<page string = "Inclusion Rating">
                     				<field name = "inclusion_rating_ids" nolabel = "1">
@@ -98,7 +107,7 @@
                     					</tree>
                     				</field>
                     			</page>
-                    			<page string = "Mechanical Properties" attrs = "{'invisible':[('mechanical_properties','=',False)]}">
+                    			<page string = "Mechanical Properties">
                     				<group>
 	                    				<group>
 		                    				<field name = "ultimate_tensile_strength" />

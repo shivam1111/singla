@@ -56,6 +56,7 @@ class ChemicalComposition(models.Model):
         for i in self.grade_id.line_ids:
             data.append((0,0,{'element_id':i.element_id,'min_val':i.min_val,'max_val':i.max_val}))
         self.line_ids = data
+    
     name = fields.Char('Name')
     partner_id = fields.Many2one('res.partner','Partner')
     no_of_pieces = fields.Float('Number of Pieces')
@@ -77,10 +78,18 @@ class ChemicalComposition(models.Model):
     complete_decarb = fields.Float('Complete Decarb')
     partial_decarb = fields.Float('Partial Decarb')
     grain_size = fields.Float('Grain Size')
-    mechanical_properties = fields.Boolean('Mechanical Properties',default = False)
+#     mechanical_properties = fields.Boolean('Mechanical Properties',default = False)
     ultimate_tensile_strength = fields.Float('Ultimate Tensile Strength (N/mm2)')
     yield_strength = fields.Float('Yield Strength (N/mm2)')
     elongation = fields.Float('Elongation %')
-    
+    quantity_details = fields.Boolean('Quantity Details',default=False)
+    reduction_ratio = fields.Char('Reduction Ratio')
+    spark_test = fields.Boolean('Spark Test',default=False)
+    is_xrf = fields.Boolean ('XRF Test',default=True)
+    is_ut = fields.Boolean('UT Test')
+    is_mpi = fields.Boolean('MPI')
+    carbon_equivalence = fields.Float('Carbon Equivalence',default = 0.00,help = "%C + (%Mn/6) + 1/20")
+    nicrmo = fields.Float('Ni+Cr+Mo')
+    surface_inspection = fields.Selection([('ok','Ok'),('dentfree','Free from Dent')],default = 'dentfree')
     
     

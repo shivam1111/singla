@@ -78,86 +78,74 @@
 				            					<t t-esc="l.actual_val"/>
 				            				</td>
 				            			</t>		            						            				
-			            			</tr>		            			            			
+			            			</tr>	
+			            			<tr class = "table-condensed">
+			            				<td>Carbon Equivalence</td>
+			            				<td><t t-esc="doc.carbon_equivalence" /></td>
+			            				<td>Ni+Cr+Mo</td>
+			            				<td><t t-esc="doc.nicrmo" /></td>
+			            			</tr>	            			            			
 			            		</tbody>
 			            </table>
-		            </div>
-					<div t-if="doc.mechanical_properties" class="row mt32 mb32" id="informations">
-		                <div  class="col-xs-4 text-center">
-		                    <strong>Ultimate Tensile Strength</strong>
-		                    <p t-esc="doc.ultimate_tensile_strength and str(doc.ultimate_tensile_strength) + ' N/mm2' or '-'"/>
-		                </div>
-		                <div class="col-xs-4 text-center">
-		                    <strong>Yield Strength</strong>
-		                    <p t-esc="doc.yield_strength and str(doc.yield_strength) + ' N/mm2' or '-'"/>		                	
-		                </div>
-		                <div class="col-xs-4 text-center">
-		                    <strong>Elongation %</strong>
-		                    <p t-esc="doc.elongation and doc.elongation or '-'"/>		                	
-		                </div>		                
-					</div>		            
-		            <div class = "row">
-		            		<div class = "col-xs-6">
-		            			<table class = "table table-striped">
-		            				<caption>DECARB DEPTH</caption>
-		            				<thead>
-		            					<th>COMPLETE</th>
-		            					<th>PARTIAL</th>
-		            					<th>GRAIN SIZE</th>
-		            				</thead>
-		            				<tbody>
-		            					<tr>
-		            						<td><t t-esc="doc.complete_decarb or '-'" /></td>
-		            						<td><t t-esc="doc.partial_decarb or '-'" /></td>
-		            						<td><t t-esc="doc.grain_size or '-'" /></td>
-		            					</tr>
-		            				</tbody>
-		            			</table>
-		            		</div>
-		            		<div class = "col-xs-6">
-		            			<table class = "table table-striped">
-		            				<caption>HARDNESS(BH No.)</caption>
-		            				<thead>
-	            						<th>MIN</th>
-	            						<th>MAX</th>
-		            				</thead>
-		            				<tbody>
-		            					<tr>
-		            						<td><t t-esc="doc.min_hardness or '-'" /></td>
-		            						<td><t t-esc="doc.max_hardness or '-'" /></td>
-		            					</tr>
-		            				</tbody>
-		            			</table>
-		            		</div>
-		            </div>
-		            <div class = "row">
-			            <div class = "col-xs-6">
-			            		<table class = "table table-striped">
-			            			<caption>QUANTITY DETAILS</caption>
+			            <!-- <table t-if="doc.mechanical_properties" class = "table table-condensed"> -->
+			            <table  class = "table table-condensed">
+		            		<caption>MECHANICAL PROPERTIES</caption>
+		            		<tr>
+		            			<th>Ultimate Tensile Strength:</th>
+		            			<td><p t-esc="doc.ultimate_tensile_strength and str(doc.ultimate_tensile_strength) + ' N/mm2' or '-'"/></td>
+		            			<th>Yield Strength:</th>
+		            			<td><p t-esc="doc.yield_strength and str(doc.yield_strength) + ' N/mm2' or '-'"/></td>
+		            			<th>Elongation %:</th>
+		            			<td><p t-esc="doc.elongation and doc.elongation or '-'"/></td>
+		            		</tr>
+		            		<tr>
+		            			<th>Reduction Ratio:</th>
+		            			<td><p t-esc="doc.reduction_ratio and doc.reduction_ratio or '-'"/></td>
+		            			<th>Spark Test:</th>
+		            			<td>
+		            				<t t-if="doc.spark_test">Yes</t>
+		            				<t t-if="not doc.spark_test">No</t>
+		            			</td>
+		            			<th>XRF Test:</th>
+		            			<td>
+		            				<t t-if="doc.is_xrf">Yes</t>
+		            				<t t-if="not doc.is_xrf">No</t>
+		            			</td>		            			
+		            		</tr>
+		            		<tr>
+		            			<th>UT Test:</th>
+		            			<td>
+		            				<t t-if="doc.is_ut">Yes</t>
+		            				<t t-if="not doc.is_ut">No</t>
+		            			</td>		            					            					            		
+		            			<th>Surface Condition:</th>
+		            			<td><t t-if = "doc.surface_inspection"><span t-field = "doc.surface_inspection" ></span></t></td>
+		            			<th>Internal Soundness:</th>
+		            			<td>Ok</td>		            			
+		            		</tr>
+		            		<tr>
+		            			<th>MPI</th>
+		            			<td>		            
+		            				<t t-if="doc.is_mpi">Yes</t>
+		            				<t t-if="not doc.is_mpi">No</t>
+	            				</td>
+		            			<th>Hardness(BHN) MIN</th>
+		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
+		            			<th>Hardness(BHN) MAX</th>
+		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            				
+		            		</tr>
+		            		<tr>
+		            			<th>Complete Decarb Depth</th>
+		            			<td><t t-esc="doc.complete_decarb or '-'" /></td>
+		            			<th>Partial Decarb Depth</th>
+		            			<td><t t-esc="doc.partial_decarb or '-'" /></td>
+	            				<th>Grain Size</th>
+	            				<td><t t-esc="doc.grain_size or '-'" /></td>
+		            		</tr>		            		
+			            </table> 
+			            <table class = "table table-striped" >
 			            			<thead>
-			            				<th>LENGTH(MM)</th>
-			            				<th>NO OF PCS</th>
-			            			</thead>
-			            			<tbody>
-			            				<t t-if = "doc.length_detail_ids">
-	            							<t t-foreach="doc.length_detail_ids"  t-as = "l">
-	            								<tr>
-	            									<td><t t-esc='l.name' /></td>
-	            									<td><t t-esc='l.no_of_pcs' /></td>
-	            								</tr>
-	            							</t>
-            							</t>	
-            							<t t-if = "not doc.length_detail_ids">
-            								<tr><td>-</td><td>-</td></tr>
-            							</t>
-			            			</tbody>
-			            		</table>			            			            		
-			            </div>
-			            <div class = "col-xs-6" >
-			            		<table class = "table table-striped">
-			            			<caption>INCLUSION RATING</caption>
-			            			<thead>
-			            				<th>TYPE</th>
+			            				<th>INCLUSION TYPE</th>
 			            				<th>A</th>
 			            				<th>B</th>
 			            				<th>C</th>
@@ -193,13 +181,35 @@
 											<td>-</td>
 											<td>-</td>											
 										</tr>											
-									</t>
-									
+									</t>			            			
+			            			</tbody>			            	
+			            </table>
+		            </div>
+		            <!-- <div class = "row">
+			            <div t-if = "doc.quantity_details" class = "col-xs-6">
+			            		<table class = "table table-striped">
+			            			<caption>QUANTITY DETAILS</caption>
+			            			<thead>
+			            				<th>LENGTH(MM)</th>
+			            				<th>NO OF PCS</th>
+			            			</thead>
+			            			<tbody>
+			            				<t t-if = "doc.length_detail_ids">
+	            							<t t-foreach="doc.length_detail_ids"  t-as = "l">
+	            								<tr>
+	            									<td><t t-esc='l.name' /></td>
+	            									<td><t t-esc='l.no_of_pcs' /></td>
+	            								</tr>
+	            							</t>
+            							</t>	
+            							<t t-if = "not doc.length_detail_ids">
+            								<tr><td>-</td><td>-</td></tr>
+            							</t>
 			            			</tbody>
-			            		</table>
-			            </div>
-		            	</div>
-		            	<t t-if = "doc.attested">
+			            		</table>			            			            		
+			            </div>			            
+	            	</div>  -->
+	            	<t t-if = "doc.attested">
 			            	<div style = "page-break-before:always;padding: 10px;" class = "row">
 			            		<strong>REMARKS</strong>
 		            			<p>
@@ -220,7 +230,7 @@
 			            			<span style = "position:absolute;bottom:0px;text-align:center;">Authorised By</span>
 			            		</div>		            				            		
 			            	</div>		            	
-		            	</t>
+	            	</t>
 		        </div>
 		        <div class = "footer">
 		        </div>
