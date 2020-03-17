@@ -80,9 +80,9 @@
 				            			</t>		            						            				
 			            			</tr>	
 			            			<tr class = "table-condensed">
-			            				<td>Carbon Equivalence</td>
+			            				<th>Carbon Equivalence</th>
 			            				<td><t t-esc="doc.carbon_equivalence" /></td>
-			            				<td>Ni+Cr+Mo</td>
+			            				<th>Ni+Cr+Mo</th>
 			            				<td><t t-esc="doc.nicrmo" /></td>
 			            			</tr>	            			            			
 			            		</tbody>
