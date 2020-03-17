@@ -70,7 +70,8 @@
 	                    			<field name = "max_hardness" />
 	                    			<field name = "partial_decarb" />
 	                    			<field name = "grain_size" />
-	                    			<filed name = "surface_inspection" />
+	                    			<field name = "surface_inspection" />
+	                    			<field name = "is_ut" />
 	                    		</group>
 	                    </group>
                     		<notebook>
