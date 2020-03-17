@@ -124,26 +124,30 @@
 		            			<td>Ok</td>		            			
 		            		</tr>
 		            		<tr>
-		            			<th>MPI</th>
+		            			<th>MPI:</th>
 		            			<td>		            
 		            				<t t-if="doc.is_mpi">Yes</t>
 		            				<t t-if="not doc.is_mpi">No</t>
 	            				</td>
-		            			<th>Hardness(BHN) MIN</th>
+		            			<th>Hardness(BHN) MIN:</th>
 		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
-		            			<th>Hardness(BHN) MAX</th>
+		            			<th>Hardness(BHN) MAX:</th>
 		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            				
 		            		</tr>
 		            		<tr>
-		            			<th>Complete Decarb Depth</th>
+		            			<th>Complete Decarb Depth:</th>
 		            			<td><t t-esc="doc.complete_decarb or '-'" /></td>
-		            			<th>Partial Decarb Depth</th>
+		            			<th>Partial Decarb Depth:</th>
 		            			<td><t t-esc="doc.partial_decarb or '-'" /></td>
-	            				<th>Grain Size</th>
+	            				<th>Grain Size:</th>
 	            				<td><t t-esc="doc.grain_size or '-'" /></td>
 		            		</tr>		            		
 			            </table> 
-			            <table class = "table table-striped" >
+		            </div>
+		            <div class = "row">
+		            	<div class = "col-xs-6">
+		            		<table class = "table table-striped">
+		            			<caption>INCLUSIOSN RATING</caption>
 			            			<thead>
 			            				<th>INCLUSION TYPE</th>
 			            				<th>A</th>
@@ -182,10 +186,9 @@
 											<td>-</td>											
 										</tr>											
 									</t>			            			
-			            			</tbody>			            	
-			            </table>
-		            </div>
-		            <!-- <div class = "row">
+		            			</tbody>			            			            			
+	            			</table>
+		            	</div>
 			            <div t-if = "doc.quantity_details" class = "col-xs-6">
 			            		<table class = "table table-striped">
 			            			<caption>QUANTITY DETAILS</caption>
@@ -208,7 +211,7 @@
 			            			</tbody>
 			            		</table>			            			            		
 			            </div>			            
-	            	</div>  -->
+	            	</div>
 	            	<t t-if = "doc.attested">
 			            	<div style = "page-break-before:always;padding: 10px;" class = "row">
 			            		<strong>REMARKS</strong>
