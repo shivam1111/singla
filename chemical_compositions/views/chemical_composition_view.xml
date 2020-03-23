@@ -47,7 +47,6 @@
 	                    			<field name = "no_of_pieces" />
 	                    			<field name = "size" />
 	                    			<field name = "rate_extra" />
-	                    			<field name = "quantity_details" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "grade_id" />
@@ -55,7 +54,6 @@
 	                    			<field name = "truck_no" />
 	                    			<field name = "heat_no" />
 	                    			<field name = "color_code" />
-	                    			<field name = "attested" />
 	                    		</group>
 	                    </group>
 	                    <group string = "Metalurgical Properties">

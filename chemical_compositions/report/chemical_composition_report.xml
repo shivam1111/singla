@@ -81,9 +81,9 @@
 			            			</tr>	
 			            			<tr class = "table-condensed">
 			            				<th>Carbon Equivalence</th>
-			            				<td><t t-esc="doc.carbon_equivalence" /></td>
+			            				<td><t t-esc="doc.carbon_equivalence or '-'" /></td>
 			            				<th>Ni+Cr+Mo</th>
-			            				<td><t t-esc="doc.nicrmo" /></td>
+			            				<td><t t-esc="doc.nicrmo or '-'" /></td>
 			            			</tr>	            			            			
 			            		</tbody>
 			            </table>
@@ -97,10 +97,10 @@
 		            			<td><p t-esc="doc.yield_strength and str(doc.yield_strength) + ' N/mm2' or '-'"/></td>
 		            			<th>Elongation %:</th>
 		            			<td><p t-esc="doc.elongation and doc.elongation or '-'"/></td>
-		            		</tr>
-		            		<tr>
 		            			<th>Reduction Ratio:</th>
 		            			<td><p t-esc="doc.reduction_ratio and doc.reduction_ratio or '-'"/></td>
+		            		</tr>
+		            		<tr>
 		            			<th>Spark Test:</th>
 		            			<td>
 		            				<t t-if="doc.spark_test">Yes</t>
@@ -110,38 +110,37 @@
 		            			<td>
 		            				<t t-if="doc.is_xrf">Yes</t>
 		            				<t t-if="not doc.is_xrf">No</t>
-		            			</td>		            			
-		            		</tr>
-		            		<tr>
+		            			</td>
 		            			<th>UT Test:</th>
 		            			<td>
 		            				<t t-if="doc.is_ut">Yes</t>
 		            				<t t-if="not doc.is_ut">No</t>
-		            			</td>		            					            					            		
-		            			<th>Surface Condition:</th>
-		            			<td><t t-if = "doc.surface_inspection"><span t-field = "doc.surface_inspection" ></span></t></td>
-		            			<th>Internal Soundness:</th>
-		            			<td>Ok</td>		            			
-		            		</tr>
-		            		<tr>
+		            			</td>
 		            			<th>MPI:</th>
 		            			<td>		            
 		            				<t t-if="doc.is_mpi">Yes</t>
 		            				<t t-if="not doc.is_mpi">No</t>
-	            				</td>
-		            			<th>Hardness(BHN) MIN:</th>
-		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
-		            			<th>Hardness(BHN) MAX:</th>
-		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            				
+	            				</td>		            					            					            					            				            					            			
+		            		</tr>
+		            		<tr>
+		            			<th>Surface Condition:</th>
+		            			<td><t t-if = "doc.surface_inspection"><span t-field = "doc.surface_inspection" ></span></t></td>
+		            			<th>Internal Soundness:</th>
+		            			<td>Ok</td>
+	            				<th>Grain Size:</th>
+	            				<td><t t-esc="doc.grain_size or '-'" /></td>
+	            				<td></td><td></td>		            			
 		            		</tr>
 		            		<tr>
 		            			<th>Complete Decarb Depth:</th>
 		            			<td><t t-esc="doc.complete_decarb or '-'" /></td>
 		            			<th>Partial Decarb Depth:</th>
 		            			<td><t t-esc="doc.partial_decarb or '-'" /></td>
-	            				<th>Grain Size:</th>
-	            				<td><t t-esc="doc.grain_size or '-'" /></td>
-		            		</tr>		            		
+		            			<th>HARDNESS MIN(BHN):</th>
+		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
+		            			<th>HARDNESS MAX(BHN):</th>
+		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            						            					            					            			
+		            		</tr>
 			            </table> 
 		            </div>
 		            <div class = "row">
@@ -189,54 +188,54 @@
 		            			</tbody>			            			            			
 	            			</table>
 		            	</div>
-			            <div t-if = "doc.quantity_details" class = "col-xs-6">
-			            		<table class = "table table-striped">
-			            			<caption>QUANTITY DETAILS</caption>
-			            			<thead>
-			            				<th>LENGTH(MM)</th>
-			            				<th>NO OF PCS</th>
-			            			</thead>
-			            			<tbody>
-			            				<t t-if = "doc.length_detail_ids">
-	            							<t t-foreach="doc.length_detail_ids"  t-as = "l">
-	            								<tr>
-	            									<td><t t-esc='l.name' /></td>
-	            									<td><t t-esc='l.no_of_pcs' /></td>
-	            								</tr>
-	            							</t>
-            							</t>	
-            							<t t-if = "not doc.length_detail_ids">
-            								<tr><td>-</td><td>-</td></tr>
-            							</t>
-			            			</tbody>
-			            		</table>			            			            		
-			            </div>			            
+		            	<div class = "col-xs-6" >
+		            		<strong>REMARKS</strong>
+	            			<p>
+	            			1. Fully killed by 'Al' &amp; 'Si' and made to attain fine grain precise<br/>
+	            			2. Material is free from lead &amp; mercury<br/>
+	            			3. 'Al' added to keep Al in the range 0.020% to 0.050%<br/>
+	            			4. Product does not contain any radioactive material.<br/>
+	            			</p>
+		            	</div>	            					            	
 	            	</div>
-	            	<t t-if = "doc.attested">
-			            	<div style = "page-break-before:always;padding: 10px;" class = "row">
-			            		<strong>REMARKS</strong>
-		            			<p>
-		            			1. Fully killed by 'Al' &amp; 'Si' and made to attain fine grain precise<br/>
-		            			2. Material is free from lead &amp; mercury<br/>
-		            			3. 'Al' added to keep Al in the range 0.020% to 0.050%<br/>
-		            			4. Product does not contain any radioactive material.<br/>
-		            			</p>
-			            	</div>
-			            	<div style = "border:1px solid black;" class = "row">
-			            		<div style = "border-right:1px solid black;height:100px;" class = "col-xs-4">
-			            			<span style = "position:absolute;bottom:0px;text-align:center;">Prepared By</span>
-			            		</div>
-			            		<div style = "border-right:1px solid black;height:100px;" class = "col-xs-4">
-			            			<span style = "position:absolute;bottom:0px;text-align:center;">Checked By</span>
-			            		</div>
-			            		<div style = "height:100px;" class = "col-xs-4">
-			            			<span style = "position:absolute;bottom:0px;text-align:center;">Authorised By</span>
-			            		</div>		            				            		
-			            	</div>		            	
-	            	</t>
+		            <!-- <div t-if = "doc.length_detail_ids" style = "page-break-before:always;padding: 10px;" class = "row"> -->
+	            	<div t-if = "doc.length_detail_ids" class = "row">
+		            		<table class = "table table-striped">
+		            			<caption>QUANTITY DETAILS</caption>
+		            			<thead>
+		            				<th>LENGTH(MM)</th>
+           							<t t-foreach="doc.length_detail_ids"  t-as = "l">
+           								<th>
+           									<td><t t-esc='l.name' /></td>
+           								</th>
+           							</t>		            				
+		            			</thead>
+		            			<tbody>
+           							<tr>
+           								<th>NO. OF PCS</th>
+            							<t t-foreach="doc.length_detail_ids"  t-as = "l">
+            								<td>
+            									<td><t t-esc='l.no_of_pcs' /></td>
+            								</td>
+            							</t>           							
+           							</tr>
+		            			</tbody>
+		            		</table>			            			            		
+		            </div>	
 		        </div>
-		        <div class = "footer">
-		        </div>
+            	<div class = "footer">
+	            	<div style = "border:1px solid black;" class = "row">
+	            		<div style = "border-right:1px solid black;height:90px;" class = "col-xs-4">
+	            			<span style = "position:absolute;bottom:0px;text-align:center;">Prepared By</span>
+	            		</div>
+	            		<div style = "border-right:1px solid black;height:90px;" class = "col-xs-4">
+	            			<span style = "position:absolute;bottom:0px;text-align:center;">Checked By</span>
+	            		</div>
+	            		<div style = "height:90px;" class = "col-xs-4">
+	            			<span style = "position:absolute;bottom:0px;text-align:center;">Authorised By</span>
+	            		</div>		            				            		
+	            	</div>	            	
+            	</div>				            		            		        
 		    </t>
 		</template>
 		<template id="report_chemical_compositions">
