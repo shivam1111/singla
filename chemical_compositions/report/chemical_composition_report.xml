@@ -206,7 +206,7 @@
 		            				<th>LENGTH(MM)</th>
            							<t t-foreach="doc.length_detail_ids"  t-as = "l">
            								<th>
-           									<td><t t-esc='l.name' /></td>
+           									<t t-esc='l.name' />
            								</th>
            							</t>		            				
 		            			</thead>
@@ -215,7 +215,7 @@
            								<th>NO. OF PCS</th>
             							<t t-foreach="doc.length_detail_ids"  t-as = "l">
             								<td>
-            									<td><t t-esc='l.no_of_pcs' /></td>
+            									<t t-esc='l.no_of_pcs' />
             								</td>
             							</t>           							
            							</tr>
