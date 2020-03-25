@@ -4,3 +4,4 @@ id_access_ingot_size,acess_ingot_size,model_ingot_size,mill_order.group_raw_mate
 id_access_size_size,access_size_size,model_size_size,mill_order.group_raw_material_manager,1,0,0,0
 id_access_corner_type,access_corner_type,model_corner_type,mill_order.group_raw_material_manager,1,0,0,0
 id_access_color_color,access_color_color,model_color_color,mill_order.group_raw_material_manager,1,0,0,0
+id_access_res_partners,access_rm_res_partner,base.model_res_partner,mill_order.group_raw_material_manager,1,0,0,0
