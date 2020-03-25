@@ -2,10 +2,18 @@
 <openerp>
 <data noupdate="0">
 
+	<record model="ir.module.category" id="module_category_mill_management">
+	  <field name="name">Mill Management</field>
+	  <field name="description">Mill Users Access</field>
+	  <field name="sequence">3</field>
+	</record>
+
+	<!-- Raw Material Manager -->
     <record id="group_raw_material_manager" model="res.groups">
         <field name="name">RM Manager</field>
+        <field name = "category_id" ref= "mill_order.module_category_mill_management" />
         <field name="comment">the user will have access raw material stock</field>
-        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/> <!-- group_user stands for Employee -->
     </record>
 </data>
 </openerp>
