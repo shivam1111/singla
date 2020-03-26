@@ -12,7 +12,7 @@ class LengthDetail(models.Model):
 
 class InclusionRatingLine(models.Model):
     _name = "inclusion.rating.line"
-    _description = "Inclusion Ratio Line"
+    _description = "Inclusion Rating Line"
     
     type = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D')],string = "Inclusion Type")
     thin = fields.Char('Thin')

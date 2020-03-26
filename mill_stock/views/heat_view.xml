@@ -56,17 +56,28 @@
                    		<group>
                    			<field name = "remarks" />
                    		</group>
-                    	<group string = "Chemical Composition Details">
-                    		<field name = "line_ids" nolabel = "1">
-                    			<tree string = "Chemical Composition Details" editable = "top">
-                    				<field name = "element_id" />
-                    				<field name = "min_val" />
-                    				<field name = "max_val" />
-                    				<field name = "furnace_val" />
-                    				<field name = "actual_val" />
-                    			</tree>
-                    		</field>
-                    	</group>	
+                   		<notebook>
+	                    	<page string = "Chemical Composition Details">
+	                    		<field name = "line_ids" nolabel = "1">
+	                    			<tree string = "Chemical Composition Details" editable = "top">
+	                    				<field name = "element_id" />
+	                    				<field name = "min_val" />
+	                    				<field name = "max_val" />
+	                    				<field name = "furnace_val" />
+	                    				<field name = "actual_val" />
+	                    			</tree>
+	                    		</field>
+	                    	</page>	
+                   			<page string = "Inclusion Rating">
+                   				<field name = "inclusion_rating_ids" nolabel = "1">
+                   					<tree string = "Inclusion Rating" editable = "1">
+                   						<field name = "type" />
+                   						<field name = "thin" />
+                   						<field name = "thick" />
+                   					</tree>
+                   				</field>
+                   			</page>                   			
+                   		</notebook>
 		    		</sheet>
 		    	</form>
 		    </field>
@@ -99,10 +110,10 @@
         </record>        
 		
        <menuitem
-           id= "heat_heat_view_submenu"
+           id= "heat_heat_view_submenu_v2"
            parent= "mill_stock.mill_stock_sub_menu"
            sequence= "4"
-           groups="mill_order.group_raw_material_manager"
+           groups="mill_order.group_laboratory_personnel"
            action = "action_heat_heat_views"
        />        	    		
 	</data>

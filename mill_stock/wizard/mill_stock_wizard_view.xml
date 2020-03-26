@@ -62,10 +62,10 @@
         </record>        	               		
 
        <menuitem
-           id="submenu_mill_stock_wizard"
+           id="submenu_mill_stock_wizard_v2"
            parent= "mill_stock.mill_stock_sub_menu"
            sequence= "1"
-           groups="base.group_user"
+           groups="mill_order.group_raw_material_manager"
            action = "action_mill_stock_wizard"
         />        
         	

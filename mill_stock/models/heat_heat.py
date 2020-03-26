@@ -9,6 +9,11 @@ class CompositionLine(models.Model):
     
     heat_id = fields.Many2one('heat.heat','Heat')
 
+class InclusionRatingLine(models.Model):
+    _inherit = "inclusion.rating.line"
+    
+    heat_id = fields.Many2one('heat.heat','Heat')
+
 class Heat(models.Model):
     _name = 'heat.heat'
     _description = "Heats"
@@ -64,6 +69,7 @@ class Heat(models.Model):
     state = fields.Selection([('ok','OK'),('non_confirmance','Non Confirmance'),('rejected','Rejected'),('resolved','Resolved')],default='ok',string = "State")
     remarks = fields.Text('Remarks')
     size = fields.Many2one('ingot.size','Size')
+    inclusion_rating_ids = fields.One2many('inclusion.rating.line','heat_id','Inclusion Rating')
     supervisor_id = fields.Many2one('res.users','Supervisor',default = lambda self:self.env.user)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env['res.company']._company_default_get('sale.order'))
     

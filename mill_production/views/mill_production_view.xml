@@ -4,6 +4,7 @@
            id= "mill_production_management_sub_menu"
            parent= "mill_order.mill_order_management_main_menu"
            sequence= "2"
+           groups = "mill_order.group_raw_material_manager"
            name= "Production Management" />
            
        <record id="view_mill_production_form" model="ir.ui.view">

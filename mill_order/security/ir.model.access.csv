@@ -1,7 +1,9 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-id_access_material_grade,access_material_grade,model_material_grade,mill_order.group_raw_material_manager,1,1,1,0
-id_access_ingot_size,acess_ingot_size,model_ingot_size,mill_order.group_raw_material_manager,1,0,0,0
-id_access_size_size,access_size_size,model_size_size,mill_order.group_raw_material_manager,1,0,0,0
-id_access_corner_type,access_corner_type,model_corner_type,mill_order.group_raw_material_manager,1,0,0,0
-id_access_color_color,access_color_color,model_color_color,mill_order.group_raw_material_manager,1,0,0,0
-id_access_res_partners,access_rm_res_partner,base.model_res_partner,mill_order.group_raw_material_manager,1,0,0,0
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"id_access_color_color_lab","access_color_color_lab","model_color_color","mill_order.group_laboratory_personnel","1","0","0","0"
+"id_access_material_grade_lab","access_material_grade_lab","model_material_grade","mill_order.group_laboratory_personnel","1","0","0","0"
+"id_access_material_grade","access_material_grade","model_material_grade","mill_order.group_raw_material_manager","1","1","1","0"
+"id_access_ingot_size","acess_ingot_size","model_ingot_size","mill_order.group_raw_material_manager","1","0","0","0"
+"id_access_size_size","access_size_size","model_size_size","mill_order.group_raw_material_manager","1","0","0","0"
+"id_access_corner_type","access_corner_type","model_corner_type","mill_order.group_raw_material_manager","1","0","0","0"
+"id_access_color_color","access_color_color","model_color_color","mill_order.group_raw_material_manager","1","0","0","0"
+"id_access_res_partners","access_rm_res_partner","base.model_res_partner","mill_order.group_raw_material_manager","1","0","0","0"
