@@ -46,9 +46,9 @@
 									<field name = "line_ids" nolabel = "1" >
 										<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
 											<field name = "ref" readonly = "1"/>
-											<field name = "name" />
+											<field name = "name" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 											<field name = "order_qty" sum = "Total Ordered Qty" />
-											<field name = "grade_id" />
+											<field name = "grade_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 											<field name = "cut_length" />
 											<field name = "ingot_size" />
 											<field name = "corner_id" />
@@ -139,6 +139,7 @@
            id= "mill_order_management_sub_submenu"
            parent= "mill_order_management_main_submenu"
            sequence= "1"
+           groups = "mill_order.group_dispatch_manager"
            action = "action_mill_orders"
             />
 
