@@ -87,59 +87,58 @@
 			            			</tr>	            			            			
 			            		</tbody>
 			            </table>
-			            <!-- <table t-if="doc.mechanical_properties" class = "table table-condensed"> -->
-			            <table  class = "table table-condensed">
+			            <!-- <table t-if="doc.mechanical_properties" class = "table table-condensed"> table-condensed -->
+			            <table  class = "table table-bordered">
 		            		<caption>MECHANICAL PROPERTIES</caption>
 		            		<tr>
-		            			<th>Ultimate Tensile Strength:</th>
+		            			<th>Ultimate Tensile Strength</th>
 		            			<td><p t-esc="doc.ultimate_tensile_strength and str(doc.ultimate_tensile_strength) + ' N/mm2' or '-'"/></td>
-		            			<th>Yield Strength:</th>
+		            			<th>Yield Strength</th>
 		            			<td><p t-esc="doc.yield_strength and str(doc.yield_strength) + ' N/mm2' or '-'"/></td>
-		            			<th>Elongation %:</th>
+		            			<th>Elongation %</th>
 		            			<td><p t-esc="doc.elongation and doc.elongation or '-'"/></td>
-		            			<th>Reduction Ratio:</th>
+		            			<th>Reduction Ratio</th>
 		            			<td><p t-esc="doc.reduction_ratio and doc.reduction_ratio or '-'"/></td>
 		            		</tr>
 		            		<tr>
-		            			<th>Spark Test:</th>
+		            			<th>Spark Test</th>
 		            			<td>
 		            				<t t-if="doc.spark_test">Yes</t>
 		            				<t t-if="not doc.spark_test">No</t>
 		            			</td>
-		            			<th>XRF Test:</th>
+		            			<th>XRF Test</th>
 		            			<td>
 		            				<t t-if="doc.is_xrf">Yes</t>
 		            				<t t-if="not doc.is_xrf">No</t>
 		            			</td>
-		            			<th>UT Test:</th>
+		            			<th>UT Test</th>
 		            			<td>
 		            				<t t-if="doc.is_ut">Yes</t>
 		            				<t t-if="not doc.is_ut">No</t>
 		            			</td>
-		            			<th>MPI:</th>
+		            			<th>MPI</th>
 		            			<td>		            
 		            				<t t-if="doc.is_mpi">Yes</t>
 		            				<t t-if="not doc.is_mpi">No</t>
 	            				</td>		            					            					            					            				            					            			
 		            		</tr>
 		            		<tr>
-		            			<th>Surface Condition:</th>
-		            			<td><t t-if = "doc.surface_inspection"><span t-field = "doc.surface_inspection" ></span></t></td>
-		            			<th>Internal Soundness:</th>
-		            			<td>Ok</td>
-	            				<th>Grain Size:</th>
-	            				<td><t t-esc="doc.grain_size or '-'" /></td>
-	            				<td></td><td></td>		            			
+		            			<th>Complete Decarb Depth</th>
+		            			<td><t t-esc="doc.complete_decarb or '-'" /></td>
+		            			<th>Partial Decarb Depth</th>
+		            			<td><t t-esc="doc.partial_decarb or '-'" /></td>
+		            			<th>HARDNESS MIN(BHN)</th>
+		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
+		            			<th>HARDNESS MAX(BHN)</th>
+		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            						            					            					            			
 		            		</tr>
 		            		<tr>
-		            			<th>Complete Decarb Depth:</th>
-		            			<td><t t-esc="doc.complete_decarb or '-'" /></td>
-		            			<th>Partial Decarb Depth:</th>
-		            			<td><t t-esc="doc.partial_decarb or '-'" /></td>
-		            			<th>HARDNESS MIN(BHN):</th>
-		            			<td><t t-esc="doc.min_hardness or '-'" /></td>
-		            			<th>HARDNESS MAX(BHN):</th>
-		            			<td><t t-esc="doc.max_hardness or '-'" /></td>	            						            					            					            			
+		            			<th>Surface Condition</th>
+		            			<td><t t-if = "doc.surface_inspection"><span t-field = "doc.surface_inspection" ></span></t></td>
+		            			<th>Internal Soundness</th>
+		            			<td>Ok</td>
+	            				<th>Grain Size</th>
+	            				<td><t t-esc="doc.grain_size or '-'" /></td>
 		            		</tr>
 			            </table> 
 		            </div>
