@@ -20,8 +20,8 @@
 ##############################################################################
 
 from odoo import models, fields, api
-from odoo.exceptions import except_orm
-from odoo import tools, _
+from odoo.exceptions import UserError
+from odoo import tools, _,SUPERUSER_ID
 
 class TestLine(models.Model):
     _name = "test.line"
@@ -51,8 +51,16 @@ class Test(models.Model):
     _name = "test.test"
     _description = "Test"
 
+    @api.multi
+    def write(self,vals):
+        if self.env.user.has_group('mill_order.group_dispatch_manager')  and self.env.user.id != SUPERUSER_ID :
+            raise UserError(_('You are not allowed to make changes to this record'))
+        return super(Test, self).write(vals)    
+
     @api.model
     def create(self, vals):
+        if self.env.user.has_group('mill_order.group_dispatch_manager')  and self.env.user.id != SUPERUSER_ID :
+            raise UserError(_('You are not allowed to create this record'))        
         vals['name'] = self.env['ir.sequence'].next_by_code('test.test') or _('New')
         result = super(Test, self).create(vals)
         return result    
