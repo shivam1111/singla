@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
 				<xpath expr = "//page/field[@name='line_ids']" position = "before">
 					<group>
-						<field name = "heat_id" />
+						<field name = "heat_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 					</group>
 				</xpath>				            
             </field>
