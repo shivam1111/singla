@@ -1,6 +1,7 @@
 from odoo import models, fields, api
-from odoo.exceptions import except_orm
+from odoo.exceptions import UserError
 from odoo.tools.translate import _
+from odoo import SUPERUSER_ID
 
 class StockLine(models.Model):
     _inherit = "stock.line"
@@ -59,10 +60,17 @@ class MillProduction(models.Model):
             self.coal_mt = self.coal/self.total_production
         except ZeroDivisionError:
             self.coal_mt = 0.00
-             
+    
+    @api.multi
+    def write(self,vals):
+        if self.env.user.has_group('mill_order.group_dispatch_manager')  and self.env.user.id != SUPERUSER_ID :
+            raise UserError(_('You are not allowed to make changes to this record'))
+        return super(MillProduction, self).write(vals)
     
     @api.model
     def create(self, vals):
+        if self.env.user.has_group('mill_order.group_dispatch_manager')  and self.env.user.id != SUPERUSER_ID :
+            raise UserError(_('You are not allowed to create this record'))
         vals['name'] = self.env['ir.sequence'].next_by_code('mill.production') or _('New')
         result = super(MillProduction, self).create(vals)
         return result    

@@ -1,4 +1,4 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-id_access_mill_production,access_mill_production,model_mill_production,,1,1,1,
-id_production_order,access_production_order,model_production_order,,1,,,
-id_production_order_line,access_production_order_line,model_production_order_line,,1,,,
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"id_access_mill_production_rm","access_mill_production_rm","model_mill_production","mill_order.group_raw_material_manager","1","1","1","0"
+"id_production_order","access_production_order","model_production_order","","1","0","0","0"
+"id_production_order_line","access_production_order_line","model_production_order_line","","1","0","0","0"

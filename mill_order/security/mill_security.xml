@@ -15,7 +15,6 @@
 	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
 	    </record>    	    
 
-
 		<!-- Raw Material Manager -->
 	    <record id="group_raw_material_manager" model="res.groups">
 	        <field name="name">RM Manager</field>
@@ -24,13 +23,21 @@
 	        <field name="implied_ids" eval="[(4, ref('group_laboratory_personnel'))]"/> <!-- group_user stands for Employee -->
 	    </record>
 	    
+		<!-- Dispatch Manager -->
+	    <record id="group_dispatch_manager" model="res.groups">
+	        <field name="name">Dispatch Manager</field>
+	        <field name = "category_id" ref= "mill_order.module_category_mill_management" />
+	        <field name="comment">The user will have access to raw material stock</field>
+	        <field name="implied_ids" eval="[(4, ref('group_raw_material_manager'))]"/> <!-- group_user stands for Employee -->
+	    </record>	    	    
+	    
 		<!-- Mill Manager -->
 	    <record id="group_manager" model="res.groups">
 	        <field name="name">Manager</field>
 	        <field name = "category_id" ref= "mill_order.module_category_mill_management" />
 	        <field name="comment">Mill Manager</field>
 	        <field name="users" eval="[(4, ref('base.user_root'))]"/>
-	        <field name="implied_ids" eval="[(4, ref('group_raw_material_manager'))]"/> <!-- group_user stands for Employee -->
+	        <field name="implied_ids" eval="[(4, ref('group_dispatch_manager'))]"/> <!-- group_user stands for Employee -->
 	    </record>	    
 	    
 	</data>

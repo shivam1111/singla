@@ -159,6 +159,7 @@
            id= "chemical_composition_management_sub_submenu"
            parent= "chemical_composition_management_main_submenu"
            sequence= "2"
+           groups = "mill_order.group_dispatch_manager"
            action = "action_chemical_composition"
             />	
             
