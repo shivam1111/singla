@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+   		<template id="report_material_grade_code_list_template">
+   			<t t-call="report.html_container">
+    			<t t-call="report.external_layout">
+    				<div class = "page">
+					<div class="oe_structure"/>
+		            <div class = "row" >
+	            		<div style = "text-align:center;"><h2>Color Codes</h2></div>
+			            <table class = "table table-striped table-bordered table-responsive">
+			            		<thead class="thead-dark">
+			            			<th>#</th>
+			            			<th>Name</th>
+			            			<th>Display Name</th>
+			            			<th>Color</th>
+			            		</thead>
+			            		<tbody>
+									<t t-foreach="docs" t-as="doc">
+										<tr>
+											<td><span t-esc="doc_index + 1" /></td>
+											<td><span t-esc = "doc.name" /></td>
+											<td><span t-esc = "doc.name_str" /></td>
+											<td><span t-esc = "doc.color_id.name" /></td>
+										</tr>
+									</t>
+			            		</tbody>
+			            </table>		            		
+		            </div>
+    				</div>
+    				<div class = "footer">
+    				</div>
+    			</t>    				
+   			</t> 
+   		</template>
+        <report 
+            id="material_grade_code_list"
+            string="Color Code List"
+            model="material.grade" 
+            report_type="qweb-pdf"
+            file="mill_order.color_code_report" 
+            name="mill_order.report_material_grade_code_list_template" 
+        />    		
+    </data>
+</odoo>
