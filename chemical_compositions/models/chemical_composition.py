@@ -81,9 +81,9 @@ class ChemicalComposition(models.Model):
                   nicrmo += float(l.actual_val)
                   nicrmo_elem.remove('Cr')
         if len(ce_elem) == 0:
-            self.carbon_equivalence = ce + float(1/20)
+            self.carbon_equivalence = round (ce + 1.00/20.00,2)
         if len(nicrmo_elem) == 0:
-            self.nicrmo = nicrmo               
+            self.nicrmo = round(nicrmo,2)               
     
     name = fields.Char('Name')
     partner_id = fields.Many2one('res.partner','Partner')
