@@ -38,4 +38,5 @@ class MaterialGrade(models.Model):
 
     name = fields.Char(string='Name', required=True)
     color_id = fields.Many2one('color.color','Color')
+    active = fields.Boolean('Active',default=True)
     

@@ -205,6 +205,7 @@
 							<group>
 								<field name= "name_str" />
 								<field name = "color_id" widget = "selection" />
+								<field name = "active" />
 							</group>
 						</group>
 	                    <notebook>
