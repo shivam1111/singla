@@ -249,7 +249,7 @@
             id="report_chemical_composition"
             string="Chemical Composition"
             model="chemical.composition" 
-            report_type="qweb-pdf"
+            report_type="qweb-html"
             file="chemical_compositions.chemical_composition_report" 
             name="chemical_compositions.report_chemical_compositions" 
         />

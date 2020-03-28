@@ -37,7 +37,7 @@
             id="material_grade_code_list"
             string="Color Code List"
             model="material.grade" 
-            report_type="qweb-pdf"
+            report_type="qweb-html"
             file="mill_order.color_code_report" 
             name="mill_order.report_material_grade_code_list_template" 
         />    		

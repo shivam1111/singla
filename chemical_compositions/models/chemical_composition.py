@@ -31,10 +31,10 @@ class CompositionLine(models.Model):
     _description = "Composition Line"
     
     element_id = fields.Many2one('chemical.element','Element',required=True)
-    min_val = fields.Float('Min')
-    max_val = fields.Float('Max')
-    actual_val = fields.Float('Actual')
-    furnace_val = fields.Float('Furnace Report')
+    min_val = fields.Char('Min')
+    max_val = fields.Char('Max')
+    actual_val = fields.Char('Actual')
+    furnace_val = fields.Char('Furnace Report')
     composition_id = fields.Many2one('chemical.composition','Composition')
     grade_id = fields.Many2one('material.grade','Material Grade')
     sequence = fields.Integer('Sequence') 
@@ -66,19 +66,19 @@ class ChemicalComposition(models.Model):
         for tc in self:
             for l in tc.line_ids:
               if l.element_id.code == 'C':
-                  ce += l.actual_val
+                  ce += float(l.actual_val)
                   ce_elem.remove('C')
               elif l.element_id.code == 'Mn':
-                  ce += l.actual_val/6.00
+                  ce += float(l.actual_val)/6.00
                   ce_elem.remove('Mn')
               elif l.element_id.code == 'Ni':
-                  nicrmo += l.actual_val
+                  nicrmo += float(l.actual_val)
                   nicrmo_elem.remove('Ni')
               elif l.element_id.code == 'Mo':
-                  nicrmo += l.actual_val
+                  nicrmo += float(l.actual_val)
                   nicrmo_elem.remove('Mo')  
               elif l.element_id.code == 'Cr':
-                  nicrmo += l.actual_val
+                  nicrmo += float(l.actual_val)
                   nicrmo_elem.remove('Cr')
         if len(ce_elem) == 0:
             self.carbon_equivalence = ce + float(1/20)
