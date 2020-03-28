@@ -31,10 +31,10 @@ class CompositionLine(models.Model):
     _description = "Composition Line"
     
     element_id = fields.Many2one('chemical.element','Element',required=True)
-    min_val = fields.Char('Min')
-    max_val = fields.Char('Max')
-    actual_val = fields.Char('Actual')
-    furnace_val = fields.Char('Furnace Report')
+    min_val = fields.Float('Min')
+    max_val = fields.Float('Max')
+    actual_val = fields.Float('Actual')
+    furnace_val = fields.Float('Furnace Report')
     composition_id = fields.Many2one('chemical.composition','Composition')
     grade_id = fields.Many2one('material.grade','Material Grade')
     sequence = fields.Integer('Sequence') 
@@ -56,6 +56,34 @@ class ChemicalComposition(models.Model):
         for i in self.grade_id.line_ids:
             data.append((0,0,{'element_id':i.element_id,'min_val':i.min_val,'max_val':i.max_val}))
         self.line_ids = data
+    
+    @api.depends('line_ids','line_ids.element_id','line_ids.actual_val')
+    def _compute_carbon_equivalence(self):
+        ce = 0.00
+        ce_elem = ['C','Mn']
+        nicrmo_elem = ['Ni','Cr','Mo']
+        nicrmo = 0.00
+        for tc in self:
+            for l in tc.line_ids:
+              if l.element_id.code == 'C':
+                  ce += l.actual_val
+                  ce_elem.remove('C')
+              elif l.element_id.code == 'Mn':
+                  ce += l.actual_val/6.00
+                  ce_elem.remove('Mn')
+              elif l.element_id.code == 'Ni':
+                  nicrmo += l.actual_val
+                  nicrmo_elem.remove('Ni')
+              elif l.element_id.code == 'Mo':
+                  nicrmo += l.actual_val
+                  nicrmo_elem.remove('Mo')  
+              elif l.element_id.code == 'Cr':
+                  nicrmo += l.actual_val
+                  nicrmo_elem.remove('Cr')
+        if len(ce_elem) == 0:
+            self.carbon_equivalence = ce + float(1/20)
+        if len(nicrmo_elem) == 0:
+            self.nicrmo = nicrmo               
     
     name = fields.Char('Name')
     partner_id = fields.Many2one('res.partner','Partner')
@@ -86,8 +114,8 @@ class ChemicalComposition(models.Model):
     is_xrf = fields.Boolean ('XRF Test',default=True)
     is_ut = fields.Boolean('UT Test')
     is_mpi = fields.Boolean('MPI')
-    carbon_equivalence = fields.Float('Carbon Equivalence',default = 0.00,help = "%C + (%Mn/6) + 1/20")
-    nicrmo = fields.Float('Ni+Cr+Mo')
+    carbon_equivalence = fields.Float('Carbon Equivalence',default = 0.00,help = "%C + (%Mn/6) + 1/20",compute = '_compute_carbon_equivalence')
+    nicrmo = fields.Float('Ni+Cr+Mo',compute = '_compute_carbon_equivalence')
     surface_inspection = fields.Selection([('ok','Ok'),('dentfree','Free from Dent')],default = 'dentfree')
     
     

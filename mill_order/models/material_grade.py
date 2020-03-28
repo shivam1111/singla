@@ -32,6 +32,10 @@ class MaterialGrade(models.Model):
     _description = "Material Grade"
     _inherit = ['mail.thread', 'ir.needaction_mixin']
 
+    _sql_constraints = [
+        ('grade_name_uniq', 'unique(name)', 'Grade name should be unique!'),
+    ]
+
     name = fields.Char(string='Name', required=True)
     color_id = fields.Many2one('color.color','Color')
     
