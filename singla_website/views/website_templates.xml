@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<template id="assets_frontend" inherit_id="web.assets_frontend" name="Singla Website Fronend Assets">
+    		<xpath expr="//link[last()]" position="after">
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/animate.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/bootstrap.min.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/colorbox.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/font-awesome.min.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/owl.carousel.min.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/owl.theme.default.min.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/responsive.css"/>
+    			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/style.css"/>
+    		</xpath>
+    	</template>
+    	<template id = "layout" inherit_id = "website.layout" name = "Singla Website Layout JS">
+    		<xpath expr = "//footer" position="after">
+				<!-- Owl Carousel -->
+				<script type="text/javascript" src="/singla_website/static/src/js/owl.carousel.min.js"></script>
+				<!-- Color box -->
+				<script type="text/javascript" src="/singla_website/static/src/js/jquery.colorbox.js"></script>
+				<!-- Isotope -->
+				<script type="text/javascript" src="/singla_website/static/src/js/isotope.js"></script>
+				<script type="text/javascript" src="/singla_website/static/src/js/ini.isotope.js"></script>
+				 <!-- Template custom -->
+				 <script type="text/javascript" src="/singla_website/static/src/js/custom.js"></script>				
+				
+    		</xpath>
+    		<!-- Inner Body -->
+    		<xpath expr = "//header" position = "replace">
+	    			<div class="body-inner">
+						<div id="top-bar" class="top-bar">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+										<ul class="top-info">
+											<li><i class="fa fa-map-marker"><![CDATA[&nbsp;]]></i>
+												<p class="info-text"><t t-esc="res_company.name"/></p>
+											</li>
+										</ul>
+									</div>
+									<!--/ Top info end -->
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 top-social text-right">
+										<ul class="unstyled">
+											<li>
+												<a title="Facebook" href="https://facebbok.com/themefisher.com">
+													<span class="social-icon"><i class="fa fa-facebook"></i></span>
+												</a>
+												<a title="Twitter" href="https://twitter.com/themefisher.com">
+													<span class="social-icon"><i class="fa fa-twitter"></i></span>
+												</a>
+												<a title="Instagram" href="https://instagram.com/themefisher.com">
+													<span class="social-icon"><i class="fa fa-instagram"></i></span>
+												</a>
+												<a title="Linkdin" href="https://github.com/themefisher.com">
+													<span class="social-icon"><i class="fa fa-github"></i></span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!--/ Top social end -->
+								</div>
+								<!--/ Content row end -->
+							</div>
+							<!--/ Container end -->
+						</div>
+						<!-- Header start -->
+						<header id="header" class="header-one">
+							<div class="container">
+								<div class="row">
+									<div class="logo-area clearfix">
+										<div class="logo col-xs-12 col-md-3">
+											<a href="index.html">
+												<img src="/logo.png" alt=""/>
+											</a>
+										</div><!-- logo end -->
+				
+										<div class="col-xs-12 col-md-9 header-right">
+											<ul class="top-info-box">
+												<li>
+													<div class="info-box">
+														<div class="info-box-content">
+															<p class="info-box-title">Call Us</p>
+															<p class="info-box-subtitle" t-field = "res_company.phone" ></p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="info-box">
+														<div class="info-box-content">
+															<p class="info-box-title">Email Us</p>
+															<p class="info-box-subtitle" t-field = "res_company.email"></p>
+														</div>
+													</div>
+												</li>
+												<li class="last">
+													<div class="info-box last">
+														<div class="info-box-content">
+															<p class="info-box-title">GST</p>
+															<p class="info-box-subtitle" t-field = "res_company.vat" ></p>
+														</div>
+													</div>
+												</li>
+												<li class="header-get-a-quote">
+													<a class="btn btn-primary" href="contact.html">Get A Quote</a>
+												</li>
+											</ul><!-- Ul end -->
+										</div><!-- header right end -->
+									</div><!-- logo area end -->
+				
+								</div><!-- Row end -->
+							</div><!-- Container end -->
+				
+							<nav class="site-navigation navigation navdown">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="site-nav-inner pull-left">
+												<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+													<span class="sr-only">Toggle navigation</span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+												</button>
+				
+												<div class="collapse navbar-collapse navbar-responsive-collapse">
+													<ul class="nav navbar-nav" id="top_menu">
+ 						                                <t t-foreach="website.menu_id.child_id" t-as="submenu">
+						                                    <t t-call="website.submenu"/>
+						                                </t>	
+						                                <li class="divider" t-ignore="true" t-if="website.user_id != user_id"/>
+						                                <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+						                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						                                        <b>
+						                                            <span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"/>
+						                                            <span class="caret"></span>
+						                                        </b>
+						                                    </a>
+						                                    <ul class="dropdown-menu js_usermenu" role="menu">
+						                                        <li class = "active" id="o_logout"><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
+						                                    </ul>
+						                                </li>
+												        <li class="divider" groups="base.group_public"/>
+												        <li groups="base.group_public">
+												            <a t-attf-href="/web/login">
+												                <b>Sign in</b>
+												            </a>
+												        </li>						                                					                                											
+ 													</ul>
+													<!--/ Nav ul end -->
+												</div>
+												<!--/ Collapse end -->
+											</div><!-- Site Navbar inner end -->
+										</div>
+										<!--/ Col end -->
+									</div>
+									<!--/ Row end -->
+									<div class="nav-search">
+										<span id="search"><i class="fa fa-search"></i></span>
+									</div><!-- Search end -->
+									<div class="search-block" style="display: none;">
+										<input type="text" class="form-control" placeholder="Type what you want and enter"/>
+										<span class="search-close"><![CDATA[&times;]]></span>
+									</div><!-- Site search end -->
+								</div>
+								<!--/ Container end -->
+							</nav>
+							<!--/ Navigation end -->
+						</header>
+						<!--/ Header end -->					
+	    			</div>
+	    			<!-- Body inner end -->    		
+    		</xpath> 
+    	</template>
+    	
+    	
+    	
+    	<template id = "website.company_description">
+		    <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+		        <!-- TODO widget contact must add itemprop attributes -->
+		        <div t-field="res_company.partner_id" t-options='{
+		                "widget": "contact",
+		                "fields": ["name", "address", "phone", "mobile", "fax", "email"]}'/>
+		    </address>
+			<style>
+			    .google-maps {
+			        position: relative;
+			        padding-bottom: 75%; // This is the aspect ratio
+			        height: 0;
+			        overflow: hidden;
+			    }
+			    .google-maps iframe {
+			        position: absolute;
+			        top: 0;
+			        left: 0;
+			        width: 100% !important;
+			        height: 100% !important;
+			    }
+			</style>		                
+            <div class = "google-maps">
+            	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13729.242330670722!2d76.2803121!3d30.6533816!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x86970c3652b10b09!2sSingla%20Steel%20%26%20Allied%20Industries!5e0!3m2!1sen!2sin!4v1585502560523!5m2!1sen!2sin" width="298" height="298" frameborder="2" style="border: 64px;" allowfullscreen="" aria-hidden="true" tabindex="1"></iframe>
+            </div>		    
+    	</template>
+    	
+    	
+    </data>
+</odoo>
