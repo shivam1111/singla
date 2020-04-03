@@ -53,8 +53,7 @@
 									<p class="slider-description lead animated7">We will deal with your failure that determines how you
 										achieve success.</p>
 									<p>
-										<a href="contact.html" class="slider btn btn-primary">Get Free Quote</a>
-										<a href="about.html" class="slider btn btn-primary border">Learn More</a>
+										<a href="/page/contactus" class="slider btn btn-primary">Get Free Quote</a>
 									</p>
 								</div>
 							</div>
@@ -71,7 +70,150 @@
 						<span><i class="fa fa-angle-right"></i></span>
 					</a>
 				</div>
-				<!--/ Carousel end -->    		    			
+				<!--/ Carousel end --> 
+				<section class="call-to-action-box no-padding">
+					<div class="container">
+						<div class="action-style-box">
+							<div class="row">
+								<div class="col-md-10">
+									<div class="call-to-action-text">
+										<h3 class="action-title">We understand your needs on construction</h3>
+									</div>
+								</div><!-- Col end -->
+								<div class="col-md-2">
+									<div class="call-to-action-btn">
+										<a class="btn btn-dark" href="/page/contactus">Request Quote</a>
+									</div>
+								</div><!-- col end -->
+							</div><!-- row end -->
+						</div><!-- Action style box -->
+					</div><!-- Container end -->
+				</section><!-- Action end -->	
+				
+				<section id="ts-features" class="ts-features">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+								<div class="ts-intro">
+									<h2 class="into-title">About Us</h2>
+									<h3 class="into-sub-title">We deliver landmark projects</h3>
+									<p>We are rethoric question ran over her cheek When she reached the first hills of the Italic Mountains,
+										she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village
+										and the subline of her own road, the Line Lane.</p>
+								</div><!-- Intro box end -->
+		
+								<div class="gap-20"></div>
+		
+								<div class="row">
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-trophy"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">We've Repution for Excellence</h3>
+											</div>
+										</div><!-- Service 1 end -->
+									</div><!-- col end -->
+		
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-sliders"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">We Build Partnerships</h3>
+											</div>
+										</div><!-- Service 2 end -->
+									</div><!-- col end -->
+								</div><!-- Content row 1 end -->
+		
+								<div class="row">
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-thumbs-up"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">Guided by Commitment</h3>
+											</div>
+										</div><!-- Service 1 end -->
+									</div><!-- col end -->
+		
+									<div class="col-md-6">
+										<div class="ts-service-box">
+											<span class="ts-service-icon">
+												<i class="fa fa-users"></i>
+											</span>
+											<div class="ts-service-box-content">
+												<h3 class="service-box-title">A Team of Professionals</h3>
+											</div>
+										</div><!-- Service 2 end -->
+									</div><!-- col end -->
+								</div><!-- Content row 1 end -->
+							</div><!-- Col end -->
+		
+							<div class="col-md-6 col-xs-12">
+								<h3 class="into-sub-title">Our Values</h3>
+								<p>Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy
+									street art, tattooed beard literally.</p>
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Safety</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+													wolf moon officia aute, non cupidata</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 1 end-->
+		
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Customer
+													Service</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+													wolf moon officia aute, non cupidata</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 2 end-->
+		
+		
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
+													Integrity</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+													wolf moon officia aute, non cupidata</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 3 end-->
+		
+								</div>
+								<!--/ Accordion end -->
+		
+							</div><!-- Col end -->
+						</div><!-- Row end -->
+					</div><!-- Container end -->
+				</section><!-- Feature are end -->				
+							   		    			
     		</xpath>
     	</template>
     </data>
