@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="products_menu" model="website.menu">
+			<field name="name">Products</field> <!-- Name of the menu-->
+			<field name="url">/page/products/</field>
+			<field name="parent_id" ref="website.main_menu"/>
+			<field name="sequence" type="int">12</field>
+			<!--sequence of the menu-->
+		</record>
+		
+		<template id = "singla_website_products">
+			<t t-call="website.layout"/>
+		</template>
+	</data>
+</odoo>

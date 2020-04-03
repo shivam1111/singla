@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="aboutus_menu" model="website.menu">
+			<field name="name">About Us</field> <!-- Name of the menu-->
+			<field name="url">/page/aboutus/</field>
+			<field name="parent_id" ref="website.main_menu"/>
+			<field name="sequence" type="int">11</field>
+			<!--sequence of the menu-->
+		</record>
+		
+		<template id = "singla_website_aboutus" inherit_id = "website.aboutus" name= "SSAI AboutUs" >
+			<xpath expr = "//div[@id='wrap']" position="replace">
+			   <div id="banner-area" class="banner-area" style="background-image:url(/singla_website/static/src/img/banner/banner1.jpg)">
+			      <div class="banner-text">
+			         <div class="container">
+			            <div class="row">
+			               <div class="col-xs-12">
+			                  <div class="banner-heading">
+			                     <h1 class="banner-title">About Us</h1>
+			                  </div>
+			               </div><!-- Col end -->
+			            </div><!-- Row end -->
+			         </div><!-- Container end -->
+			      </div><!-- Banner text end -->
+			   </div><!-- Banner area end -->
+			   
+			   <section id="main-container" class="main-container">
+			      <div class="container">
+			         <div class="row">
+			            <div class="col-md-6">
+			               <h3 class="column-title">Who We Are</h3>
+			               <p>when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+			               <blockquote><p>Semporibus autem quibusdam et aut officiis debitis aut rerum est aut optio cumque nihil necessitatibus autemn ec tincidunt nunc posuere ut</p></blockquote>
+			               <p>He lay on his armour-like  back, and if he lifted. ultrices ultrices sapien, nec tincidunt nunc posuere ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing.</p>
+			
+			            </div><!-- Col end -->
+			
+			            <div class="col-md-6">
+			               <div id="page-slider" class="owl-carousel owl-theme page-slider small-bg">
+			
+			                  <div class="item" style="background-image:url(/singla_website/static/src/img/slider-pages/slide-page1.jpg)">
+			                     <div class="container">
+			                        <div class="box-slider-content">
+			                           <div class="box-slider-text">
+			                              <h2 class="box-slide-title">Leadership</h2>
+			                           </div>    
+			                        </div>
+			                     </div>
+			                  </div><!-- Item 1 end -->
+			
+			                  <div class="item" style="background-image:url(/singla_website/static/src/img/slider-pages/slide-page2.jpg)">
+			                     <div class="container">
+			                        <div class="box-slider-content">
+			                           <div class="box-slider-text">
+			                              <h2 class="box-slide-title">Relationships</h2>
+			                           </div>    
+			                        </div>
+			                     </div>
+			                  </div><!-- Item 1 end -->
+			
+			                  <div class="item" style="background-image:url(/singla_website/static/src/img/slider-pages/slide-page3.jpg)">
+			                     <div class="container">
+			                        <div class="box-slider-content">
+			                           <div class="box-slider-text">
+			                              <h2 class="box-slide-title">Performance</h2>
+			                           </div>    
+			                        </div>
+			                     </div>
+			                  </div><!-- Item 1 end -->
+			               </div><!-- Page slider end-->          
+			            </div><!-- Col end -->
+			         </div><!-- Content row end -->
+			      </div><!-- Container end -->
+			   </section><!-- Main container end -->
+			   <div class = "oe_structure"></div>
+		   </xpath>
+		</template>		
+	</data>
+</odoo>

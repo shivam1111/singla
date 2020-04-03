@@ -15,7 +15,9 @@
     'data': [
         'views/website_templates.xml',
         'views/homepage.xml',
-        'views/footer.xml'
+        'views/footer.xml',
+        'views/aboutus.xml',
+        'views/products.xml',
     ],
     'demo': [
     ],

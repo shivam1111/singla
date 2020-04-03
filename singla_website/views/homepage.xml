@@ -77,7 +77,7 @@
 							<div class="row">
 								<div class="col-md-10">
 									<div class="call-to-action-text">
-										<h3 class="action-title">We understand your needs on construction</h3>
+										<h3 class="action-title">We understand your requirements</h3>
 									</div>
 								</div><!-- Col end -->
 								<div class="col-md-2">
@@ -111,7 +111,7 @@
 												<i class="fa fa-trophy"></i>
 											</span>
 											<div class="ts-service-box-content">
-												<h3 class="service-box-title">We've Repution for Excellence</h3>
+												<h3 class="service-box-title">We've Reputation for Excellence</h3>
 											</div>
 										</div><!-- Service 1 end -->
 									</div><!-- col end -->
@@ -212,7 +212,254 @@
 							</div><!-- Col end -->
 						</div><!-- Row end -->
 					</div><!-- Container end -->
-				</section><!-- Feature are end -->				
+				</section><!-- Feature are end -->
+				
+				<section id="facts" class="facts-area dark-bg">
+					<div class="container">
+						<div class="row">
+							<div class="facts-wrapper">
+								<div class="col-sm-3 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact1.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="1789">0</span></h2>
+										<h3 class="ts-facts-title">Total Projects</h3>
+									</div>
+								</div><!-- Col end -->
+		
+								<div class="col-sm-3 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact2.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="647">0</span></h2>
+										<h3 class="ts-facts-title">Staff Members</h3>
+									</div>
+								</div><!-- Col end -->
+		
+								<div class="col-sm-3 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact3.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="4000">0</span></h2>
+										<h3 class="ts-facts-title">Hours of Work</h3>
+									</div>
+								</div><!-- Col end -->
+		
+								<div class="col-sm-3 ts-facts">
+									<div class="ts-facts-img">
+										<img src="/singla_website/static/src/img/icon-image/fact4.png" alt="" />
+									</div>
+									<div class="ts-facts-content">
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="44">0</span></h2>
+										<h3 class="ts-facts-title">Countries Experience</h3>
+									</div>
+								</div><!-- Col end -->
+		
+							</div> <!-- Facts end -->
+						</div>
+						<!--/ Content row end -->
+					</div>
+					<!--/ Container end -->
+				</section><!-- Facts end -->
+				
+				<section id="ts-service-area" class="ts-service-area">
+					<div class="container">
+						<div class="row text-center">
+							<h2 class="section-title">We Are Specialists In</h2>
+							<h3 class="section-sub-title">What We Do</h3>
+						</div>
+						<!--/ Title row end -->
+		
+						<div class="row">
+							<div class="col-md-4">
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon1.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Home Construction</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 1 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon2.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Building Remodels</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 2 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon3.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Interior Design</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 3 end -->
+		
+							</div><!-- Col end -->
+		
+							<div class="col-md-4 text-center">
+								<img class="service-center-img img-responsive" src="/singla_website/static/src/img/services/service-center.jpg" alt="" />
+							</div><!-- Col end -->
+		
+							<div class="col-md-4">
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon4.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Exterior Design</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 4 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon5.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Renovation</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 5 end -->
+		
+								<div class="ts-service-box">
+									<div class="ts-service-box-img pull-left">
+										<img src="/singla_website/static/src/img/icon-image/service-icon6.png" alt="" />
+									</div>
+									<div class="ts-service-box-info">
+										<h3 class="service-box-title"><a href="#">Safety Management</a></h3>
+										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+									</div>
+								</div><!-- Service 6 end -->
+							</div><!-- Col end -->
+						</div><!-- Content row end -->
+					</div>
+					<!--/ Container end -->
+				</section><!-- Service end -->
+				
+				<section class="content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<h3 class="column-title">Testimonials</h3>
+		
+								<div id="testimonial-slide" class="owl-carousel owl-theme testimonial-slide">
+									<div class="item">
+										<div class="quote-item">
+											<span class="quote-text">
+												Question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last
+												view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the
+												subline of her own road.
+											</span>
+		
+											<div class="quote-item-footer">
+												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial1.png" alt="testimonial"/>
+												<div class="quote-item-info">
+													<h3 class="quote-author">Gabriel Denis</h3>
+													<span class="quote-subtext">Chairman, OKT</span>
+												</div>
+											</div>
+										</div><!-- Quote item end -->
+									</div>
+									<!--/ Item 1 end -->
+		
+									<div class="item">
+										<div class="quote-item">
+											<span class="quote-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
+												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa tion ullamco laboris
+												nisi aliquip consequat.
+											</span>
+		
+											<div class="quote-item-footer">
+												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial2.png" alt="testimonial"/>
+												<div class="quote-item-info">
+													<h3 class="quote-author">Weldon Cash</h3>
+													<span class="quote-subtext">CFO, First Choice</span>
+												</div>
+											</div>
+										</div><!-- Quote item end -->
+									</div>
+									<!--/ Item 2 end -->
+		
+									<div class="item">
+										<div class="quote-item">
+											<span class="quote-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
+												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa tion ullamco laboris
+												nisi ut commodo consequat.
+											</span>
+		
+											<div class="quote-item-footer">
+												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial3.png" alt="testimonial"/>
+												<div class="quote-item-info">
+													<h3 class="quote-author">Minter Puchan</h3>
+													<span class="quote-subtext">Director, AKT</span>
+												</div>
+											</div>
+										</div><!-- Quote item end -->
+									</div>
+									<!--/ Item 3 end -->
+		
+								</div>
+								<!--/ Testimonial carousel end-->
+							</div><!-- Col end -->
+		
+							<div class="col-md-6">
+								<h3 class="column-title">Happy Clients</h3>
+								<div class="row all-clients">
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client1.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 1 end -->
+		
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client2.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 2 end -->
+		
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client3.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 3 end -->
+		
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client4.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 4 end -->
+		
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client5.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 5 end -->
+		
+									<div class="col-sm-4">
+										<figure class="clients-logo">
+											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client6.png" alt="" /></a>
+										</figure>
+									</div><!-- Client 6 end -->
+								</div><!-- Clients row end -->
+							</div><!-- Col end -->
+						</div>
+						<!--/ Content row end -->
+					</div>
+					<!--/ Container end -->
+				</section><!-- Content end -->																
 							   		    			
     		</xpath>
     	</template>
