@@ -13,3 +13,7 @@ encoding//mill_stock/models/test_test.py=utf-8
 encoding//singla_project_extended/__manifest__.py=utf-8
 encoding//singla_website/__manifest__.py=utf-8
 encoding//singla_website/controllers/main.py=utf-8
+encoding//website_page_view_count/__manifest__.py=utf-8
+encoding//website_page_view_count/controllers/main.py=utf-8
+encoding//website_page_view_count/models/company.py=utf-8
+encoding//website_page_view_count/models/website.py=utf-8

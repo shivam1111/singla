@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Disabled this template as not needed by our functionality but kep just for example sake -->
+	<!-- Footer Template -->
+	<template id="website.layout_footer_copyright" inherit_id="website.layout" name="Footer Copyright">
+		<xpath expr="//footer" position="inside">
+			<div class="container mt16 mb8">
+				<div class="pull-right" t-ignore="true" t-if="not editable">
+				  Powered by <a class="label label-danger" href="http://www.odoo.com/page/website-builder">Odoo</a>,
+				  the #1 <a href="http://www.odoo.com/page/e-commerce">Open Source eCommerce</a>.
+				</div>
+				<div class="col-md-4  col-lg-3 text-center" style="margin-left: 38%;">
+					<h4>Page Visits: <span t-esc="website.get_page_view_count()"/></h4>
+				</div>
+				<br/><br/>
+				<div class="pull-left text-muted">
+					Copyright &amp;copy; <span t-field="res_company.name">Company name</span>
+				</div>
+			</div>
+		</xpath>
+	</template>
+
+</odoo>

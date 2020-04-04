@@ -11,7 +11,7 @@
 
     """,
     'website': 'https://www.odoo.com',
-    'depends': ['base','website_crm'],
+    'depends': ['base','website_crm','website_page_view_count'],
     'data': [
         'views/website_templates.xml',
         'views/homepage.xml',

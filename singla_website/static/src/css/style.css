@@ -687,7 +687,7 @@ ul.top-info-box li {
     position: relative;
     float: left;
     margin-left: 0;
-    border-right: 1px solid #dedede;
+    border-right: 1px solid #dedede; 
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     padding-right: 25px;
     margin-right: 25px;

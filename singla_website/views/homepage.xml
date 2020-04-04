@@ -96,10 +96,11 @@
 							<div class="col-md-6 col-xs-12">
 								<div class="ts-intro">
 									<h2 class="into-title">About Us</h2>
-									<h3 class="into-sub-title">We deliver landmark projects</h3>
-									<p>We are rethoric question ran over her cheek When she reached the first hills of the Italic Mountains,
-										she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village
-										and the subline of her own road, the Line Lane.</p>
+									<h3 class="into-sub-title">We fulfill your requirements</h3>
+									<p>We are one of the leading manufacturers of Spring Steel Flat Bars. We strictly adhere to our Customer's requirements 
+									and strive to deliver best quality in time. We believe in a very strong feedback system. It is this continuous feedback from 
+									our customer which fuels our obsession to keep making improvements.   
+									</p>
 								</div><!-- Intro box end -->
 		
 								<div class="gap-20"></div>
@@ -155,19 +156,19 @@
 		
 							<div class="col-md-6 col-xs-12">
 								<h3 class="into-sub-title">Our Values</h3>
-								<p>Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy
-									street art, tattooed beard literally.</p>
+								<p>Defined core company values help us ensure that each one our employee from top leadership to entry-level are working
+								in sync towards the same common goal, and share the same purpose
+								</p>
 								<div class="panel-group" id="accordion">
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Safety</a>
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Quality</a>
 											</h4>
 										</div>
 										<div id="collapseOne" class="panel-collapse collapse in">
 											<div class="panel-body">
-												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-													wolf moon officia aute, non cupidata</p>
+												<p>We provide outstanding products and unsurpassed service that, together, deliver premium value to our customers.</p>
 											</div>
 										</div>
 									</div>
@@ -176,14 +177,12 @@
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Customer
-													Service</a>
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">Customer Commitment</a>
 											</h4>
 										</div>
 										<div id="collapseTwo" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-													wolf moon officia aute, non cupidata</p>
+												<p>We develop relationships that make a positive difference in our customers' lives.</p>
 											</div>
 										</div>
 									</div>
@@ -194,17 +193,32 @@
 										<div class="panel-heading">
 											<h4 class="panel-title">
 												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
-													Integrity</a>
+													Personal Accountability</a>
 											</h4>
 										</div>
 										<div id="collapseThree" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-													wolf moon officia aute, non cupidata</p>
+												<p>We are personally accountable for delivering on our commitments.</p>
 											</div>
 										</div>
 									</div>
 									<!--/ Panel 3 end-->
+									
+									
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFour">
+													Respect for People</a>
+											</h4>
+										</div>
+										<div id="collapseFour" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>We value our people, encourage their development and reward their performance.</p>
+											</div>
+										</div>
+									</div>
+									<!--/ Panel 4 end-->									
 		
 								</div>
 								<!--/ Accordion end -->
@@ -223,8 +237,8 @@
 										<img src="/singla_website/static/src/img/icon-image/fact1.png" alt="" />
 									</div>
 									<div class="ts-facts-content">
-										<h2 class="ts-facts-num"><span class="counterUp" data-count="1789">0</span></h2>
-										<h3 class="ts-facts-title">Total Projects</h3>
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="37">0</span></h2>
+										<h3 class="ts-facts-title">Years of Experience</h3>
 									</div>
 								</div><!-- Col end -->
 		
@@ -233,8 +247,8 @@
 										<img src="/singla_website/static/src/img/icon-image/fact2.png" alt="" />
 									</div>
 									<div class="ts-facts-content">
-										<h2 class="ts-facts-num"><span class="counterUp" data-count="647">0</span></h2>
-										<h3 class="ts-facts-title">Staff Members</h3>
+										<h2 class="ts-facts-num"><span class="counterUp" t-attf-data-count="{{ website.get_count_customers() }}">0</span></h2>
+										<h3 class="ts-facts-title">Customers</h3>
 									</div>
 								</div><!-- Col end -->
 		
@@ -243,8 +257,8 @@
 										<img src="/singla_website/static/src/img/icon-image/fact3.png" alt="" />
 									</div>
 									<div class="ts-facts-content">
-										<h2 class="ts-facts-num"><span class="counterUp" data-count="4000">0</span></h2>
-										<h3 class="ts-facts-title">Hours of Work</h3>
+										<h2 class="ts-facts-num"><span class="counterUp" data-count="24">0</span></h2>
+										<h3 class="ts-facts-title">Hours Available</h3>
 									</div>
 								</div><!-- Col end -->
 		
@@ -253,8 +267,9 @@
 										<img src="/singla_website/static/src/img/icon-image/fact4.png" alt="" />
 									</div>
 									<div class="ts-facts-content">
-										<h2 class="ts-facts-num"><span class="counterUp" data-count="44">0</span></h2>
-										<h3 class="ts-facts-title">Countries Experience</h3>
+										<h2 class="ts-facts-num"><span class="counterUp" t-attf-data-count="{{ website.get_page_view_count() }}">0</span></h2>
+										<!-- website.get_page_view_count() is available in website_page_view_count module  -->
+										<h3 class="ts-facts-title">Site Visits</h3>
 									</div>
 								</div><!-- Col end -->
 		
@@ -280,8 +295,8 @@
 										<img src="/singla_website/static/src/img/icon-image/service-icon1.png" alt="" />
 									</div>
 									<div class="ts-service-box-info">
-										<h3 class="service-box-title"><a href="#">Home Construction</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<h3 class="service-box-title"><a href="#">Pollution Free</a></h3>
+										<p>We are using and maintaining a good APCD to keep our environment green and pollution free.</p> 
 									</div>
 								</div><!-- Service 1 end -->
 		
@@ -290,8 +305,8 @@
 										<img src="/singla_website/static/src/img/icon-image/service-icon2.png" alt="" />
 									</div>
 									<div class="ts-service-box-info">
-										<h3 class="service-box-title"><a href="#">Building Remodels</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<h3 class="service-box-title"><a href="#">R &amp; D</a></h3>
+										<p>We are continuously dedicating our resources to deliver better quality and more value to our Customers</p>
 									</div>
 								</div><!-- Service 2 end -->
 		
@@ -300,8 +315,8 @@
 										<img src="/singla_website/static/src/img/icon-image/service-icon3.png" alt="" />
 									</div>
 									<div class="ts-service-box-info">
-										<h3 class="service-box-title"><a href="#">Interior Design</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<h3 class="service-box-title"><a href="#">Test Certificate</a></h3>
+										<p>All requirements given by our Customers are tested and recorded. All dispatches are done only when all requirements are fulfilled and a test certificate is issued.</p>
 									</div>
 								</div><!-- Service 3 end -->
 		
@@ -317,8 +332,8 @@
 										<img src="/singla_website/static/src/img/icon-image/service-icon4.png" alt="" />
 									</div>
 									<div class="ts-service-box-info">
-										<h3 class="service-box-title"><a href="#">Exterior Design</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<h3 class="service-box-title"><a href="#">Callibration</a></h3>
+										<p>All our quality control equipments are callibrated and certified by concerned authority.</p>
 									</div>
 								</div><!-- Service 4 end -->
 		
@@ -327,8 +342,10 @@
 										<img src="/singla_website/static/src/img/icon-image/service-icon5.png" alt="" />
 									</div>
 									<div class="ts-service-box-info">
-										<h3 class="service-box-title"><a href="#">Renovation</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<h3 class="service-box-title"><a href="#">Plant Upgradation</a></h3>
+										<p>We are continuously upgrading our plant &amp; machinery to improve our efficiency and quality
+										   Technology is always in a state of change since new developments are continually emerging. 
+										</p>
 									</div>
 								</div><!-- Service 5 end -->
 		
@@ -338,7 +355,7 @@
 									</div>
 									<div class="ts-service-box-info">
 										<h3 class="service-box-title"><a href="#">Safety Management</a></h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Integer adipiscing erat</p>
+										<p>Worker's safety is our utmost priority. We feel completely responsible for providing a safe working environment to our people.</p>
 									</div>
 								</div><!-- Service 6 end -->
 							</div><!-- Col end -->
@@ -346,120 +363,6 @@
 					</div>
 					<!--/ Container end -->
 				</section><!-- Service end -->
-				
-				<section class="content">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6">
-								<h3 class="column-title">Testimonials</h3>
-		
-								<div id="testimonial-slide" class="owl-carousel owl-theme testimonial-slide">
-									<div class="item">
-										<div class="quote-item">
-											<span class="quote-text">
-												Question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last
-												view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the
-												subline of her own road.
-											</span>
-		
-											<div class="quote-item-footer">
-												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial1.png" alt="testimonial"/>
-												<div class="quote-item-info">
-													<h3 class="quote-author">Gabriel Denis</h3>
-													<span class="quote-subtext">Chairman, OKT</span>
-												</div>
-											</div>
-										</div><!-- Quote item end -->
-									</div>
-									<!--/ Item 1 end -->
-		
-									<div class="item">
-										<div class="quote-item">
-											<span class="quote-text">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa tion ullamco laboris
-												nisi aliquip consequat.
-											</span>
-		
-											<div class="quote-item-footer">
-												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial2.png" alt="testimonial"/>
-												<div class="quote-item-info">
-													<h3 class="quote-author">Weldon Cash</h3>
-													<span class="quote-subtext">CFO, First Choice</span>
-												</div>
-											</div>
-										</div><!-- Quote item end -->
-									</div>
-									<!--/ Item 2 end -->
-		
-									<div class="item">
-										<div class="quote-item">
-											<span class="quote-text">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa tion ullamco laboris
-												nisi ut commodo consequat.
-											</span>
-		
-											<div class="quote-item-footer">
-												<img class="testimonial-thumb" src="/singla_website/static/src/img/clients/testimonial3.png" alt="testimonial"/>
-												<div class="quote-item-info">
-													<h3 class="quote-author">Minter Puchan</h3>
-													<span class="quote-subtext">Director, AKT</span>
-												</div>
-											</div>
-										</div><!-- Quote item end -->
-									</div>
-									<!--/ Item 3 end -->
-		
-								</div>
-								<!--/ Testimonial carousel end-->
-							</div><!-- Col end -->
-		
-							<div class="col-md-6">
-								<h3 class="column-title">Happy Clients</h3>
-								<div class="row all-clients">
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client1.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 1 end -->
-		
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client2.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 2 end -->
-		
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client3.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 3 end -->
-		
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client4.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 4 end -->
-		
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client5.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 5 end -->
-		
-									<div class="col-sm-4">
-										<figure class="clients-logo">
-											<a href="#"><img class="img-responsive" src="/singla_website/static/src/img/clients/client6.png" alt="" /></a>
-										</figure>
-									</div><!-- Client 6 end -->
-								</div><!-- Clients row end -->
-							</div><!-- Col end -->
-						</div>
-						<!--/ Content row end -->
-					</div>
-					<!--/ Container end -->
-				</section><!-- Content end -->																
 							   		    			
     		</xpath>
     	</template>
