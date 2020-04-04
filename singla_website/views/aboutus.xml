@@ -86,6 +86,31 @@
 			         </div> <!-- Content Row end -->					
 					</div> <!-- Container end -->
 				</section> <!--  Main container end -->			   
+				
+				<section class="main-container">
+					<div class = "container">
+				         <div class = "row">
+				         	 <div class = "col-md-6">
+							   <h3 class="column-title">Infrastructure &amp; Facilities</h3>
+									<ul class="list-arrow">
+										<li>14” Rough stand and 11” Rolling mill</li>
+										<li>7MT Re-Heating Furnace</li>
+										<li>110 ft Cooling Bed</li>
+										<li>Swing Grinder for Dressing of Ingot/Billets</li>
+										<li>Metallurgical Analysis Laboratory</li>
+										<li>Brinell Hardness Testing Machine</li>
+										<li>250MT H-type Press for Clear Cut Requirements</li>
+										<li>XRF Analyzer</li>
+										<li>Spectrometer</li>
+										<li>Ultrasonic Tester</li>										
+									</ul>																   
+		         	 		</div> 
+				         	<div class = "col-md-6">
+				         		<img class="img-responsive" src="/singla_website/static/src/img/infra_facility.jpg" alt="" />
+				         	</div>
+			         </div> <!-- Content Row end -->					
+					</div> <!-- Container end -->
+				</section> <!--  Main container end -->			   				
 			   
 			   <div class = "oe_structure"></div>
 		   </xpath>

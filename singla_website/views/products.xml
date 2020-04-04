@@ -91,10 +91,90 @@
 										</tbody>
 									</table>								
 								</div>
-							</div>
+							</div> <!-- row ends -->
 						</div> <!-- container div ends -->
 					</section> <!-- main section ends -->
-										
+					<section id="ts-team" class="ts-team">
+					   <div class="container">
+					      <div class="row text-center">
+					         <h3 class="section-sub-title">PHOTO GALLERY</h3>
+					      </div><!--/ Title row end -->
+							<div class = "row">
+								<div id="team-slide" class="owl-carousel owl-theme team-slide">
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI1.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->									
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI2.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->									               
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI3.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->									               
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI35.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->		
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI9.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI11.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->									               									               							               
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI17.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI27.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI33.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->
+					               <div class="item">
+					                  <div class="ts-team-wrapper">
+					                     <div class="team-img-wrapper">
+					                        <img alt="" src="/singla_website/static/src/img/photo_gallery/SSAI38.jpg" class="img-responsive" />
+					                     </div>
+					                  </div><!--/ Team wrapper end -->
+					               </div><!-- Team 1 end -->					               									               									               							               					               
+								</div>
+							</div> <!-- row ends -->					      					
+				      </div> <!-- Container Div ends -->
+			      </section> <!-- Section Div Ends -->
 			</t>
 		</template>
 	</data>
