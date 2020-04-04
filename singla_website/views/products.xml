@@ -10,7 +10,88 @@
 		</record>
 		
 		<template id = "singla_website_products">
-			<t t-call="website.layout"/>
+			<t t-call="website.layout">
+					<div id="banner-area" class="banner-area" style="background-image:url(/singla_website/static/src/img/banner/banner2.jpg)">
+					   <div class="banner-text">
+					      <div class="container">
+					         <div class="row">
+					            <div class="col-xs-12">
+					               <div class="banner-heading">
+					                  <h1 class="banner-title">PRODUCTS</h1>
+					               </div>
+					            </div><!-- Col end -->
+					         </div><!-- Row end -->
+					      </div><!-- Container end -->
+					   </div><!-- Banner text end -->
+					</div><!-- Banner area end -->
+					<section id="main-container" class="main-container">
+						<div class = "container">
+							<div class = "row">
+								<table class = "table table-striped  table-responsive">
+									<caption class = "text-center"><h4>Flat Bars Specifications</h4></caption>
+				            		<thead class="thead-dark">
+				            			<th></th>
+				            			<th>Thickness</th>
+				            			<th>Width</th>
+				            		</thead>		
+				            		<tbody>
+				            			<tr>
+				            				<th>MIN</th>
+				            				<td>4.5mm</td>
+				            				<td>37mm</td>
+				            			</tr>
+				            			<tr>
+				            				<th>MAX</th>
+				            				<td>32mm</td>
+				            				<td>110mm</td>
+				            			</tr>
+				            			<tr>
+				            				<th>TOLERANCE</th>
+				            				<td>+/- 0.20</td>
+				            				<td>+/- 0.50</td>
+				            			</tr>
+				            			<tr>
+				            				<th>OTHER SIZES</th>
+				            				<td colspan = "2">65x35 (RCS), 32x25, 35x10</td>
+				            			</tr>
+				            			<tr>
+				            				<th>RADIUS</th>
+				            				<td colspan = "2">R=T, R=T/2, Custom Radius both on edge as well as corners required by Customer</td>
+				            			</tr>
+				            		</tbody>							
+								</table>
+							</div> <!--  row ends -->
+							<div class = "row">
+								<table class = "table table-striped  table-responsive">
+									<caption class = "text-center"><h4>Grades</h4></caption>
+									<tbody>
+										<tr>
+											<th>Carbon Steel</th>
+											<td>EN8, EN8D, EN9, M.S, C45, EN15</td>
+										</tr>
+										<tr>
+											<th>BORON STEEL</th>
+											<td>20MnB5, 30MnB5, 30MnCrB5</td>
+										</tr>
+										<tr>
+											<th>SPRING STEEL</th>
+											<td>SUP9, SUP11,EN42, EN45, EN45A</td>
+										</tr>
+										<tr>
+											<th>TOOL STEEL</th>
+											<td>31CrV3</td>
+										</tr>
+										<tr>
+											<th>Alloy Steel</th>
+											<td>EN19, EN18, EN24,EN31, EN15</td>
+										</tr>
+									</tbody>
+								</table>								
+							</div>
+						</div> <!-- container div ends -->
+					</section> <!-- main section ends -->
+										
+			</t>
 		</template>
 	</data>
 </odoo>

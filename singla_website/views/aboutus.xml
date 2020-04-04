@@ -71,18 +71,18 @@
 			         </div><!-- Content row end -->
 			      </div><!-- Container end -->
 			   </section><!-- Main container end -->
-				<section id="main-container" class="main-container">
+				<section class="main-container">
 					<div class = "container">
 				         <div class = "row">
-				         	<div class = "col-md-6 text-left">
-				         		<img class="img-responsive" src="/singla_website/static/src/img/hedgehog-concept.jpeg" alt="" />
-				         	</div>
 				         	 <div class = "col-md-6">
 							   <h3 class="column-title">Who We Are</h3>
-							   <p class = "text-justify">We are manufacturers of Alloy Steel Flat Bars. We cater to various industries such as Automotive Industry, Agricultural Equipments Industry, Forging Industry, Construction Equipments Industry, Handtool Industry.
+							   <p class = "text-justify">We are manufacturers of Alloy Steel Flat Bars. We have a annual capacity to manfacture 25000MT per annum. We cater to various industries such as Automotive Industry, Agricultural Equipments Industry, Forging Industry, Construction Equipments Industry, Handtool Industry.
 							   In our endeavour to provide consistency to our customers we are guided by three circles.
 							   </p>			         		
 		         	 		</div> 
+				         	<div class = "col-md-6">
+				         		<img class="img-responsive" src="/singla_website/static/src/img/hedgehog-concept.jpeg" alt="" />
+				         	</div>
 			         </div> <!-- Content Row end -->					
 					</div> <!-- Container end -->
 				</section> <!--  Main container end -->			   
