@@ -36,10 +36,8 @@
 								<div class="col-md-4 col-sm-12 footer-widget">
 									<h3 class="widget-title">Grades</h3>
 									<ul class="list-arrow">
-										<li><a href="service-single.html">Spring Steel</a></li>
-										<li><a href="service-single.html">Boron Steel</a></li>
-										<li><a href="service-single.html">Tool Steel</a></li>
-										<li><a href="service-single.html">Plain Carbon Steel</a></li>
+										<li><a href="/grade/spring_steel">Spring Steel</a></li>
+										<li><a href="/grade/boron_steel">Boron Steel</a></li>
 										<strong>Note: We can also manufacture other grades based on customer's requirement</strong>
 									</ul>									
 									

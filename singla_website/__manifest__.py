@@ -18,6 +18,7 @@
         'views/footer.xml',
         'views/aboutus.xml',
         'views/products.xml',
+        'views/grades.xml',
     ],
     'demo': [
     ],

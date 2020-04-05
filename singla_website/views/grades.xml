@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- Spring Steel -->
+		<template id = "grade_spring_steel">
+			<t t-call="website.layout">
+				<section id = "main-container" class = "main-container">
+					<div class = "container">
+						<div class="row text-center">
+						   <h3 class="section-sub-title">SPRING STEEL</h3>
+						</div><!--/ Title row end -->
+						<div class = "row">
+							<div class = "col-md-12">
+								<p>
+									Spring Steel is used to manufacture various kinds of springs and components, for the suspension mechanism in Automobiles and Railways like
+								</p>
+								<ul class="list-arrow">
+									<li>Leaf Springs</li>
+									<li>Coil Springs</li>
+									<li>Torsion Bars</li>
+									<li>Stabiliser Bars</li>
+								</ul>
+							</div>
+						</div>
+						<div class = "row">
+							<div class = "col-md-6" >
+								<h4>EDGE RADIUS</h4>
+								<p>Flats can be supplied with edge radius R=T and R = T/2, where “T” is equal to thickness.</p>							
+								<h4>QUALITY</h4>
+								<p>On visual inspection surface is free from harmful defects such as crack, laps, fold, pits, roll marks.</p>
+								<h4>AS ROLLED HARDNESS</h4>
+								<p>310 BHN (MAX)</p>								
+																							
+							</div>
+							<div class = "col-md-6">
+								<h4>STRAIGHTNESS</h4>
+								<p>Bars will have a straightness of 3mm/mtr.</p>							
+								<h4>GRAIN SIZE</h4>
+								<p>5-8 AS PER ASTM E-112</p>
+								<h4>INCLUSION RATING</h4>
+								<p>THIN: 2.5 A,B,C,D MAX <br/> HEAVAY: 1.5 A,B,C,D MAX</p>																							
+							</div>
+						</div>
+						<div class = "row">
+							<div class ="col-md-6" >
+								<h4>DECARBURIZATION</h4>							
+								<table class = "table table-bordered  table-responsive">
+									<thead>
+										<th></th>
+										<th>FULL</th>
+										<th>PARTIAL</th>
+										<th>TOTAL</th>
+									</thead>
+									<tbody>
+										<tr>
+											<th>Flats (upto 80x13)</th>
+											<td>Nil</td>
+											<td>0.15</td>
+											<td>0.15mm (max)</td>										
+										</tr>
+										<tr>
+											<th>Flats (above 80x13)</th>
+											<td>0.03</td>
+											<td>0.25</td>
+											<td>0.28mm (max)</td>										
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+							<div class = "col-md-6" >
+								<h4>DELIVERY CONDITIONS</h4>
+								<ul class="list-arrow">
+									<li>All bundles tied with wire in 3 to 4 places</li>
+									<li>Apprx bundle weight will be 2.5 to 3 MT</li>
+									<li>Grade/HT identification number along with material length will be mentioned on each bundle</li>
+								</ul>
+								<h4>Various International Standards</h4>
+								<p>SUP6, SUP9, SUP9A, SUP11A, EN45, EN45A, 60Si<sub>7</sub></p>
+							</div>							
+						</div>
+						<!-- <div class = "row">
+							<div class = "col-md-12">
+								<table class = "table table-bordered  table-responsive table-hover">
+									<caption>Chemical Compositions of various International Standards</caption>
+									<thead class = "thead-dark">
+										<th></th>
+										<th>C</th>
+										<th>Mn</th>
+										<th>P</th>
+										<th>S</th>
+										<th>Si</th>
+										<th>Cu</th>
+										<th>Cr</th>
+										<th>Al</th>
+										<th>B</th>
+									</thead>
+									<tbody>
+										<tr class="bg-success">
+											<td>JIS</td>
+											<t t-foreach = "range(9)" t-as = "i">
+												<td></td>
+											</t>
+										</tr>
+										<tr>
+											<td>SUP6</td>
+											<td>0.56-0.64</td>
+											<td>0.70-1.00</td>
+											<td>0.035</td>
+											<td>0.035</td>
+											<td>1.50-1.80</td>
+											<td>0.25max</td>
+											<td>0.25max</td>
+											<td>0.040max</td>
+											<td>-</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div> -->
+					</div> <!-- Conainer Ends -->
+				</section> <!-- Section Ends -->
+			</t>		
+		</template>
+		
+		<!-- Boron Steel -->
+		<template id = "grade_boron_steel">
+			<t t-call="website.layout">
+				<section id = "main-container" class = "main-container">
+					<div class = "container">
+						<div class="row text-center">
+						   <h3 class="section-sub-title">Boron Steel</h3>
+						</div><!--/ Title row end -->
+						<div class = "row">
+							<div class = "col-md-12">
+								<p>
+									Boron steel refers to steel alloyed with boron, usually in sub 1% quantities. Boron in steel greatly increases the hardenability of boron steel alloys.
+								</p>
+							</div>
+						</div>
+						<div class = "row">
+							<div class = "col-md-6" >
+								<h4>EDGE RADIUS</h4>
+								<p>Flats can be supplied with edge radius R=T and R = T/2, where “T” is equal to thickness.</p>							
+								<h4>QUALITY</h4>
+								<p>On visual inspection surface is free from harmful defects such as crack, laps, fold, pits, roll marks.</p>
+								<h4>AS ROLLED HARDNESS</h4>
+								<p>20 HRC (MAX)</p>								
+																							
+							</div>
+							<div class = "col-md-6">
+								<h4>STRAIGHTNESS</h4>
+								<p>Bars will have a straightness of 3mm/mtr.</p>							
+								<h4>GRAIN SIZE</h4>
+								<p>5-8 AS PER ASTM E-112</p>
+								<h4>INCLUSION RATING</h4>
+								<p>THIN: 2.5 A,B,C,D MAX <br/> HEAVAY: 1.5 A,B,C,D MAX</p>																							
+							</div>
+						</div>
+						<div class = "row">
+							<div class ="col-md-6" >
+								<h4>DECARBURIZATION</h4>							
+								<table class = "table table-bordered  table-responsive">
+									<thead>
+										<th></th>
+										<th>FULL</th>
+										<th>PARTIAL</th>
+										<th>TOTAL</th>
+									</thead>
+									<tbody>
+										<tr>
+											<th>Flats (upto 80x13)</th>
+											<td>Nil</td>
+											<td>0.15</td>
+											<td>0.15mm (max)</td>										
+										</tr>
+										<tr>
+											<th>Flats (above 80x13)</th>
+											<td>0.03</td>
+											<td>0.25</td>
+											<td>0.28mm (max)</td>										
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+							<div class = "col-md-6" >
+								<h4>DELIVERY CONDITIONS</h4>
+								<ul class="list-arrow">
+									<li>All bundles tied with wire in 3 to 4 places</li>
+									<li>Apprx bundle weight will be 2.5 to 3 MT</li>
+									<li>Grade/HT identification number along with material length will be mentioned on each bundle</li>
+								</ul>
+								<h4>Various International Standards</h4>
+								<p>20MnB<sub>5</sub>,&#160;28MnB<sub>5</sub>,&#160;30MnB<sub>5</sub>,&#160;30MnCrB<sub>5</sub></p>
+							</div>							
+						</div>
+					</div> <!-- Conainer Ends -->
+				</section> <!-- Section Ends -->
+			</t>		
+		</template>		
+
+	</data>
+</odoo>
