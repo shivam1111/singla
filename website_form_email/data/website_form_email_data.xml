@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <record id="website_form_email_template" model="mail.template">
             <field name="name">Contact Form Email Notification</field>
             <field name="model_id" ref="crm.model_crm_lead"/>
@@ -14,8 +14,17 @@
             </field>
             <field name="body_html">
                 <![CDATA[
-<p>Thank you for contacting us.</p>
-<p>Thank you for contacting us. We'll contact you shortly to resolve your doubts..</p>
+            <table cellspacing="0" cellpadding="0" style="width:100%;border-bottom:1px solid lightgray;">
+                <tbody>
+                    <tr>
+                        <td style="padding:2px;width:30%;">
+                            <img src="/logo" style = "vertical-align:middle;border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;padding: 0px; margin: 0px; height: auto; width: 80px;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                
+<p style = "padding-top:30px;" >Thank you for contacting us. We'll get back to you shortly.</p>
 <p>Details of your query:</p>
 <ul>
 <li>Name: ${object.contact_name}</li>
@@ -25,7 +34,8 @@
 <li>Subject: ${object.name}</li>
 <li>Content: ${object.description}</li>
 </ul>
-<p>King Regards,</p>
+<p>Best Regards</p>
+<p>Singla Steel &amp; Allied Industries</p>
         ]]>
             </field>
         </record>
