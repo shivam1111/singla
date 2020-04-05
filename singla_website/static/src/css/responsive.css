@@ -423,7 +423,7 @@
 	ul.top-info-box li{
 		float: none;
 		margin-left: 40px !important;
-		border-right: 0;
+		border-right: 0 !important;
 	}
 
 	ul.top-info-box li .info-box{
@@ -699,7 +699,7 @@
 	}
 
 	.service-center-img{
-		margin-bottom: 30px;
+		margin-bottom: 30px !important;
 	}
 
 	.mrb-80 {
