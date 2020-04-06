@@ -11,6 +11,7 @@
     			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/owl.theme.default.min.css"/>
     			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/responsive.css"/>
     			<link rel="stylesheet" type="text/css" href="/singla_website/static/src/css/style.css"/>
+				<!-- Global site tag (gtag.js) - Google Analytics -->
     		</xpath>
     	</template>
     	<template id = "layout" inherit_id = "website.layout" name = "Singla Website Layout JS">
@@ -25,6 +26,16 @@
 				 <!-- Template custom -->
 				 <script type="text/javascript" src="/singla_website/static/src/js/custom.js"></script>				
     		</xpath>
+    		<xpath expr = "//script[@id = 'tracking_code']" position="replace">
+				<script async = "True" t-if="website and website.google_analytics_key and not editable" src="https://www.googletagmanager.com/gtag/js?id=UA-162884618-1"></script>
+				<script t-if="website and website.google_analytics_key and not editable">
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				
+				  gtag('config', 'UA-162884618-1');
+				</script>    		    		
+    		</xpath>    		
     		<!-- Inner Body -->
     		<xpath expr = "//header" position = "replace">
 	    			<div class="body-inner">
