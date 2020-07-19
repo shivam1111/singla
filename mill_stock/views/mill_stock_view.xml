@@ -114,9 +114,9 @@
                     <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
                     <field name="grade_id" string = "Grade" operator="child_of"/>
                     <field name="partner_id" string = "Furnace" operator="child_of"/>
-                    <filter name = "stock_updated" string = "Stock Updated" domain="[('state','=','stock'),'|',('type','=','purchase'),('type','=','adjustment'),('qty','>','0')]" />
-                    <filter name = "heats_updated" string = "Stock &amp; Heats Updated" domain="[('state','=','heats'),'|',('type','=','purchase'),('type','=','adjustment'),('qty','>','0')]" />
-                    <filter name = "no_check" string = "Checking Not Required" domain="[('state','=','no_check'),'|',('type','=','purchase'),('type','=','adjustment'),('qty','>','0')]" />
+                    <filter name = "stock_updated" string = "Stock Updated" domain="[('state','=','stock'),'|',('type','=','purchase'),'|',('type','=','trade'),('type','=','adjustment'),('qty','>','0')]" />
+                    <filter name = "heats_updated" string = "Stock &amp; Heats Updated" domain="[('state','=','heats'),'|',('type','=','purchase'),'|',('type','=','trade'),('type','=','adjustment'),('qty','>','0')]" />
+                    <filter name = "no_check" string = "Checking Not Required" domain="[('state','=','no_check'),'|',('type','=','purchase'),'|',('type','=','adjustment'),('type','=','trade'),('qty','>','0')]" />
                </search>
             </field>
         </record>   		

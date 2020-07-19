@@ -16,9 +16,14 @@
 	    <field name="model">mill.purchase.order</field>
 	    <field name="inherit_id" ref="mill_purchase_order.view_mill_puchase_order_form"/>
 	    <field name="arch" type="xml">
+	    		<xpath expr = "//notebook" position = "before">
+    				<group class="oe_subtotal_footer oe_right" colspan="2">
+    					<field name="balance" />
+    				</group>    				    					    		
+	    		</xpath>
 	    		<xpath expr = "//notebook/page" position = "before" >
 	    			<page string = "Stock">
-		    			<field name = "stock_line_ids" nolabel = "1" context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'purchase'}">
+		    			<field name = "stock_line_ids" nolabel = "1"  context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'purchase'}">
 		    				<tree string = "Purchase Stock Line" editable = "1">
 		    					<field name = "name" readonly ="1" />
 		    					<field name = "date"  readonly = "1"/>
@@ -30,9 +35,20 @@
 		    					<field name = "qty" />
 		    				</tree>
 	    				</field>
-	    				<group class="oe_subtotal_footer oe_right" colspan="2">
-	    					<field name="balance" />
-	    				</group>
+    				</page>
+	    			<page string = "Trading">
+		    			<field name = "trading_line_ids" domain = "[('type','=','trade')]" nolabel = "1" context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'trade'}">
+		    				<tree string = "Purchase Trade Line" editable = "1">
+		    					<field name = "name" readonly ="1" />
+		    					<field name = "date"  readonly = "1"/>
+		    					<field name = "partner_id" readonly = "1"/>
+		    					<field name = "grade_id" readonly = "1"/>
+		    					<field name = "truck_no" />
+		    					<field name = "pcs" />
+		    					<field name = "type" invisible = "1" />
+		    					<field name = "qty" />
+		    				</tree>
+	    				</field>
     				</page>
 	    		</xpath>
 	    </field>

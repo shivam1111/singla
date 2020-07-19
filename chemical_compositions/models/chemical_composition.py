@@ -63,23 +63,27 @@ class ChemicalComposition(models.Model):
         ce_elem = ['C','Mn']
         nicrmo_elem = ['Ni','Cr','Mo']
         nicrmo = 0.00
-        for tc in self:
-            for l in tc.line_ids:
-              if l.element_id.code == 'C':
-                  ce += float(l.actual_val)
-                  ce_elem.remove('C')
-              elif l.element_id.code == 'Mn':
-                  ce += float(l.actual_val)/6.00
-                  ce_elem.remove('Mn')
-              elif l.element_id.code == 'Ni':
-                  nicrmo += float(l.actual_val)
-                  nicrmo_elem.remove('Ni')
-              elif l.element_id.code == 'Mo':
-                  nicrmo += float(l.actual_val)
-                  nicrmo_elem.remove('Mo')  
-              elif l.element_id.code == 'Cr':
-                  nicrmo += float(l.actual_val)
-                  nicrmo_elem.remove('Cr')
+        try:
+            for tc in self:
+                for l in tc.line_ids:
+                  if l.element_id.code == 'C':
+                      ce += float(l.actual_val)
+                      ce_elem.remove('C')
+                  elif l.element_id.code == 'Mn':
+                      ce += float(l.actual_val)/6.00
+                      ce_elem.remove('Mn')
+                  elif l.element_id.code == 'Ni':
+                      nicrmo += float(l.actual_val)
+                      nicrmo_elem.remove('Ni')
+                  elif l.element_id.code == 'Mo':
+                      nicrmo += float(l.actual_val)
+                      nicrmo_elem.remove('Mo')  
+                  elif l.element_id.code == 'Cr':
+                      nicrmo += float(l.actual_val)
+                      nicrmo_elem.remove('Cr')
+        except ValueError:
+            # Do nothing
+            return
         if len(ce_elem) == 0:
             self.carbon_equivalence = round (ce + 1.00/20.00,2)
         if len(nicrmo_elem) == 0:
@@ -99,12 +103,12 @@ class ChemicalComposition(models.Model):
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env['res.company']._company_default_get('sale.order'))
     inclusion_rating_ids = fields.One2many('inclusion.rating.line','composition_id','Inclusion Rating')
     length_detail_ids = fields.One2many('length.detail','composition_id','Length Details')
-    rate_extra = fields.Float('Rate Extra',help = "Basic + Extra Rate")
     min_hardness = fields.Char("Min. Hardness",default = "255")
     max_hardness = fields.Char("Max. Hardness",default = "280")
     complete_decarb = fields.Float('Complete Decarb')
     partial_decarb = fields.Float('Partial Decarb')
     grain_size = fields.Float('Grain Size')
+    qty = fields.Char('Qty')
 #     mechanical_properties = fields.Boolean('Mechanical Properties',default = False)
     ultimate_tensile_strength = fields.Float('Ultimate Tensile Strength (N/mm2)')
     yield_strength = fields.Float('Yield Strength (N/mm2)')

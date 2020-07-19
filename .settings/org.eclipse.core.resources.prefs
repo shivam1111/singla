@@ -10,6 +10,7 @@ encoding//mill_purchase_order/__manifest__.py=utf-8
 encoding//mill_purchase_order/models/mill_purchase_order.py=utf-8
 encoding//mill_stock/__manifest__.py=utf-8
 encoding//mill_stock/models/test_test.py=utf-8
+encoding//report_xlsx/models/ir_report.py=utf-8
 encoding//singla_project_extended/__manifest__.py=utf-8
 encoding//singla_website/__manifest__.py=utf-8
 encoding//singla_website/controllers/main.py=utf-8

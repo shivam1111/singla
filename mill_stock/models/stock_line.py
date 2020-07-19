@@ -18,7 +18,7 @@ class StockLine(models.Model):
     remarks = fields.Text('Remarks')
     partner_id = fields.Many2one('res.partner',help="Mostly furnce, but depends on usage",string = "Partner")
     grade_id = fields.Many2one('material.grade',string = "Material Grade",required=True)
-    type = fields.Selection(selection = [('production','Production'),('purchase','Purchase'),('adjustment','Adjustment Entry')],
+    type = fields.Selection(selection = [('production','Production'),('purchase','Purchase'),('adjustment','Adjustment Entry'),('trade','Trading')],
                             string = "Type",help = "Determines the purpose for which the line has been created",required=True)
     qty = fields.Float('Qty')
     purchase_id = fields.Many2one('mill.purchase.order','Purchase Order')

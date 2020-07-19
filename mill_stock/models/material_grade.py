@@ -29,7 +29,8 @@ class MaterialGrade(models.Model):
     def _compute_qty(self):
         total = 0.00
         for i in self.stock_line_ids:
-            total += i.qty
+            if i.type != 'trade':
+                total += i.qty
         self.qty = total
     
     qty = fields.Float('Qty',compute = "_compute_qty",store=True)

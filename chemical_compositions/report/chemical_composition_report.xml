@@ -24,8 +24,10 @@
 			            			<td><span style = "text-transform:uppercase;"><t t-esc="doc.name or '-'" /></span></td>
 			            			<td><strong>Date: </strong></td>
 			            			<td><span t-field="doc.date" t-options ='{"format": "dd/MM/yyyy"}' /></td>
-			            			<td></td>
-			            			<td></td>
+		            				<td><strong>Qty</strong></td>
+		            				<td>
+			            				<span t-esc="doc.qty or '-'" />
+			            			</td>
 							</tr>
 			            		<tr>
 			            			<td><strong>Inv No: </strong></td>

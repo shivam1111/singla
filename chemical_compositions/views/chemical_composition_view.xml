@@ -23,7 +23,7 @@
 			    		<field name = "grade_id"/>
 			    		<field name = "heat_no"/>
 			    		<field name = "invoice_no" />
-			    		<field name = "rate_extra" />
+			    		<field name = "size" />
 		    		</tree>       
 		    </field>
 	    </record>
@@ -46,7 +46,7 @@
 	                    			<field name = "invoice_no" />
 	                    			<field name = "no_of_pieces" />
 	                    			<field name = "size" />
-	                    			<field name = "rate_extra" />
+	                    			<field name = "qty" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "grade_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />

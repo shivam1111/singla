@@ -62,6 +62,7 @@ class Heat(models.Model):
     date = fields.Char('Date Rcvd',required=True,default = fields.Date.today)
     truck_no = fields.Char('Truck No.',related = "stock_line_id.truck_no")
     stock_line_id = fields.Many2one('stock.line','Stock Line')
+    purchase_id = fields.Many2one(string = "Purchase Order",store=True,related = 'stock_line_id.purchase_id')
     grade_id = fields.Many2one(string = "Grade",store=True,related = "stock_line_id.grade_id")
     line_ids = fields.One2many('composition.line','heat_id','Chemical Composition Report')
     surface_inspection = fields.Boolean('Surface Inspection')
