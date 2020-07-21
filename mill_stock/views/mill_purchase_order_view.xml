@@ -42,6 +42,7 @@
 		    					<field name = "name" readonly ="1" />
 		    					<field name = "date"  readonly = "1"/>
 		    					<field name = "partner_id" readonly = "1"/>
+		    					<field name = "rolling_id" />
 		    					<field name = "grade_id" readonly = "1"/>
 		    					<field name = "truck_no" />
 		    					<field name = "pcs" />

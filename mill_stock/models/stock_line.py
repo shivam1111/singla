@@ -28,6 +28,7 @@ class StockLine(models.Model):
     state = fields.Selection(selection=[('stock','Stock Updated'),('heats','Heats Updated'),('no_check','Checking Not Required')],default = "stock",required=True)
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
     truck_no = fields.Char('Truck No.')
+    rolling_id = fields.Many2one('res.partner',"Rolling At")
     
     
     
