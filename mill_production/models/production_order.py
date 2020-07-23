@@ -72,6 +72,7 @@ class ProductionOrderLine(models.Model):
 class ProductionOrder(models.Model):
     _name = "production.order"
     _description = "Production Order"
+    _order = "date"
     
     @api.model
     def create(self, vals):

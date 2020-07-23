@@ -2,6 +2,23 @@ from odoo import models, fields, api
 from odoo.exceptions import except_orm
 from odoo.tools.translate import _
 
+class StockRoll(models.Model):
+    _name = "stock.roll"
+    _description = "Stock Rolled and Rcvd"
+
+    @api.model
+    def create(self, vals):
+        vals['name'] = self.env['ir.sequence'].next_by_code('stock.roll') or _('New')
+        result = super(StockRoll, self).create(vals)
+        return result
+    
+    name = fields.Char('Name',default = '/',required = True)
+    date = fields.Char('Date',required=True,default = fields.Date.today)
+    remarks = fields.Text('Remarks')
+    line_id = fields.Many2one('stock.line','Stock Line')
+    qty = fields.Float('Qty')    
+
+
 class StockLine(models.Model):
     _name = 'stock.line'
     _description = "Stock Line"
@@ -13,6 +30,14 @@ class StockLine(models.Model):
         result = super(StockLine, self).create(vals)
         return result
     
+    @api.one
+    @api.depends()
+    def _compute_stock_balance(self):
+        total = 0.00
+        for i in self.stock_roll_ids:
+            total = total + i.qty
+        self.trade_balance = max(self.qty - total,0)
+            
     name = fields.Char('Name',default = '/',required = True)
     date = fields.Char('Date',required=True,default = fields.Date.today)
     remarks = fields.Text('Remarks')
@@ -26,9 +51,13 @@ class StockLine(models.Model):
     heat_no = fields.Char('Heat No.(Deprecated)',help = "This field has been deprecated.")
     heat_no_ids = fields.Many2many('heat.heat','stock_line_heat_heat_relation','stock_line_id','heat_id','Heats')
     state = fields.Selection(selection=[('stock','Stock Updated'),('heats','Heats Updated'),('no_check','Checking Not Required')],default = "stock",required=True)
+    trade_state = fields.Selection(selection=[('stock','Ingot'),('roll','Rolled'),('dispatch','Dispath')],default = "stock",required=True)
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
     truck_no = fields.Char('Truck No.')
     rolling_id = fields.Many2one('res.partner',"Rolling At")
+    roll_size = fields.Many2one('size.size',"Rolling Size",help = "In case of trading, the size to be rolled")
+    stock_roll_ids = fields.One2many('stock.roll','line_id','Material Rolled')
+    trade_balance = fields.Float('Balance',compute = "_compute_stock_balance")
     
     
     
