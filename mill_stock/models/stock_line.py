@@ -37,6 +37,12 @@ class StockLine(models.Model):
         for i in self.stock_roll_ids:
             total = total + i.qty
         self.trade_balance = max(self.qty - total,0)
+        
+    @api.one
+    @api.depends()
+    def _compute_heat_no(self):
+        sizes_list = map(lambda x:x.name + "(" + x.state +  ")"  ,self.heat_ids)
+        self.heat_no = ' | '.join(sizes_list)        
             
     name = fields.Char('Name',default = '/',required = True)
     date = fields.Char('Date',required=True,default = fields.Date.today)
@@ -48,10 +54,10 @@ class StockLine(models.Model):
     qty = fields.Float('Qty')
     purchase_id = fields.Many2one('mill.purchase.order','Purchase Order')
     pcs = fields.Float('Pcs')
-    heat_no = fields.Char('Heat No.(Deprecated)',help = "This field has been deprecated.")
+    heat_no = fields.Char('Heat No.(Deprecated)',help = "This field has been deprecated.",compute = "_compute_heat_no")
     heat_no_ids = fields.Many2many('heat.heat','stock_line_heat_heat_relation','stock_line_id','heat_id','Heats')
     state = fields.Selection(selection=[('stock','Stock Updated'),('heats','Heats Updated'),('no_check','Checking Not Required')],default = "stock",required=True)
-    trade_state = fields.Selection(selection=[('stock','Ingot'),('roll','Rolled'),('dispatch','Dispath')],default = "stock",required=True)
+    trade_state = fields.Selection(selection = [('ingot','Ingot'),('rolled','Rolled'),('dispatch','Dispatch'),('rejected','Rejected')],default = "ingot")
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
     truck_no = fields.Char('Truck No.')
     rolling_id = fields.Many2one('res.partner',"Rolling At")

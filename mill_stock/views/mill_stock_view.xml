@@ -28,15 +28,18 @@
 		    <field name="name">stock.line.tree</field>
 		    <field name="model">stock.line</field>
 		    <field name="arch" type="xml">
-		    	<tree string="Stock Lines" decoration-muted="state == 'heats'" decoration-info="state == 'stock'" decoration-warning="state == 'no_check'" >
+		    	<tree string="Stock Lines" decoration-warning="trade_state == 'rejected'" decoration-success="trade_state == 'dispatch'" decoration-info="trade_state == 'rolled'">
 		    		<field name = "name" />
 		    		<field name = "date" />
 		    		<field name = "purchase_id" />
 		    		<field name = "partner_id" />
 		    		<field name = "rolling_id"  />
 		    		<field name = "grade_id" />
+		    		<field name = "heat_no" />
+		    		<field name = "roll_size" />
 		    		<field name = "qty" />
 		    		<field name = "trade_balance" />
+		    		<field name = "trade_state" invisible = "1" />
 		    		<field name = "state" invisible = "1" />
 		    	</tree>
 		    </field>		
@@ -133,7 +136,7 @@
 		    <field name="arch" type="xml">
 		        <form string="Stock Line">
 		        	<header>
-		        		<field name="state" widget="statusbar" clickable="1" statusbar_visible="stock,heats,no_check"/>
+		        		<field name="trade_state" widget="statusbar" clickable="1" statusbar_visible="ingot,rolled,dispatch,rejected"/>
 		        	</header>
 		        	<sheet>
 	                    <div class="oe_title oe_left">
@@ -165,16 +168,20 @@
 	    				</group>    				    					    			                    
 	                    <notebook>
 	                    	<page string = "Heat Report">
-	                    		<field name = "heat_ids">
-                    				<tree string = "Heat">
+	                    		<field name = "heat_ids" >
+                    				<tree string = "Heat" decoration-info="state == 'non_confirmance'" decoration-success="state == 'ok'" decoration-warning="state == 'rejected'" >
                     					<field name = "date" />
                     					<field name = "name" />
                     					<field name = "furnace_heat_no" />
                     					<field name = "grade_id" />
                     					<field name =  "grinding" />
+                    					<field name = "state" invisible = "1" />
                     					<button name="%(mill_stock.report_heat_heat)d" string="Print Heat Report" type="action" />
                     				</tree>
                     				<form string = "Heat Details">
+							    		<header>
+							    			<field name = "state" widget = "statusbar" statusbar_visible="ok,non_confirmance,rejected,resolved" clickable = "1" /> 
+							    		</header>                    					
                     					<field name = "stock_line_id" invisible = "1" />
 					                    <div class="oe_title oe_left">
 					                        <h1>
@@ -236,10 +243,23 @@
                     <filter name = "stock_updated" string = "Stock Updated" domain="[('state','=','stock'),'|',('type','=','purchase'),('type','=','adjustment'),('qty','>','0')]" />
                     <filter name = "heats_updated" string = "Stock &amp; Heats Updated" domain="[('state','=','heats'),'|',('type','=','purchase'),('type','=','adjustment'),('qty','>','0')]" />
                     <filter name = "no_check" string = "Checking Not Required" domain="[('state','=','no_check'),'|',('type','=','purchase'),'|',('type','=','adjustment'),('type','=','trade'),('qty','>','0')]" />
-                    <filter name = "trading" string = "Trading Stock Lines" domain="[('state','=','stock'),('type','=','trade'),('qty','>','0')]" />
                </search>
             </field>
         </record>   		
+
+        <record id="view_mill_stock_line_filter_trading" model="ir.ui.view">
+            <field name="name">mill.stock.line.search</field>
+            <field name="model">stock.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Stock Lines">
+                    <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="grade_id" string = "Grade" operator="child_of"/>
+                    <field name="partner_id" string = "Furnace" operator="child_of"/>
+                    <field name="rolling_id" string = "Rolling Mill" operator="child_of"/>
+                    <filter name = "dashboard" string = "Dashboard" domain="['|',('trade_state','=','ingot'),'|',('trade_state','=','rolled'),('trade_state','=','rejected')]" />
+               </search>
+            </field>
+        </record>   		        
 
         <record id="action_stock_lines_views" model="ir.actions.act_window">
             <field name="name">Stock Lines</field>
@@ -265,9 +285,9 @@
             <field name="res_model">stock.line</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_mill_stock_line_filter"/>
-            <field name = "context">{'search_default_trading':1}</field>
-            <field name = "domain">[('qty','>','0')]</field>
+            <field name="search_view_id" ref="view_mill_stock_line_filter_trading"/>
+            <field name = "context">{'search_default_dashboard':1}</field>
+            <field name = "domain">[('qty','>','0'),('type','=','trade')]</field>
         </record>        		
 
 		<record id="child_action_window_tree" model="ir.actions.act_window.view">
