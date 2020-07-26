@@ -63,11 +63,9 @@
 								<group string = "Completed Order Lines" attrs = "{'invisible':[('id','=',False)]}">
 									<field name = "line_completed_ids" nolabel = "1" >
 										<tree string = "Completed Size Line"   editable = "bottom">
-											<field name = "name" domain = "[('order_id','=',parent.id)]" widget = "selection" />
-											<field name = "order_qty" sum = "Total Ordered Qty" readonly = "1" />
-											<field name = "grade_id" readonly = "1"/>
-											<field name = "cut_length" readonly = "1"/>
-											<field name = "corner_id" readonly = "1"/>
+											<field name = "name" readonly = "1"/>
+											<field name = "size_id"  />
+											<field name = "line_id" domain = "[('order_id','=',parent.id)]" widget = "selection" />
 											<field name = "complete_date"/>
 											<field name = "pcs" sum = "Total Pcs" />
 											<field name = "completed_qty" sum = "Total Completed Qty" />

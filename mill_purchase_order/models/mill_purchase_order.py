@@ -66,6 +66,7 @@ class MillPurchaseOrder(models.Model):
     state = fields.Selection([
         ('order_placed', 'Order Placed'),
         ('done', 'Done'),
+        ('cancel','Cancelled')
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='order_placed')
     currency_id = fields.Many2one(
         'res.currency', string='Currency',default=_get_default_currency_id)    

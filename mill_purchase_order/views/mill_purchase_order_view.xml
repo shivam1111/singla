@@ -12,7 +12,7 @@
        		<field name="arch" type="xml">
 	       		<form string="Mill Purchase Orders">
 		        		<header>
-		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="order_placed,done"/>
+		        			<field name="state" widget="statusbar" clickable="1" statusbar_visible="order_placed,done,cancel"/>
 		        		</header>
 		        		<sheet>
 	                    <div class="oe_title">
@@ -63,7 +63,7 @@
             <field name="name">Purchase Orders Tree</field>
        		<field name="model">mill.purchase.order</field>
        		<field name="arch" type="xml">
-       			<tree string = "Mill Purchase Order" decoration-muted="state == 'done'">
+       			<tree string = "Mill Purchase Order" decoration-muted="state == 'done'" decoration-warning="state == 'cancel'">
        				<field name = "name" />
        				<field name = "partner_id" />
        				<field name = "date_order"/>

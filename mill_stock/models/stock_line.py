@@ -61,7 +61,7 @@ class StockLine(models.Model):
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
     truck_no = fields.Char('Truck No.')
     rolling_id = fields.Many2one('res.partner',"Rolling At")
-    roll_size = fields.Many2one('size.size',"Rolling Size",help = "In case of trading, the size to be rolled")
+    roll_size = fields.Many2many('size.size',string = "Rolling Size",help = "In case of trading, the size to be rolled")
     stock_roll_ids = fields.One2many('stock.roll','line_id','Material Rolled')
     trade_balance = fields.Float('Balance',compute = "_compute_stock_balance")
     

@@ -63,9 +63,8 @@ class MillOrderSizeLine(models.Model):
     @api.one
     @api.depends('order_id.line_completed_ids','order_id.line_completed_ids.completed_qty')
     def _compute_completed_qty(self):
-        line_ids = self.order_id.line_completed_ids.filtered(lambda rec: rec.name.id == self.id)
         total = 0.00
-        for i in line_ids:
+        for i in self.order_id.line_completed_ids:
             total = total + i.completed_qty
         self.completed_qty = total
 
@@ -105,12 +104,16 @@ class MillOrderSizeLine(models.Model):
 class MillOrderSizeLineCompleted(models.Model):
     _name = "mill.order.size.line.completed"
     _description = "Mill Order Size Line Completed"
-    
-    name = fields.Many2one('mill.order.size.line')
-    order_qty = fields.Float('Order Qty',related = "name.order_qty")
-    grade_id = fields.Many2one('material.grade','Grade',related = "name.grade_id")
-    cut_length = fields.Char('Cut Length',related = "name.cut_length")
-    corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "name.corner_id",store=True)
+
+    @api.model
+    def create(self, vals):
+        vals['ref'] = self.env['ir.sequence'].next_by_code('mill.order.size.line') or _('New')
+        result = super(MillOrderSizeLineCompleted, self).create(vals)
+        return result  
+
+    name = fields.Char('Ref',default = '/')
+    size_id = fields.Many2one('size.size',"Size")
+    line_id = fields.Many2one('mill.order.size.line','Order Line')
     completed_qty = fields.Float('Completed Qty')
     remarks = fields.Text("Remarks")
     order_id = fields.Many2one('mill.order')
