@@ -5,4 +5,4 @@ id_test_test,access_test_test,model_test_test,,1,1,1,
 id_test_line,access_test_line,model_test_line,,1,1,1,1
 id_access_heat_heat_lab,access_heat_heat_lab,model_heat_heat,mill_order.group_laboratory_personnel,1,1,1,0
 id_test_report_rm,access_test_report_rm,model_test_report,mill_order.group_raw_material_manager,1,1,1,1
-id_stock_roll_rm,access_stock_roll_rm,moel_stock_roll,mill_order.group_raw_material_manager,1,1,,
+id_stock_roll_rm,access_stock_roll_rm,model_stock_roll,mill_order.group_raw_material_manager,1,1,,
