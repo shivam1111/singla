@@ -60,13 +60,6 @@ class MillOrderSizeLine(models.Model):
     _name = "mill.order.size.line"
     _description = "Mill Order Size Line"
     
-    @api.one
-    @api.depends('order_id.line_completed_ids','order_id.line_completed_ids.completed_qty')
-    def _compute_completed_qty(self):
-        total = 0.00
-        for i in self.order_id.line_completed_ids:
-            total = total + i.completed_qty
-        self.completed_qty = total
 
     @api.model
     def create(self, vals):
@@ -84,7 +77,6 @@ class MillOrderSizeLine(models.Model):
     name = fields.Many2one('size.size',required=True)
     ref = fields.Char('Ref',default = '/')
     order_qty = fields.Float('Order Qty')
-    completed_qty = fields.Float('Completed Qty', compute = "_compute_completed_qty",store=True)
     rate = fields.Float("Rate")
     remarks = fields.Text("Remarks")
     corner_id = fields.Many2one('corner.type',string = "Corner Type",related = "name.corner_id",store=True)
@@ -167,7 +159,7 @@ class MillOrder(models.Model):
         '''
         for order in self:
             order_qty = sum(map(lambda x:x.order_qty,order.line_ids))
-            complete_qty = sum(map(lambda x:x.completed_qty,order.line_ids))
+            complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
             order.order_qty = order_qty
             order.completed_qty = complete_qty
     
@@ -185,7 +177,7 @@ class MillOrder(models.Model):
         return self.env.user.company_id.currency_id.id                
             
     size = fields.Char(string='Size', required=True)
-    order_qty = fields.Float('Quantity',compute = '_compute_qty')
+    order_qty = fields.Float('Quantity',compute = '_compute_qty',store=True)
     qty = fields.Float('Old field Qty')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
@@ -199,7 +191,7 @@ class MillOrder(models.Model):
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
     completed = fields.Float('Old field Completed Qty')
-    completed_qty = fields.Float('Completed',compute = '_compute_qty')
+    completed_qty = fields.Float('Completed',compute = '_compute_qty',store=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),

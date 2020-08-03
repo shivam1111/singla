@@ -7,16 +7,13 @@ class MillOrderReport(models.Model):
     _description = "Order Report"
     _auto = False
     
-    name = fields.Many2one('size.size','Size')
+    name = fields.Char('Name')
     order_qty = fields.Float('Order Qty')
     completed_qty = fields.Float('Completed Qty')
     balance = fields.Float('Balance')
-    corner_id = fields.Many2one('corner.type',string = "Corner Type")
-    order_id = fields.Many2one('mill.order','Order')
     partner_id = fields.Many2one('res.partner',string = "Customer")
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('manufactured','Manufactured'),
         ('cancel','Cancel'),
         ('done', 'Done'),
         ], string='Status',default='draft')
@@ -26,30 +23,24 @@ class MillOrderReport(models.Model):
         select_str = """
             select 
                 min(l.id) as id,
-                name,
+                size,
                 SUM(order_qty) as order_qty,
                 SUM(completed_qty) as completed_qty,
                 SUM(order_qty) - SUM(completed_qty)  as balance,
-                order_id,
                 partner_id,
-                state,
-                grade_id
+                state
         """ 
         return select_str
     
     def _from(self):
         from_str = """
-            mill_order_size_line  l
+            mill_order  l
         """
         return from_str
         
     def _group_by(self):
         group_by_str = """
-            GROUP BY name,
-                    order_id,
-                    partner_id,
-                    state,
-                    grade_id
+            GROUP BY partner_id,size,state 
                     
         """
         return group_by_str    

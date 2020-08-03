@@ -54,7 +54,6 @@
 											<field name = "corner_id" />
 											<field name = "state" />
 											<field name = "booking_date"/>
-											<field name = "completed_qty" sum = "Total Completed Qty" />
 											<field name = "rate" />
 											<field name = "remarks" />
 										</tree>
@@ -68,7 +67,6 @@
 											<field name = "line_id" domain = "[('order_id','=',parent.id)]" widget = "selection" />
 											<field name = "complete_date"/>
 											<field name = "pcs" sum = "Total Pcs" />
-											<field name = "completed_qty" sum = "Total Completed Qty" />
 											<field name = "remarks" />
 										</tree>
 									</field>																
@@ -152,7 +150,6 @@
 					<field name = "name"/>
 					<field name = "partner_id" />
 					<field name = "order_qty" sum="Total Qty" />
-					<field name = "completed_qty" sum = "Total Completed" />
 					<field name = "corner_id"  />
 					<field name = "grade_id" />
 					<field name = "cut_length" />
@@ -182,7 +179,6 @@
 							<group>
 								<field name = "partner_id" />
 								<field name = "order_qty" sum="Total Qty" />
-								<field name = "completed_qty" sum = "Total Completed" />	
 								<field name = "order_id" string = "Order"/>
 							</group>		        				        			
 		        			</group>
