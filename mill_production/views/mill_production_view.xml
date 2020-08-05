@@ -60,6 +60,7 @@
 	                    					<field name ="units" sum = "Total Units" />
 	                    					<field name = "type" invisible = "1"/>
 	                    					<field name = "scrap" sum = "Total Scrap" />
+	                    					<field name = "remarks" />
 	                    				</tree>
 	                    			</field>
 	                    		</page>
