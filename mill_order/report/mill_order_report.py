@@ -17,13 +17,12 @@ class MillOrderReport(models.Model):
         ('cancel','Cancel'),
         ('done', 'Done'),
         ], string='Status',default='draft')
-    grade_id = fields.Many2one('material.grade','Grade')
-    
+
     def _select(self):
         select_str = """
             select 
                 min(l.id) as id,
-                size,
+                size as name,
                 order_qty as order_qty,
                 completed_qty as completed_qty,
                 (order_qty - completed_qty)  as balance,
