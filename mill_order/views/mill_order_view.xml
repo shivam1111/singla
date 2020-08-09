@@ -67,6 +67,7 @@
 											<field name = "line_id" domain = "[('order_id','=',parent.id)]" widget = "selection" />
 											<field name = "complete_date"/>
 											<field name = "pcs" sum = "Total Pcs" />
+											<field name = "completed_qty" sum = "Total Qty" />
 											<field name = "remarks" />
 										</tree>
 									</field>																

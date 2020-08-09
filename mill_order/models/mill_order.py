@@ -162,7 +162,7 @@ class MillOrder(models.Model):
             complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
             order.order_qty = order_qty
             order.completed_qty = complete_qty
-    
+
     @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
         """
@@ -177,7 +177,7 @@ class MillOrder(models.Model):
         return self.env.user.company_id.currency_id.id                
             
     size = fields.Char(string='Size', required=True)
-    order_qty = fields.Float('Quantity',compute = '_compute_qty',store=True)
+    order_qty = fields.Float('Quantity',compute = '_compute_qty')
     qty = fields.Float('Old field Qty')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
@@ -191,7 +191,7 @@ class MillOrder(models.Model):
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
     completed = fields.Float('Old field Completed Qty')
-    completed_qty = fields.Float('Completed',compute = '_compute_qty',store=True)
+    completed_qty = fields.Float('Completed', compute='_compute_qty')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),

@@ -25,8 +25,8 @@ class MillOrderReport(models.Model):
                 min(l.id) as id,
                 size,
                 SUM(order_qty) as order_qty,
-                SUM(completed_qty) as completed_qty,
-                SUM(order_qty) - SUM(completed_qty)  as balance,
+                (select SUM(completed_qty) from mill_order_size_line_completed where order_id = l.id) as completed_qty,
+                (order_qty - completed_qty)  as balance,
                 partner_id,
                 state
         """ 
@@ -40,7 +40,7 @@ class MillOrderReport(models.Model):
         
     def _group_by(self):
         group_by_str = """
-            GROUP BY partner_id,size,state 
+            GROUP BY id,partner_id,size,state
                     
         """
         return group_by_str    

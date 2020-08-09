@@ -1,0 +1,14 @@
+select
+                SUM(order_qty) as order_qty,
+                (select SUM(completed_qty) from mill_order_size_line_completed where order_id = l.id) as completed_qty,
+                SUM(order_qty - completed_qty)  as balance
+
+            FROM
+            mill_order  l
+
+            WHERE partner_id = 140
+            GROUP BY id,partner_id,size,state
+
+
+
+
