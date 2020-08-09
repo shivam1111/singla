@@ -24,8 +24,8 @@ class MillOrderReport(models.Model):
             select 
                 min(l.id) as id,
                 size,
-                SUM(order_qty) as order_qty,
-                SUM(completed_qty) as completed_qty,
+                order_qty as order_qty,
+                completed_qty as completed_qty,
                 (order_qty - completed_qty)  as balance,
                 partner_id,
                 state

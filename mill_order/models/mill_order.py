@@ -186,7 +186,7 @@ class MillOrder(models.Model):
         return self.env.user.company_id.currency_id.id                
             
     size = fields.Char(string='Size', required=True)
-    order_qty = fields.Float('Quantity',compute = '_compute_qty')
+    order_qty = fields.Float('Quantity',compute = '_compute_qty',store=True)
     qty = fields.Float('Old field Qty')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     manufacturing_date = fields.Datetime('Manufacturing Date')
