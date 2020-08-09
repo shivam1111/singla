@@ -25,7 +25,7 @@ class MillOrderReport(models.Model):
                 min(l.id) as id,
                 size,
                 SUM(order_qty) as order_qty,
-                (select SUM(completed_qty) from mill_order_size_line_completed where order_id = l.id) as completed_qty,
+                SUM(completed_qty) as completed_qty,
                 (order_qty - completed_qty)  as balance,
                 partner_id,
                 state
@@ -43,15 +43,17 @@ class MillOrderReport(models.Model):
             GROUP BY id,partner_id,size,state
                     
         """
-        return group_by_str    
-    
+        return group_by_str
+
+
     @api.model_cr
     def init(self):
         # self._table = mill_order_report
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute("""CREATE or REPLACE VIEW %s as (
             %s
-            FROM  %s 
+            FROM  %s
+            WHERE state = 'draft'
             %s
             )""" % (self._table, self._select(), self._from(), self._group_by()))
 

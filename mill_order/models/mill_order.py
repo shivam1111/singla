@@ -159,9 +159,18 @@ class MillOrder(models.Model):
         '''
         for order in self:
             order_qty = sum(map(lambda x:x.order_qty,order.line_ids))
-            complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
             order.order_qty = order_qty
+
+    @api.depends('line_ids','line_completed_ids.completed_qty')
+    def _compute_completed_qty(self):
+        '''
+            Compute the total ordered and completed qty
+        '''
+        for order in self:
+            complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
             order.completed_qty = complete_qty
+
+
 
     @api.depends('rate','extra_rate','rolling')
     def _amount_all(self):
@@ -191,7 +200,7 @@ class MillOrder(models.Model):
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
     completed = fields.Float('Old field Completed Qty')
-    completed_qty = fields.Float('Completed', compute='_compute_qty')
+    completed_qty = fields.Float('Completed', compute='_compute_completed_qty',store=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
