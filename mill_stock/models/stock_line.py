@@ -42,7 +42,13 @@ class StockLine(models.Model):
     @api.depends()
     def _compute_heat_no(self):
         sizes_list = map(lambda x:x.name + "(" + x.state +  ")"  ,self.heat_ids)
-        self.heat_no = ' | '.join(sizes_list)        
+        self.heat_no = ' | '.join(sizes_list)
+         
+    @api.depends()    
+    @api.one
+    def _compute_roll_sizes(self):
+        for i in self.heat_ids:
+            self.roll_size += i.roll_size
             
     name = fields.Char('Name',default = '/',required = True)
     date = fields.Char('Date',required=True,default = fields.Date.today)
@@ -61,7 +67,7 @@ class StockLine(models.Model):
     heat_ids = fields.One2many('heat.heat','stock_line_id','Heats')
     truck_no = fields.Char('Truck No.')
     rolling_id = fields.Many2one('res.partner',"Rolling At")
-    roll_size = fields.Many2many('size.size',string = "Rolling Size",help = "In case of trading, the size to be rolled")
+    roll_size = fields.Many2many('size.size',string = "Rolling Size",compute = "_compute_roll_sizes",help = "In case of trading, the size to be rolled")
     stock_roll_ids = fields.One2many('stock.roll','line_id','Material Rolled')
     trade_balance = fields.Float('Balance',compute = "_compute_stock_balance")
     

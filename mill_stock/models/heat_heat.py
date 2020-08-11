@@ -72,5 +72,6 @@ class Heat(models.Model):
     size = fields.Many2one('ingot.size','Size')
     inclusion_rating_ids = fields.One2many('inclusion.rating.line','heat_id','Inclusion Rating')
     supervisor_id = fields.Many2one('res.users','Supervisor',default = lambda self:self.env.user)
+    roll_size = fields.Many2many('size.size', string="Rolling Size", help="Rolling Size")
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env['res.company']._company_default_get('sale.order'))
     

@@ -12,6 +12,7 @@
 		    		<field name = "grade_id" />
 					<field name = "grinding" />		    		
 		    		<field name = "size" />
+					<field name = "roll_size" />
 		    	</tree>
 		    </field>		
 		</record>
@@ -35,6 +36,7 @@
 	                    		<field name = "furnace_heat_no" />
 	                    		<field name = "supervisor_id" />
 	                    		<field name = "truck_no" />
+								<field name = "roll_size" widget="many2many_tags" options="{'no_create_edit': True}"/>
 	                    	</group>
 	                    	<group>
 	                    		<field name = "date" />
