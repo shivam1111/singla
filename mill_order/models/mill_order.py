@@ -152,24 +152,35 @@ class MillOrder(models.Model):
             records_to_unlink |= self.browse(int(self.id))
         return super(MillOrder,records_to_unlink).unlink()
       
-    @api.depends('line_ids','line_ids.order_qty')
+    @api.depends('line_ids','line_ids.order_qty','line_completed_ids.completed_qty')
     def _compute_qty(self):
         '''
             Compute the total ordered and completed qty
         '''
         for order in self:
             order_qty = sum(map(lambda x:x.order_qty,order.line_ids))
+            complete_qty = sum(map(lambda x: x.completed_qty, order.line_completed_ids))
             order.order_qty = order_qty
-
-    @api.depends('line_ids','line_completed_ids.completed_qty')
-    def _compute_completed_qty(self):
-        '''
-            Compute the total ordered and completed qty
-        '''
-        for order in self:
-            complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
             order.completed_qty = complete_qty
+            order.balance = order_qty - complete_qty
 
+    # @api.depends('line_ids','line_completed_ids.completed_qty')
+    # def _compute_completed_qty(self):
+    #     '''
+    #         Compute the total ordered and completed qty
+    #     '''
+    #     for order in self:
+    #         complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
+    #         order.completed_qty = complete_qty
+
+    # @api.depends('line_ids','line_completed_ids.completed_qty','line_ids.order_qty')
+    # def _compute_balance_qty(self):
+    #     '''
+    #         Compute the total ordered and completed qty
+    #     '''
+    #     for order in self:
+    #         complete_qty = sum(map(lambda x:x.completed_qty,order.line_completed_ids))
+    #         order.completed_qty = complete_qty
 
 
     @api.depends('rate','extra_rate','rolling')
@@ -189,8 +200,6 @@ class MillOrder(models.Model):
     order_qty = fields.Float('Quantity',compute = '_compute_qty',store=True)
     qty = fields.Float('Old field Qty')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
-    manufacturing_date = fields.Datetime('Manufacturing Date')
-    duration = fields.Float('Duration')
     note = fields.Text('Note')
     currency_id = fields.Many2one(
         'res.currency', string='Currency',default=_get_default_currency_id)        
@@ -200,7 +209,7 @@ class MillOrder(models.Model):
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
     completed = fields.Float('Old field Completed Qty')
-    completed_qty = fields.Float('Completed', compute='_compute_completed_qty',store=True)
+    completed_qty = fields.Float('Completed', compute='_compute_qty',store=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
@@ -209,4 +218,4 @@ class MillOrder(models.Model):
     line_ids = fields.One2many('mill.order.size.line','order_id','Order Lines')    
     line_completed_ids = fields.One2many('mill.order.size.line.completed','order_id','Completed Order Lines')
     material_feature_ids = fields.Many2many('material.feature','mill_order_material_feature_rel','order_id','feature_id','Features')
-    
+    balance = fields.Float('Balance', compute='_compute_qty',store=True)

@@ -24,19 +24,17 @@
 			        		<group>
 							<group>
 								<field name = "partner_id" />
-								<field name = "order_qty" />
 								<field name = "rate" widget = "monetary"/>
-								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
+								<field name = "extra_rate" widget = "monetary"/>
+								<field name = "rolling" widget = "monetary"/>
+								<field name = "order_qty" />
 							</group>
 							<group>
 								<field name = "booking_date"/>
-								<field name = "duration" widget = "float_time"/>	
-								<field name = "size"/>							
-								
-								<field name = "manufacturing_date" />
+								<field name = "size"/>
+								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
 								<field name = "completed_qty" />
-								<field name = "extra_rate" widget = "monetary"/>
-								<field name = "rolling" widget = "monetary"/>
+								<field name = "balance" />
 								<field name = "net_rate" widget = "monetary"/>
 							</group>
 						</group>
@@ -96,8 +94,8 @@
 					<field name = "size"/>
 					<field name = "order_qty" sum="Total Qty" />
 					<field name = "completed_qty" sum = "Total Completed" />
+					<field name = "balance" sum = "Total Balance Qty" />
 					<field name = "partner_id" />
-					<field name = "manufacturing_date" />
 					<field name = "net_rate"  />
 					<field name = "note" />
 					<button name = "set_state_done" type = "object" string = "Done" />
