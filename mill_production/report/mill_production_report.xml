@@ -42,6 +42,7 @@
 					    					<th>Coal/MT</th>
 					    					<th>Scrap</th>
 					    					<th>Scrap %</th>
+											<th>Sale</th>
 					    					<th>H</th>
 					    					<th>F</th>
 					    					<th>M</th>
@@ -73,6 +74,8 @@
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;">Total: <span t-field="doc.coal" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.scrap" /></td>
+														<td style="border-bottom:1px solid black;"><span t-field="l.scrap_percentage" /></td>
+														<td style="border-bottom:1px solid black;"><span t-field="l.sale" /></td>
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>
@@ -99,7 +102,8 @@
 						    							<td><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
 						    							<td><span t-field="l.scrap" /></td>
-						    							<td><t t-if = "l_first"><span t-field="doc.scrap_percentage" /></t></td>
+						    							<td><span t-field="l.scrap_percentage" /></td>
+														<td><span t-field="l.sale" /></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.hours" /></t></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.furnace_kara" /></t></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.mill_kara" /></t></td>

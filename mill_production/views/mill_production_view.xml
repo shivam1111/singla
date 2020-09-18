@@ -59,7 +59,9 @@
 	                    					<field name = "kva_closing" />
 	                    					<field name ="units" sum = "Total Units" />
 	                    					<field name = "type" invisible = "1"/>
-	                    					<field name = "scrap" sum = "Total Scrap" />
+											<field name = "scrap" sum = "Total Scrap" />
+											<field name = "scrap_percentage" />
+											<field name = "sale" />
 	                    					<field name = "remarks" />
 	                    				</tree>
 	                    			</field>

@@ -21,6 +21,14 @@ class StockLine(models.Model):
     @api.depends('kwh_closing','kwh_opening')
     def _compute_units(self):
         self.units = (self.kwh_closing - self.kwh_opening)*10
+
+    @api.one
+    @api.depends('scrap','qty')
+    def _compute_scrap(self):
+        try:
+            self.scrap_percentage = (self.scrap*100)/(1000*self.qty)
+        except ZeroDivisionError:
+            self.scrap_percentage = 0.00
         
     name = fields.Char('Name')
     sequence = fields.Integer('sequence', help="Sequence for the handle.",default=10)
@@ -34,8 +42,10 @@ class StockLine(models.Model):
     kva_closing = fields.Float('KVA Cl.')
     units = fields.Float('Units',compute = "_compute_units")
     scrap = fields.Float('Scrap')
+    scrap_percentage = fields.Float('Scrap%',compute = "_compute_scrap")
     production_line_id = fields.Many2one('production.order.line','Prooduction Line',help = "This field stores the planned productio line")
     stock_id = fields.Many2one('stock.line','Stock Line')
+    sale = fields.Float('Sale')
     
     
 
@@ -122,4 +132,5 @@ class MillProduction(models.Model):
     units_per_mt = fields.Float('Units/MT',compute = '_compute_units')
     kwh_mt = fields.Float('KWH/MT',compute = '_compute_units' )
     size_id = fields.Many2one('size.size',related= "production_line_ids.size_id",string = "Size")
+
     
