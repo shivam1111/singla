@@ -122,7 +122,7 @@ class MillOrder(models.Model):
     @api.onchange('line_ids')
     def onchange_line_ids(self):
         sizes_list = map(lambda x:x.name and x.name.name or '',self.line_ids)
-        self.size = ' | '.join(sizes_list)
+        self.size = ' | '.join(sizes_list) or "Size Unknown"
     
     @api.onchange('qty')
     def onchange_qty(self):
@@ -158,11 +158,9 @@ class MillOrder(models.Model):
             Compute the total ordered and completed qty
         '''
         for order in self:
-            order_qty = sum(map(lambda x:x.order_qty,order.line_ids))
             complete_qty = sum(map(lambda x: x.completed_qty, order.line_completed_ids))
-            order.order_qty = order_qty
             order.completed_qty = complete_qty
-            order.balance = order_qty - complete_qty
+            order.balance = self.order_qty - complete_qty
 
     # @api.depends('line_ids','line_completed_ids.completed_qty')
     # def _compute_completed_qty(self):
@@ -196,8 +194,8 @@ class MillOrder(models.Model):
     def _get_default_currency_id(self):
         return self.env.user.company_id.currency_id.id                
             
-    size = fields.Char(string='Size', required=True)
-    order_qty = fields.Float('Quantity',compute = '_compute_qty',store=True)
+    size = fields.Char(string='Size', required=True,default = "Size Unknown")
+    order_qty = fields.Float('Quantity',required=True)
     qty = fields.Float('Old field Qty')
     partner_id = fields.Many2one('res.partner','Customer',required=True)
     note = fields.Text('Note')
