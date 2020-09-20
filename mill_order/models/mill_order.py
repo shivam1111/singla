@@ -71,7 +71,7 @@ class MillOrderSizeLine(models.Model):
     def name_get(self):
         result = []
         for i in self:
-            result.append((i.id,i.name.name+(i.ref and " ["+i.ref+"]" or "" )))
+            result.append((i.id,i.name.name+" / %sMT" % i.order_qty))
         return result                 
         
     name = fields.Many2one('size.size',required=True)

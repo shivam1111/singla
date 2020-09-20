@@ -17,6 +17,7 @@
         'report/mill_order_report_view.xml',
         'report/packing_list_report.xml',
         'report/color_code_report.xml',
+        'report/mill_order_analysis.xml',
         'data/ir_sequence_data.xml',
         'security/mill_security.xml',
         'security/ir.model.access.csv',

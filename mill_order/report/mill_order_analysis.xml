@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<template id="report_mill_order_list">
+		    <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class = "page">
+                        <div class="oe_structure"/>
+                        <table class = "table table-condensed">
+                            <thead class="thead-dark">
+                                <th>Name</th>
+                                <th>Booking Date</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs.sorted(key = lambda r:r.partner_id.name)" t-as="doc">
+                                    <tr>
+                                        <td><t t-esc="doc.partner_id.name"/></td>
+                                        <td><t t-esc="doc.booking_date"/></td>
+                                            <t t-foreach="doc.line_ids" t-as="line_id">
+                                                <td>
+                                                    <t t-esc = "line_id.name_get()[0][1]" />
+                                                </td>
+                                            </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class = "footer"></div>
+                </t>
+		    </t>
+		</template>
+        <report
+            id="mill_order_list"
+            string="Orders List"
+            model="mill.order"
+            report_type="qweb-html"
+            file="mill_order.mill_order_analysis"
+            name="mill_order.report_mill_order_list"
+        />
+    </data>
+</odoo>
