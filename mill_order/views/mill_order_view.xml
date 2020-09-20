@@ -28,6 +28,7 @@
 								<field name = "extra_rate" widget = "monetary"/>
 								<field name = "rolling" widget = "monetary"/>
 								<field name = "order_qty" />
+								<field name = "inclusive_loading" />
 							</group>
 							<group>
 								<field name = "booking_date"/>

@@ -209,6 +209,7 @@ class MillOrder(models.Model):
     delivery_data = fields.Date('Delivery Date')
     completed = fields.Float('Old field Completed Qty')
     completed_qty = fields.Float('Completed', compute='_compute_qty',store=True)
+    inclusive_loading = fields.Boolean('Loading Inclusive')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
