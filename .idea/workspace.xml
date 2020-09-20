@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_order/models/mill_order.py" afterPath="$PROJECT_DIR$/mill_order/models/mill_order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" afterPath="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,21 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mill_order.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mill_order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_order/models/mill_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="196" column="53" selection-start-line="196" selection-start-column="53" selection-end-line="196" selection-end-column="53" />
+            <state relative-caret-position="2640">
+              <caret line="208" column="17" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mill_order_view.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mill_order_view.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mill_order/views/mill_order_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="96" column="68" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
+            <state relative-caret-position="180">
+              <caret line="44" column="110" selection-start-line="44" selection-start-column="110" selection-end-line="44" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -55,11 +56,11 @@
         <option value="$PROJECT_DIR$/mill_stock/models/heat_heat.py" />
         <option value="$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml" />
         <option value="$PROJECT_DIR$/mill_stock/views/heat_view.xml" />
-        <option value="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" />
         <option value="$PROJECT_DIR$/mill_production/views/mill_production_view.xml" />
         <option value="$PROJECT_DIR$/mill_production/models/mill_production.py" />
         <option value="$PROJECT_DIR$/mill_production/report/mill_production_report.xml" />
         <option value="$PROJECT_DIR$/mill_order/models/mill_order.py" />
+        <option value="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" />
       </list>
     </option>
   </component>
@@ -474,14 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_order/views/mill_order_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="96" column="68" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -545,8 +538,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_order/models/mill_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="196" column="53" selection-start-line="196" selection-start-column="53" selection-end-line="196" selection-end-column="53" />
+        <state relative-caret-position="2640">
+          <caret line="208" column="17" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_order/views/mill_order_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="44" column="110" selection-start-line="44" selection-start-column="110" selection-end-line="44" selection-end-column="110" />
           <folding />
         </state>
       </provider>

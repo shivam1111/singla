@@ -31,6 +31,7 @@
 							</group>
 							<group>
 								<field name = "booking_date"/>
+								<field name = "delivery_data" />
 								<field name = "size"/>
 								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
 								<field name = "completed_qty" />
@@ -41,8 +42,9 @@
 						<notebook>
 							<page string = "Order">
 								<group string = "Order Line">
-									<field name = "line_ids" nolabel = "1" >
-										<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'" decoration-info="state == 'draft'"  editable = "top">
+									<field name = "line_ids" nolabel = "1" context = "{'default_rate':net_rate}">
+										<tree string = "Size Line" decoration-danger = "state == 'cancel'" decoration-muted="state == 'done'" decoration-bf="state=='manufactured'"
+											  decoration-info="state == 'draft'"  editable = "top"  >
 											<field name = "ref" readonly = "1"/>
 											<field name = "name" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 											<field name = "order_qty" sum = "Total Ordered Qty" />
@@ -52,7 +54,7 @@
 											<field name = "corner_id" />
 											<field name = "state" />
 											<field name = "booking_date"/>
-											<field name = "rate" />
+											<field name = "rate" context = "{'default_rate':rolling}" />
 											<field name = "remarks" />
 										</tree>
 									</field>								

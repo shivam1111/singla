@@ -206,6 +206,7 @@ class MillOrder(models.Model):
     rolling = fields.Monetary('Rolling',currency_field = "currency_id",groups = "mill_order.group_manager")
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     booking_date = fields.Date('Booking Date',default = fields.Date.today)
+    delivery_data = fields.Date('Delivery Date')
     completed = fields.Float('Old field Completed Qty')
     completed_qty = fields.Float('Completed', compute='_compute_qty',store=True)
     state = fields.Selection([
