@@ -37,8 +37,8 @@
 		    		<field name = "grade_id" />
 		    		<field name = "heat_no" />
 		    		<field name = "roll_size" />
-		    		<field name = "qty" />
-		    		<field name = "trade_balance" />
+		    		<field name = "qty" sum = "Total Qty"/>
+		    		<field name = "trade_balance" sum = "Balance" />
 		    		<field name = "trade_state" invisible = "1" />
 		    		<field name = "state" invisible = "1" />
 		    	</tree>
