@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" afterPath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" afterPath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
     </list>
@@ -34,21 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mill_purchase_order.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mill_purchase_order.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+            <state relative-caret-position="555">
+              <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mill_purchase_order_view.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mill_purchase_order_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state relative-caret-position="336">
+              <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -74,8 +73,8 @@
         <option value="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_analysis.xml" />
         <option value="$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml" />
-        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
         <option value="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
+        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
       </list>
     </option>
   </component>
@@ -662,18 +661,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
+    <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+        <state relative-caret-position="336">
+          <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
+    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state relative-caret-position="555">
+          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
           <folding />
         </state>
       </provider>

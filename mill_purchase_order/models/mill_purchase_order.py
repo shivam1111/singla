@@ -63,6 +63,8 @@ class MillPurchaseOrder(models.Model):
     finish_size = fields.Many2one('size.size','Finish Size')
     is_ingot = fields.Boolean('Is Ingot',default=True)
     is_finish = fields.Boolean('Is Finish')
+    finish_loading = fields.Boolean ("Loading Inclusive")
+    cc_size = fields.Char('CC Size')
     grade_id = fields.Many2one('material.grade','Material Grade')
     material_ordered = fields.Float('Material Qty Ordered')
     material_received = fields.Float('Material Qty Received')

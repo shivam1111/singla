@@ -39,6 +39,7 @@
 								<field name = "extra_rate" widget = "monetary"  />
 								<field name = "material_feature_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
 								<field name = "net_rate" widget = "monetary"/>
+
 							</group>
 						</group>
 						<notebook>
@@ -51,6 +52,12 @@
 	               						<field name = "max_val"/>
 	               					</tree>																							
 								</field>
+							</page>
+							<page string = "Finish Details" attrs="{ 'invisible': [('is_ingot', '=', True)]}" >
+								<group col="4">
+									<field name = "cc_size" />
+									<field name = "finish_loading" />
+								</group>
 							</page>
 						</notebook>		        			
 		        		</sheet>
