@@ -25,8 +25,11 @@
 								<field name = "partner_id" domain = "[('supplier','=',True)]" context = "{'default_is_broker': 0,'default_customer': 0,'default_supplier': 1}" />
 								<field name = "date_delivery" />
 								<field name = "size" />
+								<field name = "finish_size" />
 								<field name = "material_ordered" />
 								<field name = "basic_rate" widget = "monetary" />
+								<field name = "is_ingot" />
+								<field name = "is_finish" />
 							</group>
 							<group>
 								<field name = "date_order" />
