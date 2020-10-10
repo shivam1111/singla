@@ -70,6 +70,7 @@ class StockLine(models.Model):
     roll_size = fields.Many2many('size.size',string = "Rolling Size",compute = "_compute_roll_sizes",help = "In case of trading, the size to be rolled")
     stock_roll_ids = fields.One2many('stock.roll','line_id','Material Rolled')
     trade_balance = fields.Float('Balance',compute = "_compute_stock_balance")
+    bill_no =fields.Integer("Bill No.")
     
     
     
