@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/odoo10/addons/.idea/addons.iml" filepath="$USER_HOME$/odoo10/addons/.idea/addons.iml" />
+      <module fileurl="file://$USER_HOME$/odoo10/addons/calendar/.idea/calendar.iml" filepath="$USER_HOME$/odoo10/addons/calendar/.idea/calendar.iml" />
+      <module fileurl="file://$USER_HOME$/odoo10/.idea/odoo10.iml" filepath="$USER_HOME$/odoo10/.idea/odoo10.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/singla.iml" filepath="$PROJECT_DIR$/.idea/singla.iml" />
     </modules>
   </component>

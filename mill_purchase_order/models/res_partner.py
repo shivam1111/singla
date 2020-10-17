@@ -6,4 +6,3 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
     
     is_broker = fields.Boolean('Broker')
-    

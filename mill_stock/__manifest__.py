@@ -25,7 +25,9 @@
         'views/chemical_composition_view.xml',
         'views/test_test_view.xml',
         'report/test_report.xml',
-        'report/test_report_print.xml'
+        'report/test_report_print.xml',
+        'views/res_partner_view.xml',
+        'report/brokerage_report.xml'
     ],
     'demo': [
     ],

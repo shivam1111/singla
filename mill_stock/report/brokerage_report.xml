@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<template id="brokerage_report">
+		    <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class = "page">
+                        <div class="oe_structure"/>
+                        <div class = "row">
+                            <div style = "text-align:center;"><h2><t t-esc="broker_name"/></h2></div>
+                            <t t-set="total_qty" t-value="0" />
+                            <table class = "table  table-condensed">
+                                <thead>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>PO No.</th>
+                                    <th>Furnace</th>
+                                    <th>Grade</th>
+                                    <th>Qty</th>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="docs" t-as="l">
+                                        <tr>
+                                            <td><span t-field="l.name" /></td>
+                                            <td><span t-field="l.date" t-field-options='{"widget": "date"}' /></td>
+                                            <td><span t-field="l.purchase_id.name" /></td>
+                                            <td><span t-field="l.partner_id.name" /></td>
+                                            <td><span t-field="l.grade_id.name" /></td>
+                                            <td><span t-field="l.qty" /></td>
+                                        </tr>
+                                        <t t-set="total_qty" t-value="total_qty+l.qty" />
+                                        <t t-if="l_last">
+                                            <tr class="border-black">
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><span t-esc="total_qty" /></td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+		    </t>
+		</template>
+
+        <report
+            id="report_brokerage_report"
+            string="Brokerage Report"
+            model="stock.line"
+            report_type="qweb-html"
+            file="mill_stock.brokerage_report"
+            name="mill_stock.brokerage_report"
+        />
+    </data>
+</odoo>
