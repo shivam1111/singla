@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mill_stock/models/res_partner.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mill_stock/report/brokerage_report.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mill_stock/views/res_partner_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/singla.iml" afterPath="$PROJECT_DIR$/.idea/singla.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/models/res_partner.py" afterPath="$PROJECT_DIR$/mill_purchase_order/models/res_partner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/views/res_partner_view.xml" afterPath="$PROJECT_DIR$/mill_purchase_order/views/res_partner_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/__manifest__.py" afterPath="$PROJECT_DIR$/mill_stock/__manifest__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/models/__init__.py" afterPath="$PROJECT_DIR$/mill_stock/models/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/models/res_partner.py" afterPath="$PROJECT_DIR$/mill_stock/models/res_partner.py" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +47,8 @@
       <file leaf-file-name="res_partner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mill_stock/models/res_partner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
+            <state relative-caret-position="450">
+              <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -799,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_stock/models/res_partner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
+        <state relative-caret-position="450">
+          <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>

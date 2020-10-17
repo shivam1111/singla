@@ -25,7 +25,11 @@ class ResPartner(models.Model):
 
     @api.multi
     def print_brokerage(self):
-        stock_line = self.env['stock.line'].search([('purchase_id.broker_id','=',self.id),('date','>=',self.from_dt_brokerage),('date','<=',self.to_dt_brokerage)])
+        stock_line = self.env['stock.line'].search([('purchase_id.broker_id','=',self.id),
+                                                    ('date','>=',self.from_dt_brokerage),
+                                                    ('date','<=',self.to_dt_brokerage),
+                                                    ('state','!=','cancel')
+                                                    ])
         data = {
             'doc_model': 'stock.line',
             'doc_ids': stock_line.ids,
