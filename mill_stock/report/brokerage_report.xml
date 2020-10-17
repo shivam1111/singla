@@ -12,7 +12,8 @@
                             <table class = "table  table-condensed">
                                 <thead>
                                     <th>#</th>
-                                    <th>Date</th>
+                                    <th>Order Date</th>
+                                    <th>Rcvd Date</th>
                                     <th>PO No.</th>
                                     <th>Furnace</th>
                                     <th>Grade</th>
@@ -22,6 +23,7 @@
                                     <t t-foreach="docs" t-as="l">
                                         <tr>
                                             <td><span t-field="l.name" /></td>
+                                            <td><span t-field="l.purchase_id.date_order" t-field-options='{"widget": "date"}' /></td>
                                             <td><span t-field="l.date" t-field-options='{"widget": "date"}' /></td>
                                             <td><span t-field="l.purchase_id.name" /></td>
                                             <td><span t-field="l.partner_id.name" /></td>
@@ -31,6 +33,7 @@
                                         <t t-set="total_qty" t-value="total_qty+l.qty" />
                                         <t t-if="l_last">
                                             <tr class="border-black">
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>

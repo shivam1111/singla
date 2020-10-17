@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/models/res_partner.py" afterPath="$PROJECT_DIR$/mill_stock/models/res_partner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/report/brokerage_report.xml" afterPath="$PROJECT_DIR$/mill_stock/report/brokerage_report.xml" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,14 +37,14 @@
       <file leaf-file-name="stock_line.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_stock/models/stock_line.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="495">
               <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="res_partner.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="res_partner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_stock/models/res_partner.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -56,11 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="brokerage_report.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mill_stock_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1899">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="brokerage_report.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mill_stock/report/brokerage_report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="107" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="107" />
+            <state relative-caret-position="540">
+              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -115,8 +125,8 @@
         <option value="$PROJECT_DIR$/mill_purchase_order/views/res_partner_view.xml" />
         <option value="$PROJECT_DIR$/mill_stock/models/__init__.py" />
         <option value="$PROJECT_DIR$/mill_stock/__manifest__.py" />
-        <option value="$PROJECT_DIR$/mill_stock/report/brokerage_report.xml" />
         <option value="$PROJECT_DIR$/mill_stock/models/res_partner.py" />
+        <option value="$PROJECT_DIR$/mill_stock/report/brokerage_report.xml" />
       </list>
     </option>
   </component>
@@ -179,7 +189,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="chemical_compositions" />
+              <option name="myItemId" value="mill_stock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -193,11 +203,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="chemical_compositions" />
+              <option name="myItemId" value="mill_stock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singla" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singla" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mill_stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -620,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -705,14 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_stock/models/stock_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/odoo10/addons/sale/views/sale_templates.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -771,18 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml">
+    <entry file="file://$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="253" column="35" selection-start-line="253" selection-start-column="12" selection-end-line="253" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mill_stock/report/brokerage_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="107" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="107" />
+        <state relative-caret-position="-1899">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -794,6 +798,30 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_stock/models/stock_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="253" column="35" selection-start-line="253" selection-start-column="12" selection-end-line="253" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_stock/report/brokerage_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
