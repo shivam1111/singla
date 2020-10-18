@@ -28,7 +28,8 @@ class ResPartner(models.Model):
         stock_line = self.env['stock.line'].search([('purchase_id.broker_id','=',self.id),
                                                     ('date','>=',self.from_dt_brokerage),
                                                     ('date','<=',self.to_dt_brokerage),
-                                                    ('state','!=','cancel')
+                                                    ('state','!=','cancel'),
+                                                    ('type','not in',['production','adjustment'])
                                                     ])
         data = {
             'doc_model': 'stock.line',
