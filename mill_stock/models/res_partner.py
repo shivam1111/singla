@@ -29,7 +29,7 @@ class ResPartner(models.Model):
                                                     ('date','>=',self.from_dt_brokerage),
                                                     ('date','<=',self.to_dt_brokerage),
                                                     ('state','!=','cancel'),
-                                                    ('type','not in',['production','adjustment'])
+                                                    ('type','in',['purchase','trade'])
                                                     ])
         data = {
             'doc_model': 'stock.line',
