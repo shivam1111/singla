@@ -110,6 +110,38 @@
 						    							<td><t t-if = "l_first"><span t-field="doc.miss_roll" /></t></td>
 					    							</t>
 					    						</tr>
+												<t t-if = "l_last">
+													<tr>
+						    							<td style = "border-right:1px solid black;border-bottom:1px solid black;">
+						    								<span><strong>Water Units</strong></span>
+						    							</td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Op.</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.water_units_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Cl.</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.water_units_closing" /></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Net</strong></span></td>
+														<td style="border-bottom:1px solid black;"><strong><span t-esc="doc.water_units_closing - doc.water_units_opening" /></strong></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Solar Units</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Op.</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Cl.</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_closing" /></td>
+						    							<td style="border-bottom:1px solid black;"><strong>Net</strong></td>
+						    							<td style="border-bottom:1px solid black;"><span t-esc="doc.solar_units_closing-doc.solar_units_opening"></span></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+														<td style="border-bottom:1px solid black;"></td>
+														<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"></td>
+													</tr>
+													<tr>
+
+													</tr>
+												</t>
 					    					</t>
 				    					</t>
 					    				</tbody>

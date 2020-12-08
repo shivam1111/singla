@@ -37,6 +37,16 @@
 	                    			<field name = "total_production" />
 	                    		</group>
 	                    </group>
+						<group>
+							<group string = "Water Untis">
+								<field name = "water_units_opening"/>
+								<field name = "water_units_closing"/>
+							</group>
+							<group string = "Soalr Untis">
+								<field name = "solar_units_opening"/>
+								<field name = "solar_units_closing"/>
+							</group>
+						</group>
 	                    <notebook>
 	                    		<page string = "Production">
 	                    			<field name = "production_line_ids" context = "{'default_type':'production'}">
