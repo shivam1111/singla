@@ -55,7 +55,18 @@
        		</field>
     		</record>	
     		
-        <record id="action_mill_production_order" model="ir.actions.act_window">
+        <record id="view_mill_production_order_filter" model="ir.ui.view">
+            <field name="name">mill.production.order.search</field>
+            <field name="model">production.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Bundles">
+                    <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="line_ids" string = "Customer" filter_domain="[('line_ids.customer_id','child_of',self)]"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_mill_production_order" model="ir.actions.act_window">
             <field name="name">Production Order</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">production.order</field>
@@ -63,7 +74,9 @@
             <field name="view_mode">tree,form</field>
             <field name="context">{'group_by':'date:month'}</field>
         </record>
-        
+
+
+
        <menuitem
            id= "mill_production_order_item"
            parent= "mill_production_management_sub_menu"

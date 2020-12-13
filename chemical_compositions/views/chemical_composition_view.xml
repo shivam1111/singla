@@ -137,6 +137,7 @@
                     <field name="grade_id"/>
                     <field name="truck_no"/>
                     <field name="heat_no"/>
+					<field name = "invoice_no" />
                     <group expand="0" string="Group By">
                         <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter string="Grade" domain="[]" context="{'group_by':'grade_id'}"/>
