@@ -202,6 +202,7 @@
 							<group>
 								<field name = "name" />
 								<field name = "price_extra" />
+								<field name = "mechanical_properties" />
 							</group>
 							<group>
 								<field name= "name_str" />
@@ -224,6 +225,21 @@
 	                    		<page string = "Remarks">
                     				<field name = "remarks" nolabel = "1" />
 	                    		</page>
+								<page string = "Mechanical Properties" attrs="{'invisible':[('mechanical_properties', '=', False)]}" >
+									<group>
+										<group col = "2">
+											<field name = "tensile_strength_min" />
+											<field name = "yield_strength_min" />
+											<field name = "elongation_min"/>
+										</group>
+										<group col="2">
+											<field name = "tensile_strength_max" />
+											<field name = "yield_strength_max" />
+											<field name = "elongation_max" />
+										</group>
+
+									</group>
+								</page>
 	                    </notebook>
 		        		</sheet>
 	                <div class="oe_chatter">

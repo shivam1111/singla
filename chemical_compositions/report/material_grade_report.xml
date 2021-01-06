@@ -43,7 +43,40 @@
 				            			</t>		            						            				
 			            			</tr>		            			            			
 			            		</tbody>
-			            </table>		            		
+			            </table>
+						<t t-if = "doc.mechanical_properties == True">
+							<table class = "table table-striped table-bordered table-responsive">
+								<caption>MECHANICAL PROPERTIES</caption>
+								<thead>
+									<th>
+										PROPERTIES
+									</th>
+									<th>
+										TENSILE STRENGTH
+									</th>
+									<th>
+										YIELD STRENGTH
+									</th>
+									<th>
+										ELONGATION
+									</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>MIN</td>
+										<td><t t-esc="doc.tensile_strength_min"></t></td>
+										<td><t t-esc="doc.yield_strength_min"></t></td>
+										<td><t t-esc="doc.elongation_min"></t></td>
+									</tr>
+									<tr>
+										<td>MAX</td>
+										<td><t t-esc="doc.tensile_strength_max"></t></td>
+										<td><t t-esc="doc.yield_strength_max"></t></td>
+										<td><t t-esc="doc.elongation_max"></t></td>
+									</tr>
+								</tbody>
+							</table>
+						</t>
 		            </div>
     		            <div class = "row">
 	            			<p t-field="doc.remarks" />
