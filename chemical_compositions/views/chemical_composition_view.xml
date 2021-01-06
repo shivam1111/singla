@@ -231,11 +231,15 @@
 											<field name = "tensile_strength_min" />
 											<field name = "yield_strength_min" />
 											<field name = "elongation_min"/>
+											<field name = "hardness_min" />
+											<field name = "decarb_min" />
 										</group>
 										<group col="2">
 											<field name = "tensile_strength_max" />
 											<field name = "yield_strength_max" />
 											<field name = "elongation_max" />
+											<field name = "hardness_max"/>
+											<field name = "decarb_max" />
 										</group>
 
 									</group>

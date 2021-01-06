@@ -60,6 +60,12 @@
 									<th>
 										ELONGATION(%)
 									</th>
+									<th>
+										HARDNESS(BHN)
+									</th>
+									<th>
+										DECARB
+									</th>
 								</thead>
 								<tbody>
 									<tr>
@@ -67,12 +73,16 @@
 										<td><t t-esc="doc.tensile_strength_min"></t></td>
 										<td><t t-esc="doc.yield_strength_min"></t></td>
 										<td><t t-esc="doc.elongation_min"></t></td>
+										<td><t t-esc="doc.hardness_min"></t></td>
+										<td><t t-esc="doc.decarb_min"></t></td>
 									</tr>
 									<tr>
 										<td>MAX</td>
 										<td><t t-esc="doc.tensile_strength_max"></t></td>
 										<td><t t-esc="doc.yield_strength_max"></t></td>
 										<td><t t-esc="doc.elongation_max"></t></td>
+										<td><t t-esc="doc.hardness_max"></t></td>
+										<td><t t-esc="doc.decarb_max"></t></td>
 									</tr>
 								</tbody>
 							</table>

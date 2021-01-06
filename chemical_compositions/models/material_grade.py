@@ -17,3 +17,7 @@ class MaterialGrade(models.Model):
     elongation_min = fields.Float("Min. Elongation")
     elongation_max = fields.Float("Max. Elongation")
     mechanical_properties = fields.Boolean('Mechanical Properties')
+    hardness_min = fields.Float('Min. Hardness')
+    hardness_max = fields.Float("Max. Hardness")
+    decarb_min = fields.Float('Min. Decarb')
+    decarb_max = fields.Float('Max. Decarb')

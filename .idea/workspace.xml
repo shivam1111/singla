@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" afterPath="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" afterPath="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" afterPath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +39,8 @@
       <file leaf-file-name="material_grade.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/models/material_grade.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="330">
+              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -49,8 +51,8 @@
       <file leaf-file-name="chemical_composition_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="227" column="128" selection-start-line="227" selection-start-column="128" selection-end-line="227" selection-end-column="128" />
+            <state relative-caret-position="399">
+              <caret line="234" column="69" selection-start-line="234" selection-start-column="59" selection-end-line="234" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -59,8 +61,8 @@
       <file leaf-file-name="material_grade_report.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="57" column="60" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+            <state relative-caret-position="699">
+              <caret line="84" column="68" selection-start-line="84" selection-start-column="68" selection-end-line="84" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -99,8 +101,8 @@
         <option value="$PROJECT_DIR$/mill_production/report/mill_production_report.xml" />
         <option value="$PROJECT_DIR$/mill_production/views/production_order_view.xml" />
         <option value="$PROJECT_DIR$/chemical_compositions/models/chemical_composition.py" />
-        <option value="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" />
         <option value="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" />
+        <option value="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" />
         <option value="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" />
       </list>
     </option>
@@ -774,28 +776,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="227" column="128" selection-start-line="227" selection-start-column="128" selection-end-line="227" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chemical_compositions/models/material_grade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="330">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="234" column="69" selection-start-line="234" selection-start-column="59" selection-end-line="234" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="57" column="60" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+        <state relative-caret-position="699">
+          <caret line="84" column="68" selection-start-line="84" selection-start-column="68" selection-end-line="84" selection-end-column="68" />
           <folding />
         </state>
       </provider>
