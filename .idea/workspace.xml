@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/models/chemical_composition.py" afterPath="$PROJECT_DIR$/chemical_compositions/models/chemical_composition.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" afterPath="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" afterPath="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" afterPath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +59,8 @@
       <file leaf-file-name="material_grade_report.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+            <state relative-caret-position="459">
+              <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -798,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+        <state relative-caret-position="459">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
           <folding />
         </state>
       </provider>
