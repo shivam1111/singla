@@ -94,6 +94,7 @@
             <field name="arch" type="xml">
                 <search string="Search Orders">
                     <field name="size" string="Size" filter_domain="[('size','ilike',self)]"/>
+					<field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
                     <field name="partner_id" operator="child_of"/>
                     <field name="grade_id" filter_domain="[('grade_id','ilike',self)]"/>
                     <filter string="Order Placed" domain="[('state','=','order_placed')]" name="order_placed"/>
