@@ -37,14 +37,18 @@
 	                    			<field name = "total_production" />
 	                    		</group>
 	                    </group>
-						<group>
+						<group col="3">
 							<group string = "Water Untis">
 								<field name = "water_units_opening"/>
 								<field name = "water_units_closing"/>
 							</group>
-							<group string = "Soalr Untis">
-								<field name = "solar_units_opening"/>
-								<field name = "solar_units_closing"/>
+							<group string = "Solar (KWH)">
+								<field name = "solar_units_opening_kwh"/>
+								<field name = "solar_units_closing_kwh"/>
+							</group>
+							<group string = "Solar (KVaH)">
+								<field name = "solar_units_opening_kvah"/>
+								<field name = "solar_units_closing_kvah"/>
 							</group>
 						</group>
 	                    <notebook>

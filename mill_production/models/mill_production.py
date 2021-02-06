@@ -134,6 +134,8 @@ class MillProduction(models.Model):
     size_id = fields.Many2one('size.size',related= "production_line_ids.size_id",string = "Size")
     water_units_opening = fields.Float('Water Units Opening')
     water_units_closing  = fields.Float('Water Units Closing')
-    solar_units_opening = fields.Float('Solar Units Opening')
-    solar_units_closing = fields.Float('Solar Units Closing')
+    solar_units_opening_kwh = fields.Float('Solar Units Opening (KWH)')
+    solar_units_closing_kwh = fields.Float('Solar Units Closing (KWH)')
+    solar_units_opening_kvah = fields.Float('Solar Units Opening (KVaH)')
+    solar_units_closing_kvah = fields.Float('Solar Units Closing (KVaH)')
     

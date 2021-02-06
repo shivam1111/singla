@@ -79,7 +79,6 @@
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>					    							
 					    							</t>
 												<t t-if = "not l_last">					    							
@@ -120,23 +119,23 @@
 						    							<td style="border-bottom:1px solid black;"><span><strong>Cl.</strong></span></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="doc.water_units_closing" /></td>
 						    							<td style="border-bottom:1px solid black;"><span><strong>Net</strong></span></td>
-														<td style="border-bottom:1px solid black;"><span t-esc="doc.water_units_closing - doc.water_units_opening" /></td>
-						    							<td style="border-bottom:1px solid black;"><span><strong>Solar Units</strong></span></td>
+														<td style="border-bottom:1px solid black;border-right:1px solid black;"><span t-esc="doc.water_units_closing - doc.water_units_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Solar (KWH)</strong></span></td>
 						    							<td style="border-bottom:1px solid black;"><span><strong>Op.</strong></span></td>
-						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_opening" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_opening_kwh" /></td>
 						    							<td style="border-bottom:1px solid black;"><span><strong>Cl.</strong></span></td>
-						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_closing" /></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_closing_kwh" /></td>
 						    							<td style="border-bottom:1px solid black;"><strong>Net</strong></td>
-						    							<td style="border-bottom:1px solid black;"><span t-esc="doc.solar_units_closing-doc.solar_units_opening"></span></td>
+						    							<td style="border-bottom:1px solid black;border-right:1px solid black;"><span t-esc="doc.solar_units_closing_kwh-doc.solar_units_opening_kwh"></span></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Solar (KVaH)</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Op.</strong></span></td>
+						    							<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_opening_kvah" /></td>
+						    							<td style="border-bottom:1px solid black;"><span><strong>Cl.</strong></span></td>
+														<td style="border-bottom:1px solid black;"><span t-field="doc.solar_units_closing_kvah" /></td>
+														<td style="border-bottom:1px solid black;"><strong>Net</strong></td>
+						    							<td style="border-bottom:1px solid black;border-right:1px solid black;"><span t-esc="doc.solar_units_closing_kvah-doc.solar_units_opening_kvah"></span></td>
 						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
-														<td style="border-bottom:1px solid black;"></td>
-														<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;"></td>
+						    							<td style="border-bottom:1px solid black;"><strong><span t-field="doc.total_production" /></strong></td>
 													</tr>
 													<tr>
 
