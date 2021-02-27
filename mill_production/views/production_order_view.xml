@@ -44,6 +44,8 @@
 										<field name = "partner_id" />
 										<field name = "heat_no" />
 										<field name = "cc" />
+										<field name = "is_inspection" />
+										<field name = "is_heat" />
 										<field name = "remarks" />
 									</tree>	                    		
 	                    		</field>
@@ -102,6 +104,8 @@
 					<field name = "partner_id" />
 					<field name = "heat_no" />
 					<field name = "cc" />
+					<field name = "is_inspection" />
+					<field name = "is_heat" />
 					<field name = "remarks" /> 
 					<button string = "View Production Order" name = "view_production_order" type = "object" />      				
        			</tree>

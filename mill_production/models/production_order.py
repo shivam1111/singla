@@ -68,6 +68,8 @@ class ProductionOrderLine(models.Model):
     production_id = fields.Many2one('production.order','Production Order')
     heat_no = fields.Char('Heat No.')
     remarks = fields.Char('Remarks')
+    is_inspection = fields.Boolean('Inspection')
+    is_heat = fields.Boolean('Heat Wise')
     
 class ProductionOrder(models.Model):
     _name = "production.order"

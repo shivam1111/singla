@@ -26,9 +26,9 @@
 		    			<field name = "stock_line_ids" nolabel = "1"  context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'purchase'}">
 		    				<tree string = "Purchase Stock Line" editable = "1">
 		    					<field name = "name" readonly ="1" />
-		    					<field name = "date"  readonly = "1"/>
+		    					<field name = "date"  />
 		    					<field name = "partner_id" readonly = "1"/>
-		    					<field name = "grade_id" readonly = "1"/>
+		    					<field name = "grade_id" />
 		    					<field name = "truck_no" />
 		    					<field name = "pcs" />
 								<field name = "bill_no"/>
@@ -41,10 +41,10 @@
 		    			<field name = "trading_line_ids" domain = "[('type','=','trade')]" nolabel = "1" context="{'default_partner_id':partner_id,'default_grade_id':grade_id,'default_type':'trade'}">
 		    				<tree string = "Purchase Trade Line" editable = "1">
 		    					<field name = "name" readonly ="1" />
-		    					<field name = "date"  readonly = "1"/>
+		    					<field name = "date"  />
 		    					<field name = "partner_id" readonly = "1"/>
 		    					<field name = "rolling_id" />
-		    					<field name = "grade_id" readonly = "1"/>
+		    					<field name = "grade_id" />
 		    					<field name = "truck_no" />
 		    					<field name = "pcs" />
 								<field name = "bill_no" />
