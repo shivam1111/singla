@@ -159,6 +159,7 @@
 	                    	<group>
 	                    		<field name = "grade_id" readonly = "1" />
 	                    		<field name = "type" readonly = "1" />
+								<field name = "bill_no" />
 	                    		<field name = "truck_no" />
 	                    		<field name = "roll_size" options = "{'no_create':True}" widget = "many2many_tags"  />
 	                    	</group>
