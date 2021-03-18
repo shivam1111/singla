@@ -17,29 +17,31 @@ class MillOrderReport(models.Model):
         ('cancel','Cancel'),
         ('done', 'Done'),
         ], string='Status',default='draft')
+    grade_id = fields.Many2one('material.grade','Grade')
 
     def _select(self):
         select_str = """
             select 
-                min(l.id) as id,
-                size as name,
-                order_qty as order_qty,
-                completed_qty as completed_qty,
-                (order_qty - completed_qty)  as balance,
-                partner_id,
-                state
+                min(o.id) as id,
+                o.size as name,
+                o.order_qty as order_qty,
+                o.completed_qty as completed_qty,
+                (o.order_qty - o.completed_qty)  as balance,
+                l.grade_id as grade_id,
+                o.partner_id,
+                o.state
         """ 
         return select_str
     
     def _from(self):
         from_str = """
-            mill_order  l
+            mill_order  o right join mill_order_size_line l on o.id = l.order_id
         """
         return from_str
         
     def _group_by(self):
         group_by_str = """
-            GROUP BY id,partner_id,size,state
+            GROUP BY o.id,o.partner_id,o.size,o.state,l.grade_id
                     
         """
         return group_by_str
@@ -52,7 +54,7 @@ class MillOrderReport(models.Model):
         self.env.cr.execute("""CREATE or REPLACE VIEW %s as (
             %s
             FROM  %s
-            WHERE state = 'draft'
+            WHERE o.state = 'draft' and l.order_id is not NULL
             %s
             )""" % (self._table, self._select(), self._from(), self._group_by()))
 
