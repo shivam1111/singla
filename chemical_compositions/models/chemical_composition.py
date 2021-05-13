@@ -96,6 +96,7 @@ class ChemicalComposition(models.Model):
     truck_no = fields.Char('Vehicle No.')
     heat_no = fields.Char('Heat No.')
     grade_id = fields.Many2one('material.grade','Grade')
+    route_id = fields.Many2one('process.route','Process Route')
     size = fields.Char('Size')
     color_code = fields.Char('Color Code')
     invoice_no = fields.Char('Invoice No.')

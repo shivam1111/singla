@@ -37,7 +37,7 @@
 	                    			<field name = "total_production" />
 	                    		</group>
 	                    </group>
-						<group col="3">
+						<group col="4">
 							<group string = "Water Untis">
 								<field name = "water_units_opening"/>
 								<field name = "water_units_closing"/>
@@ -49,6 +49,11 @@
 							<group string = "Solar (KVaH)">
 								<field name = "solar_units_opening_kvah"/>
 								<field name = "solar_units_closing_kvah"/>
+							</group>
+							<group string = "PNG">
+								<field name = "png_units_opening"/>
+								<field name = "png_units_closing"/>
+								<field name = "png_net"/>
 							</group>
 						</group>
 	                    <notebook>

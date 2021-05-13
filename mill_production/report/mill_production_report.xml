@@ -39,7 +39,7 @@
 					    					<th>Units</th>
 					    					<th>KWH/MT</th>
 					    					<th>MD/MT</th>
-					    					<th>Coal/MT</th>
+					    					<th>PNG/MT</th>
 					    					<th>Scrap</th>
 					    					<th>Scrap %</th>
 											<th>Sale</th>
@@ -72,7 +72,7 @@
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.units" /></td>
 						    							<td style="border-bottom:1px solid black;"></td>
 						    							<td style="border-bottom:1px solid black;"></td>
-						    							<td style="border-bottom:1px solid black;">Total: <span t-field="doc.coal" /></td>
+						    							<td style="border-bottom:1px solid black;">Total: <span t-field="doc.png_net" /></td>
 						    							<td style="border-bottom:1px solid black;"><span t-field="l.scrap" /></td>
 														<td style="border-bottom:1px solid black;"><span t-field="l.scrap_percentage" /></td>
 														<td style="border-bottom:1px solid black;"><span t-field="l.sale" /></td>
@@ -99,7 +99,7 @@
 						    							<td><span t-field="l.units" /></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.kwh_mt" /></t></td>
 						    							<td><t t-if = "l_first"><span t-field="doc.md_mt" /></t></td>
-						    							<td><t t-if = "l_first"><span t-field="doc.coal_mt" /></t></td>
+						    							<td><t t-if = "l_first"><span t-esc="'%.2f'%(doc.png_net/doc.total_production)" /></t></td>
 						    							<td><span t-field="l.scrap" /></td>
 						    							<td><span t-field="l.scrap_percentage" /></td>
 														<td><span t-field="l.sale" /></td>

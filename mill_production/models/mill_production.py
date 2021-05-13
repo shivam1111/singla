@@ -112,8 +112,14 @@ class MillProduction(models.Model):
             self.kwh_mt = total/self.total_production        
         except ZeroDivisionError:
             self.kwh_mt = 0.00
-        
-    
+
+    @api.one
+    @api.depends('png_units_opening','png_units_closing')
+    def _compute_png_units(self):
+        self.png_net = self.png_units_closing - self.png_units_opening
+
+
+
     name = fields.Char('Name',default = '/',required = True)
     date = fields.Date('Date',required=True,default = fields.Date.today)
     total_production = fields.Float('Total Production',compute = "_compute_total_production",store=True)
@@ -138,4 +144,7 @@ class MillProduction(models.Model):
     solar_units_closing_kwh = fields.Float('Solar Units Closing (KWH)')
     solar_units_opening_kvah = fields.Float('Solar Units Opening (KVaH)')
     solar_units_closing_kvah = fields.Float('Solar Units Closing (KVaH)')
+    png_units_opening = fields.Float('PNG Opening')
+    png_units_closing = fields.Float('PNG Closing')
+    png_net = fields.Float("Net PNG",compute = '_compute_png_units',store=True)
     

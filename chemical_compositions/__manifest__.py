@@ -14,6 +14,7 @@
     'depends': ['base','mail','mill_order'],
     'data': [
         'views/chemical_composition_view.xml',
+        'views/process_route_view.xml',
         'data/ir_sequence_data.xml',
         'report/chemical_composition_report.xml',
         'report/material_grade_report.xml',
