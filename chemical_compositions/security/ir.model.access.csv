@@ -1,6 +1,7 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-id_access_chemical_element_labs,access_chemical_element_lab,model_chemical_element,mill_order.group_laboratory_personnel,1,0,0,0
-id_access_composition_line,access_composition_line,model_composition_line,,1,1,1,1
-id_access_inclusion_rating_list_lab,access_inclusion_rating_list_lab,model_inclusion_rating_line,,1,1,1,1
-id_access_chemical_composition_dispatch,access_chemical_composition_dispatch,model_chemical_composition,mill_order.group_dispatch_manager,1,1,1,
-id_length_detail,access_length_detail,model_length_detail,,1,1,1,1
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"id_access_chemical_element_labs","access_chemical_element_lab","model_chemical_element","mill_order.group_laboratory_personnel","1","0","0","0"
+"id_access_composition_line","access_composition_line","model_composition_line","","1","1","1","1"
+"id_access_inclusion_rating_list_lab","access_inclusion_rating_list_lab","model_inclusion_rating_line","","1","1","1","1"
+"id_access_chemical_composition_dispatch","access_chemical_composition_dispatch","model_chemical_composition","mill_order.group_dispatch_manager","1","1","1",""
+"id_access_process_route","access_process_route","model_process_route","mill_order.group_dispatch_manager","1","","",""
+"id_length_detail","access_length_detail","model_length_detail","","1","1","1","1"
