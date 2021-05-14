@@ -141,6 +141,8 @@
 		            			<td>Ok</td>
 	            				<th>Grain Size</th>
 	            				<td><t t-esc="doc.grain_size or '-'" /></td>
+	            				<th>Process Route</th>
+	            				<td><strong t-field="doc.route_id" ></strong></td>
 		            		</tr>
 			            </table> 
 		            </div>
