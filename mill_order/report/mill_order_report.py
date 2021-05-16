@@ -23,10 +23,10 @@ class MillOrderReport(models.Model):
         select_str = """
             select 
                 min(o.id) as id,
-                o.size as name,
-                o.order_qty as order_qty,
+                s.name as name,
+                SUM(l.order_qty) as order_qty,
                 o.completed_qty as completed_qty,
-                (o.order_qty - o.completed_qty)  as balance,
+                SUM(o.order_qty - o.completed_qty)  as balance,
                 l.grade_id as grade_id,
                 o.partner_id,
                 o.state
@@ -35,13 +35,13 @@ class MillOrderReport(models.Model):
     
     def _from(self):
         from_str = """
-            mill_order  o right join mill_order_size_line l on o.id = l.order_id
+            mill_order  o right join mill_order_size_line l on o.id = l.order_id right join size_size s on s.id = l.name
         """
         return from_str
         
     def _group_by(self):
         group_by_str = """
-            GROUP BY o.id,o.partner_id,o.size,o.state,l.grade_id
+            GROUP BY o.id,o.partner_id,o.size,o.state,l.grade_id,s.name
                     
         """
         return group_by_str
