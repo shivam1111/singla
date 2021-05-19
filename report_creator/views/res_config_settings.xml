@@ -1,0 +1,29 @@
+<odoo>
+<record id="view_website_config_settings" model="ir.ui.view">
+            <field name="name">Report Creator settings</field>
+            <field name="model">report.creator.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Report Creator" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+                    </header>
+                    <div>                        
+                        <group string="Report Creator">
+                            <field name="file_store" string="File Store Path"/>                                                     
+                        </group>                                                                                                                                               
+                    </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_report_creator_configuration" model="ir.actions.act_window">
+            <field name="name">Report Creator Settings</field>
+            <field name="res_model">report.creator.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+        
+        <menuitem id="report_creator_config_settings_menu_action" name="Settings" parent="report_creator_settings_menu"
+            sequence="0" action="action_report_creator_configuration" groups="base.group_system"/>
+</odoo>

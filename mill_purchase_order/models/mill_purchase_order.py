@@ -33,8 +33,13 @@ class MillPurchaseOrder(models.Model):
         data = []
         for i in self.grade_id.line_ids:
             data.append((0,0,{'element_id':i.element_id,'min_val':i.min_val,'max_val':i.max_val}))
-        self.line_ids = data    
-    
+        self.line_ids = data
+
+    @api.onchange('heats') # if these fields are changed, call method
+    def _chage_heats(self):
+        data = []
+        self.material_ordered = 7.50 * self.heats
+
     @api.depends('basic_rate','extra_rate')
     def _amount_all(self):
         """
@@ -80,4 +85,4 @@ class MillPurchaseOrder(models.Model):
     net_rate = fields.Monetary(string='Net Rate', store=True, readonly=True,currency_field = "currency_id", compute='_amount_all', track_visibility='always')
     line_ids = fields.One2many('composition.line','purchase_order_id','Composition Line')
     material_feature_ids = fields.Many2many('material.feature','mill_purchase_order_material_feature_rel','order_id','feature_id','Features')
-    
+    heats= fields.Float('Heats')

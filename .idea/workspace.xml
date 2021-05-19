@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_order/report/mill_order_report.py" afterPath="$PROJECT_DIR$/mill_order/report/mill_order_report.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_order/report/mill_order_report_view.xml" afterPath="$PROJECT_DIR$/mill_order/report/mill_order_report_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" afterPath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" afterPath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,16 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="heat_heat.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mill_stock/models/heat_heat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="chemical_composition_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mill_order_report.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mill_order_report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
-              <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -79,6 +69,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mill_purchase_order.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mill_purchase_order_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -136,7 +146,6 @@
         <option value="$PROJECT_DIR$/mill_order/models/mill_order.py" />
         <option value="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_analysis.xml" />
-        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
         <option value="$PROJECT_DIR$/mill_purchase_order/models/res_partner.py" />
         <option value="$PROJECT_DIR$/mill_stock/views/res_partner_view.xml" />
         <option value="$PROJECT_DIR$/mill_purchase_order/views/res_partner_view.xml" />
@@ -146,7 +155,6 @@
         <option value="$PROJECT_DIR$/mill_stock/models/res_partner.py" />
         <option value="$PROJECT_DIR$/chemical_compositions/models/material_grade.py" />
         <option value="$PROJECT_DIR$/chemical_compositions/report/material_grade_report.xml" />
-        <option value="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
         <option value="$PROJECT_DIR$/singla_website/views/homepage.xml" />
         <option value="$PROJECT_DIR$/mill_production/models/production_order.py" />
         <option value="$PROJECT_DIR$/mill_production/views/production_order_view.xml" />
@@ -167,6 +175,8 @@
         <option value="$PROJECT_DIR$/chemical_compositions/security/ir.model.access.csv" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_report_view.xml" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_report.py" />
+        <option value="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
+        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
       </list>
     </option>
   </component>
@@ -228,7 +238,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mill_order" />
+              <option name="myItemId" value="mill_purchase_order" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,11 +252,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mill_order" />
+              <option name="myItemId" value="mill_purchase_order" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -260,7 +270,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mill_order" />
+              <option name="myItemId" value="mill_purchase_order" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -564,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chemical_compositions/models/material_grade.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -680,13 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -816,14 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mill_order/models/mill_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -835,7 +823,31 @@
     <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_order/models/mill_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding />
         </state>
       </provider>

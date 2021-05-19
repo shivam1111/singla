@@ -26,6 +26,7 @@
 								<field name = "date_delivery" />
 								<field name = "size" />
 								<field name = "finish_size" />
+								<field name = "heats" />
 								<field name = "material_ordered" />
 								<field name = "basic_rate" widget = "monetary" />
 								<field name = "is_ingot" />
