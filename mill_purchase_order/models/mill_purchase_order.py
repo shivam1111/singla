@@ -61,8 +61,8 @@ class MillPurchaseOrder(models.Model):
     
     name = fields.Char('Name')
     partner_id = fields.Many2one('res.partner','Supplier')
-    date_order = fields.Datetime(string='Order Date', required=True, index=True, copy=False, default=fields.Datetime.now)
-    date_delivery = fields.Datetime(string='Delivery Date', required=True, index=True, copy=False, default=fields.Datetime.now)
+    date_order = fields.Date(string='Order Date', required=True, index=True, copy=False, default=fields.Date.today())
+    date_delivery = fields.Date(string='Delivery Date', required=True, index=True, copy=False, default=fields.Date.today())
     broker_id = fields.Many2one('res.partner','Broker',domain = [('is_broker','=',True)])
     size = fields.Many2one('ingot.size','Material Size')
     finish_size = fields.Many2one('size.size','Finish Size')
