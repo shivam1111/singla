@@ -20,16 +20,15 @@
 	                    <group>
 	                    		<group>
 	                    			<field name = "date" />
-	                    			<field name = "coal" />
 	                    			<field name = "hours" />
 	                    			<field name = "mill_kara"/>
 	                    			<field name = "total_scrap" />
 	                    			<field name = "total_units" />
 	                    			<field name = "kwh_mt" />
+									<field name = "order_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
 	                    		</group>
 	                    		<group>
 	                    			<field name = "md_mt" />
-	                    			<field name = "coal_mt" />
 	                    			<field name = "furnace_kara"/>
 	                    			<field name = "miss_roll" />
 	                    			<field name = "scrap_percentage" />
@@ -104,10 +103,8 @@
        				<field name = "name" />
        				<field name = "date" />
        				<field name = "total_production" sum = "Total Production" />
-       				<field name = "coal" sum = "Total Coal" />
        				<field name = "total_units" sum = "Total Units Consumed" />
        				<field name = "total_scrap" sum = "Total Scrap" />
-       				<field name = "coal_mt" avg = "Average Coal Consumption"/>
        				<field name = "units_per_mt" />
        				<field name = "hours" sum = "Total Hours"/>
        				<field name = "furnace_kara"/>

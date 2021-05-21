@@ -62,15 +62,6 @@ class MillProduction(models.Model):
             total = total+i.qty
         self.total_production = -total
         
-    @api.one
-    @api.depends('coal','total_production')
-    def _compute_coal_mt(self):
-        total = 0.00
-        try:
-            self.coal_mt = self.coal/self.total_production
-        except ZeroDivisionError:
-            self.coal_mt = 0.00
-    
     @api.multi
     def write(self,vals):
         if self.env.user.has_group('mill_order.group_dispatch_manager')  and self.env.user.id != SUPERUSER_ID :
@@ -126,8 +117,6 @@ class MillProduction(models.Model):
     remarks = fields.Text('Remarks')
     production_line_ids = fields.One2many('stock.line','production_id','Production Lines')
     md_mt = fields.Float('MD/MT')
-    coal = fields.Float('Total Coal')
-    coal_mt = fields.Float('Coal/MT',compute = "_compute_coal_mt",store=True)
     total_scrap = fields.Float('Total Scrap',compute = "_compute_scrap",store=True )
     scrap_percentage = fields.Float('Scrap%',compute = "_compute_scrap")
     hours = fields.Float('Total Hours')
@@ -147,4 +136,5 @@ class MillProduction(models.Model):
     png_units_opening = fields.Float('PNG Opening')
     png_units_closing = fields.Float('PNG Closing')
     png_net = fields.Float("Net PNG",compute = '_compute_png_units',store=True)
+    order_id = fields.Many2one('production.order','Production Order')
     
