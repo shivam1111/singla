@@ -41,7 +41,7 @@ class StockLine(models.Model):
     @api.one
     @api.depends()
     def _compute_heat_no(self):
-        sizes_list = map(lambda x:x.name + "(" + x.state +  ")"  ,self.heat_ids)
+        sizes_list = map(lambda x:x.furnace_heat_no + "(" + x.state +  ")"  ,self.heat_ids)
         self.heat_no = ' | '.join(sizes_list)
          
     @api.depends()    
