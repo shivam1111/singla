@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_stock/models/stock_line.py" afterPath="$PROJECT_DIR$/mill_stock/models/stock_line.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" afterPath="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
     </list>
     <ignored path="singla.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_line.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stock_line.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_stock/models/stock_line.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="360">
               <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
               <folding />
             </state>
@@ -55,7 +56,7 @@
       <file leaf-file-name="mill_order_report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="780">
               <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding />
             </state>
@@ -65,18 +66,18 @@
       <file leaf-file-name="mill_stock_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="510">
               <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mill_purchase_order.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mill_purchase_order.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="64" column="121" selection-start-line="64" selection-start-column="121" selection-end-line="64" selection-end-column="121" />
+              <caret line="64" column="120" selection-start-line="64" selection-start-column="120" selection-end-line="64" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -85,7 +86,7 @@
       <file leaf-file-name="mill_purchase_order_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1500">
               <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
               <folding />
             </state>
@@ -95,7 +96,7 @@
       <file leaf-file-name="chemical_composition_report.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1044">
+            <state relative-caret-position="2160">
               <caret line="144" column="65" selection-start-line="144" selection-start-column="65" selection-end-line="144" selection-end-column="65" />
               <folding />
             </state>
@@ -150,11 +151,11 @@
         <option value="$PROJECT_DIR$/chemical_compositions/security/ir.model.access.csv" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_report_view.xml" />
         <option value="$PROJECT_DIR$/mill_order/report/mill_order_report.py" />
-        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
         <option value="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" />
         <option value="$PROJECT_DIR$/mill_production/models/mill_production.py" />
         <option value="$PROJECT_DIR$/mill_production/views/mill_production_view.xml" />
         <option value="$PROJECT_DIR$/mill_stock/models/stock_line.py" />
+        <option value="$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py" />
       </list>
     </option>
   </component>
@@ -187,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -216,7 +218,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mill_stock" />
+              <option name="myItemId" value="mill_purchase_order" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -230,25 +232,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mill_stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="singla" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="singla" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mill_stock" />
+              <option name="myItemId" value="mill_purchase_order" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -258,7 +242,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,7 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="59" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="98" column="12" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2205">
           <caret line="147" column="66" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="27" column="138" selection-start-line="27" selection-start-column="138" selection-end-line="27" selection-end-column="138" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="138" column="68" selection-start-line="138" selection-start-column="68" selection-end-line="138" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,21 +751,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="64" column="121" selection-start-line="64" selection-start-column="121" selection-end-line="64" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="1500">
           <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
           <folding />
         </state>
@@ -798,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1044">
+        <state relative-caret-position="2160">
           <caret line="144" column="65" selection-start-line="144" selection-start-column="65" selection-end-line="144" selection-end-column="65" />
           <folding />
         </state>
@@ -806,7 +772,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_order/report/mill_order_report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="780">
           <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
           <folding />
         </state>
@@ -814,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_stock/views/mill_stock_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="510">
           <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
@@ -830,8 +796,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mill_stock/models/stock_line.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="360">
           <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mill_purchase_order/models/mill_purchase_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="64" column="120" selection-start-line="64" selection-start-column="120" selection-end-line="64" selection-end-column="120" />
           <folding />
         </state>
       </provider>
