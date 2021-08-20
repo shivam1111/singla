@@ -15,7 +15,8 @@
     'data': [
         'views/mill_purchase_order_view.xml',
         'views/res_partner_view.xml',
-        'data/ir_sequence_data.xml'
+        'data/ir_sequence_data.xml',
+        'report/purchase_order_summary_report.xml',
     ],
     'demo': [
     ],
