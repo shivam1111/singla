@@ -69,6 +69,7 @@
 											<field name = "complete_date"/>
 											<field name = "pcs" sum = "Total Pcs" />
 											<field name = "completed_qty" sum = "Total Qty" />
+											<field name = "invoice" />
 											<field name = "remarks" />
 										</tree>
 									</field>																

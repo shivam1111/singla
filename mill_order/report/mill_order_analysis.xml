@@ -10,17 +10,32 @@
                             <thead class="thead-dark">
                                 <th>Name</th>
                                 <th>Booking Date</th>
+                                <th>Rate</th>
+                                <th>Ordered Qty</th>
+                                <th>Completed Qty</th>
+                                <th>Balance</th>
+                                <th>Details</th>
                             </thead>
                             <tbody>
                                 <t t-foreach="docs.sorted(key = lambda r:r.partner_id.name)" t-as="doc">
                                     <tr>
                                         <td><t t-esc="doc.partner_id.name"/></td>
-                                        <td><t t-esc="doc.booking_date"/></td>
-                                            <t t-foreach="doc.line_ids" t-as="line_id">
-                                                <td>
-                                                    <t t-esc = "line_id.name_get()[0][1]" />
-                                                </td>
+                                        <td><span t-field="doc.booking_date" t-options='{"format": "MM/dd/yyyy"}'/></td>
+                                        <td><t t-esc="doc.net_rate"/></td>
+                                        <td><span t-field="doc.order_qty"/></td>
+                                        <td><span t-field="doc.completed_qty"/></td>
+                                        <td><span t-field="doc.balance"/></td>
+                                        <t t-set="details" t-value = "''" />
+                                        <t t-foreach="doc.line_completed_ids" t-as="line_id">
+                                            <t t-if="line_id.invoice">
+                                                <t t-set = "details" t-value = "details+str(line_id.completed_qty)+'MT/'+line_id.invoice+ '| '" />
                                             </t>
+                                            <t t-if="not line_id.invoice">
+                                                <t t-set = "details" t-value = "details+line_id.remarks+'| '" />
+                                            </t>
+
+                                        </t>
+                                        <td><span t-esc="details"/></td>
                                     </tr>
                                 </t>
                             </tbody>

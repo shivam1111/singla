@@ -108,6 +108,7 @@ class MillOrderSizeLineCompleted(models.Model):
     line_id = fields.Many2one('mill.order.size.line','Order Line')
     completed_qty = fields.Float('Completed Qty')
     remarks = fields.Text("Remarks")
+    invoice = fields.Char('Invoice No.')
     order_id = fields.Many2one('mill.order')
     complete_date = fields.Date('Completion Date',default = fields.Date.today)
     pcs = fields.Float('Pcs')
