@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mill_order/models/mill_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/mill_order/models/mill_order.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mill_order/report/mill_order_analysis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mill_order/report/mill_order_analysis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mill_order/views/mill_order_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

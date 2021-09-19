@@ -14,7 +14,7 @@
                                 <th>Ordered Qty</th>
                                 <th>Completed Qty</th>
                                 <th>Balance</th>
-                                <th>Details</th>
+                                <th>Dispatch Details</th>
                             </thead>
                             <tbody>
                                 <t t-foreach="docs.sorted(key = lambda r:r.partner_id.name)" t-as="doc">
@@ -28,12 +28,8 @@
                                         <t t-set="details" t-value = "''" />
                                         <t t-foreach="doc.line_completed_ids" t-as="line_id">
                                             <t t-if="line_id.invoice">
-                                                <t t-set = "details" t-value = "details+str(line_id.completed_qty)+'MT/'+line_id.invoice+ '| '" />
+                                                <t t-set = "details" t-value = "details+str(line_id.completed_qty)+'MT-INV'+line_id.invoice+ '| '" />
                                             </t>
-                                            <t t-if="not line_id.invoice">
-                                                <t t-set = "details" t-value = "details+line_id.remarks+'| '" />
-                                            </t>
-
                                         </t>
                                         <td><span t-esc="details"/></td>
                                     </tr>
