@@ -64,7 +64,7 @@
 
                 <footer>
                     <button name="fetch_query" string="Fetch" type="object" class="btn-primary"/>
-                    <button string="Cancel" class="btn-default" special="cancel" />
+                    <button string="Done" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
