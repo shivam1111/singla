@@ -13,8 +13,9 @@
                         <field name="item_code" tabindex="0"/>
                     </group>
                     <group>
-                        <field name="status" tabindex="1"/>
-                        <field name = "cancelled" tabindex="2" />
+                        <field name = "all" />
+                        <field name="status" tabindex="1" attrs = "{'invisible':[('all','=',True)]}"/>
+                        <field name = "cancelled" tabindex="2" attrs = "{'invisible':[('all','=',True)]}" />
                     </group>
                 </group>
                 <notebook>

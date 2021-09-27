@@ -60,6 +60,7 @@ class WizardGooleSpreadsheet(models.TransientModel):
     status = fields.Boolean('Status')
     cancelled = fields.Boolean('Cancelled')
     line_ids = fields.Many2many('sheet.row','google_spreadsheet_sheet_row_rel','spreadsheet_id','row_id','Search Results',ondelete = 'cascade')
+    all = fields.Boolean('All',help = "Get all lines whether status checked or not")
 
     @api.multi
     def fetch_query(self,vals):
@@ -90,7 +91,10 @@ class WizardGooleSpreadsheet(models.TransientModel):
                 record.update({
                     'row':itemcode_rows[i].row
                 })
-                if record.get('status',False) == self.status and record.get('cancelled',False) == self.cancelled:
+                if self.all:
+                    records.append(record)
+                    self.line_ids += self.env['sheet.row'].create(record)
+                elif record.get('status',False) == self.status and record.get('cancelled',False) == self.cancelled:
                     records.append(record)
                     self.line_ids += self.env['sheet.row'].create(record)
 
