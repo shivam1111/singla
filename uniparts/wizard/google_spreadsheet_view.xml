@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_google_spreadsheet" model="ir.ui.view">
+        <field name="name">wizard.google.spreadsheet</field>
+        <field name="model">google.spreadsheet</field>
+        <field name="arch" type="xml">
+            <form string="Enter Item Code">
+                <p class="oe_gray">
+
+                </p>
+                <group>
+                    <group>
+                        <field name="item_code" tabindex="0"/>
+                    </group>
+                    <group>
+                        <field name="status" tabindex="1"/>
+                        <field name = "cancelled" tabindex="2" />
+                    </group>
+                </group>
+                <notebook>
+                    <page string = "Search Results">
+                        <field name = "line_ids"  readonly="1">
+                            <tree string = "Search Results" editable = "bottom" >
+                                <field name = "company_name" />
+                                <field name = "po" />
+                                <field name = "item_code" />
+                                <field name = "uniparts_grade" invisible="1" />
+                                <field name = "grade" />
+                                <field name = "item_description" />
+                                <field name = "qty" sum="Toal Qty Ordered"/>
+                                <field name = "rate" />
+                                <field name = "dispatch" sum = "Total Dispatched"/>
+                                <field name = "balance" sum = "Balace"/>
+                                <field name = "bill_details" />
+                                <field name = "status"  invisible="1"/>
+                                <field name = "cancelled" invisible="1" />
+                                <field name = "remarks" invisible = "1" />
+                            </tree>
+                            <form string = "Search Results">
+                                <group>
+                                    <group>
+                                        <field name = "company_name" />
+                                        <field name = "po" />
+                                        <field name = "item_code" />
+                                        <field name = "uniparts_grade"  />
+                                        <field name = "grade" />
+                                        <field name = "item_description" />
+                                    </group>
+                                    <group>
+                                        <field name = "qty" />
+                                        <field name = "rate" />
+                                        <field name = "dispatch" />
+                                        <field name = "balance" />
+                                        <field name = "bill_details" />
+                                        <field name = "status"  />
+                                        <field name = "cancelled" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+
+                <footer>
+                    <button name="fetch_query" string="Fetch" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="wizard_google_spreadsheet_action" model="ir.actions.act_window">
+        <field name="name">Farmpart/SKG</field>
+        <field name="res_model">google.spreadsheet</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_google_spreadsheet"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_google_spreadsheet_unipart" parent="mill_order.mill_order_management_main_submenu"
+              sequence="3" name="Farmpart/SKG"
+              action = "wizard_google_spreadsheet_action"
+    />
+</odoo>
