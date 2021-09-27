@@ -80,5 +80,6 @@
     <menuitem id="menu_google_spreadsheet_unipart" parent="mill_order.mill_order_management_main_submenu"
               sequence="3" name="Farmpart/SKG"
               action = "wizard_google_spreadsheet_action"
+              groups = "mill_order.group_dispatch_manager"
     />
 </odoo>
