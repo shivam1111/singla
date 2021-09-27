@@ -36,6 +36,7 @@ col_field = ['company_name','po','vendor','item_code','uniparts_grade','grade','
 class WizardSheetRow(models.TransientModel):
     _name = "sheet.row"
 
+    row = fields.Char('Row')
     company_name = fields.Selection(COMPANIES,string = "Company")
     po = fields.Char('PO')
     # vendor = fields.Char('Vendor')
@@ -86,6 +87,9 @@ class WizardGooleSpreadsheet(models.TransientModel):
             values_list = worksheet.batch_get(rows_list, value_render_option='UNFORMATTED_VALUE')
             for i,item in enumerate(values_list):
                 record = dict(zip(col_field,item[0]))
+                record.update({
+                    'row':itemcode_rows[i].row
+                })
                 if record.get('status',False) == self.status and record.get('cancelled',False) == self.cancelled:
                     records.append(record)
                     self.line_ids += self.env['sheet.row'].create(record)

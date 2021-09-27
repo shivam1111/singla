@@ -39,6 +39,7 @@
                             <form string = "Search Results">
                                 <group>
                                     <group>
+                                        <field name = "row" />
                                         <field name = "company_name" />
                                         <field name = "po" />
                                         <field name = "item_code" />
