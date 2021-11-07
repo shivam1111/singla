@@ -11,10 +11,10 @@
                 <group>
                     <group>
                             <field name="item_code" tabindex="0"/>
-                            <label for="average_price"/>
+                            <label for="average_price" groups = "uniparts.group_average_price"/>
                             <div class="o_row" groups = "uniparts.group_average_price">
-                                <field name = "average_price"  />
-                                <button name="compute_average_price" type="object" string="Compute"/>
+                                <field name = "average_price"  readonly = "1"/>
+                                <button name="compute_average_price" type="object" string="Compute" />
                             </div>
                     </group>
                     <group>
