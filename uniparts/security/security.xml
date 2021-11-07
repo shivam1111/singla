@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- Average Price Field Permission -->
+	    <record id="group_average_price" model="res.groups">
+	        <field name="name">Average Price</field>
+	        <field name="comment">This user access the Average price field in the wizard</field>
+	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+	    </record>
+
+	</data>
+</openerp>

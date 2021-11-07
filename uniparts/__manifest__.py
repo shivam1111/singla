@@ -31,6 +31,8 @@
     'license': 'AGPL-3',
     'depends': [],
     'data': [
-            'wizard/google_spreadsheet_view.xml'
+            'security/security.xml',
+            'wizard/google_spreadsheet_view.xml',
+
     ],
 }

@@ -53,17 +53,64 @@ class WizardSheetRow(models.TransientModel):
     cancelled = fields.Boolean('Cancelled')
     remarks = fields.Char('Remarks')
 
+
 class WizardGooleSpreadsheet(models.TransientModel):
     _name = 'google.spreadsheet'
 
-    item_code = fields.Char('Item Code',required=True)
+    item_code = fields.Char('Item Code')
     status = fields.Boolean('Status')
     cancelled = fields.Boolean('Cancelled')
     line_ids = fields.Many2many('sheet.row','google_spreadsheet_sheet_row_rel','spreadsheet_id','row_id','Search Results',ondelete = 'cascade')
     all = fields.Boolean('All',help = "Get all lines whether status checked or not")
+    average_price = fields.Float('Average price')
+
+    @api.multi
+    def compute_average_price(self):
+        # define the scope
+        scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+        if os.path.exists('credentials.json'):
+            # add credentials to the account
+            creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+        else:
+            return
+
+        # authorize the clientsheet
+        client = gspread.authorize(creds)
+        # get the instance of the Spreadsheet
+        sheet = client.open_by_url(GOOGLESHEET_URL)
+        # By title
+        worksheet = sheet.worksheet("Main Sheet")
+        main_data = worksheet.get_all_records(value_render_option='UNFORMATTED_VALUE')
+        worksheet = sheet.worksheet("PO")
+        po_data = worksheet.get_all_records(value_render_option='UNFORMATTED_VALUE')
+        rate_list = {}
+        # Create PO Number and rate list
+        for i in po_data:
+            if i.get('PO',False) and i.get('Rate',False):
+                rate_list.update({
+                    i['PO']:i['Rate']
+                })
+        total_price = 0.00
+        total_balanace_qty = 0.00
+        for i in main_data:
+            if not i.get('Status',True) and i.get('PO',False) and not i.get('Cancelled',True) : # IF status is False
+                bal_qty = i.get('Balance',0)/1000.00
+                product = bal_qty*rate_list.get(i.get('PO','PO'),0)
+                total_price += product
+                if product != 0:
+                    total_balanace_qty+=bal_qty
+        average_price = total_price/total_balanace_qty
+        self.average_price = average_price
+        return {
+            "type": "ir.actions.do_nothing",
+        }
 
     @api.multi
     def fetch_query(self,vals):
+        if not self.item_code:
+            return {
+                "type": "ir.actions.do_nothing",
+            }
         self.line_ids = [(6, 0, [])]
         # define the scope
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
