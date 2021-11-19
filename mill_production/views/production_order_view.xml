@@ -47,6 +47,7 @@
 										<field name = "is_inspection" />
 										<field name = "is_heat" />
 										<field name = "remarks" />
+										<field name = "production_id" groups = "mill_order.group_manager"  />
 									</tree>	                    		
 	                    		</field>
 	                    </group>
