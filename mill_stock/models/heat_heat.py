@@ -61,6 +61,7 @@ class Heat(models.Model):
     grinding = fields.Boolean('Grinding')
     date = fields.Char('Date Rcvd',required=True,default = fields.Date.today)
     truck_no = fields.Char('Truck No.',related = "stock_line_id.truck_no")
+    partner_id = fields.Many2one(string = " Supplier",related = "stock_line_id.partner_id",store=True)
     stock_line_id = fields.Many2one('stock.line','Stock Line')
     purchase_id = fields.Many2one(string = "Purchase Order",store=True,related = 'stock_line_id.purchase_id')
     grade_id = fields.Many2one(string = "Grade",store=True,related = "stock_line_id.grade_id")

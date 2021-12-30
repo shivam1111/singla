@@ -35,7 +35,8 @@
 		    		<field name = "partner_id" />
 		    		<field name = "rolling_id"  />
 		    		<field name = "grade_id" />
-		    		<field name = "heat_no" />
+		    		<field name = "heat_no" string = "Heat No." />
+					<field name = "bill_no" />
 		    		<field name = "roll_size" />
 		    		<field name = "qty" sum = "Total Qty"/>
 		    		<field name = "trade_balance" sum = "Balance" />
