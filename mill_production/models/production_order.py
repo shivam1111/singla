@@ -11,14 +11,17 @@ class ProductionOrderLine(models.Model):
     
     @api.depends('size_id','kg_per_pc')
     def _compute_flat_length(self):
-        for i in self:
+        for i in self :
             if i.size_id:
-                try:
-                    name_list = re.split("x", i.size_id.name, flags=re.IGNORECASE)
-                    length = float(i.kg_per_pc) / (float(name_list[0]) * float(name_list[1]) * float(0.002389) )
-                    i.flat_length = length
-                except:
-                    raise exceptions.Warning('Please check if the name if the size entered is correct!')
+                if i.corner_id.name == "RD":
+                    i.flat_length = 0
+                else:
+                    try:
+                        name_list = re.split("x", i.size_id.name, flags=re.IGNORECASE)
+                        length = float(i.kg_per_pc) / (float(name_list[0]) * float(name_list[1]) * float(0.002389) )
+                        i.flat_length = length
+                    except:
+                        raise exceptions.Warning('Please check if the name if the size entered is correct!')
             else:
                 i.flat_length = 0
         
