@@ -121,5 +121,6 @@ class ChemicalComposition(models.Model):
     carbon_equivalence = fields.Float('Carbon Equivalence',default = 0.00,help = "%C + (%Mn/6) + 1/20",compute = '_compute_carbon_equivalence')
     nicrmo = fields.Float('Ni+Cr+Mo',compute = '_compute_carbon_equivalence')
     surface_inspection = fields.Selection([('ok','Ok'),('dentfree','Free from Dent')],default = 'dentfree')
+    remarks = fields.Text("Remarks")
 
     

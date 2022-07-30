@@ -124,6 +124,7 @@
            parent= "mill_purchase_order_management_main_submenu"
            sequence= "1"
            action = "action_mill_purchase_order"
+		    groups="mill_order.group_raw_material_manager"
             />       
             
         <!-- Broker -->

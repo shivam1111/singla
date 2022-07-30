@@ -198,8 +198,9 @@
 	            			2. Material is free from lead &amp; mercury<br/>
 	            			3. 'Al' added to keep Al in the range 0.020% to 0.050%<br/>
 	            			4. Product does not contain any radioactive material.<br/>
-	            			</p>
-		            	</div>	            					            	
+							<span t-if="doc.remarks" >5. <strong t-field="doc.remarks" /></span>
+							</p>
+		            	</div>
 	            	</div>
 		            <!-- <div t-if = "doc.length_detail_ids" style = "page-break-before:always;padding: 10px;" class = "row"> -->
 	            	<div t-if = "doc.length_detail_ids" class = "row">
