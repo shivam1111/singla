@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2aa8488-8f28-4cc8-be00-3e0814d89764" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chemical_compositions/models/chemical_composition.py" beforeDir="false" afterPath="$PROJECT_DIR$/chemical_compositions/models/chemical_composition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chemical_compositions/report/chemical_composition_report.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chemical_compositions/views/chemical_composition_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mill_purchase_order/views/mill_purchase_order_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uniparts/wizard/google_spreadsheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/uniparts/wizard/google_spreadsheet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +12,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="singla" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,6 +72,9 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1440" />
     <option name="height" value="900" />
@@ -110,10 +107,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mill_stock/models" />
@@ -301,7 +300,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -310,9 +308,6 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../odoo10/addons/sale/views/sale_views.xml">

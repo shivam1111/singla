@@ -29,7 +29,7 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 _logger = logging.getLogger(__name__)
 GOOGLESHEET_URL = 'https://docs.google.com/spreadsheets/d/1D-euhy3H0koC6Cr-AX1CqSUkvD2CvwUeQ4vAkcUgw5o/edit#gid=149290768'
-COMPANIES = [('SKG','SKG'),('FP','FP')]
+COMPANIES = [('SKG','SKG'),('FP','FP'),('GPCL','GPCL')]
 col_field = ['company_name','po','vendor','item_code','uniparts_grade','grade','item_description','qty','rate','dispatch','balance','bill_details',
              'status','cancelled','remarks']
 
